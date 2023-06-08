@@ -5,7 +5,11 @@ export const HomePage = () => {
         <Page
             title="Hey, are you my master?"
         >
-            Hello, new project ;)
+            <div className="p-10">
+                <div className="animate-slide-up ">
+                    Hello, new project ;)
+                </div>
+            </div>
         </Page>
     );
 };
