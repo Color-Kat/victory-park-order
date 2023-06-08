@@ -8,13 +8,17 @@ use App\Http\Controllers\ReactController;
 
 Auth::routes();
 
+Route::middleware('role:admin')->get('/admin', function () {
+    return 'hello, admin';
+});
 
 /**
  * Redirect all routes to ReactController that renders react
  */
 Route::get('/{path?}', [ReactController::class, 'index'])
-    ->name('react')
     ->where('path', '.*')
+    ->name('home')
 ;
+
 
 
