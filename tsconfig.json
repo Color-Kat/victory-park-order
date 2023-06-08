@@ -1,0 +1,55 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "lib": [
+            "DOM",
+            "DOM.Iterable",
+            "ESNext"
+        ],
+        "module": "ESNext",
+        "skipLibCheck": true,
+        "rootDir": "./src",
+        /* Bundler mode */
+        "moduleResolution": "node",
+        "allowImportingTsExtensions": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "react-jsx",
+        /* Linting */
+        "strict": true,
+        "noUnusedLocals": false,
+        "noUnusedParameters": true,
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": "./",
+        "paths": {
+            "@/*": [
+                "./resources/*"
+            ],
+            "@sass/*": [
+                "./resources/sass/*"
+            ],
+            "@assets/*": [
+                "./resources/assets/*"
+            ],
+            "@pages/*": [
+                "./resources/pages/*"
+            ],
+            "@modules/*": [
+                "./resources/modules/*"
+            ],
+            "@components/*": [
+                "./resources/components/*"
+            ],
+            "@UI/*": [
+                "./resources/UI/*"
+            ],
+            "@hooks/*": [
+                "./resources/hooks/*"
+            ]
+        }
+    },
+    "include": [
+        "src"
+    ]
+}
