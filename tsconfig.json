@@ -7,49 +7,54 @@
             "ESNext"
         ],
         "module": "ESNext",
+        "jsx": "react-jsx",
         "skipLibCheck": true,
-        "rootDir": "./src",
+        "rootDir": "./resources/js",
+
         /* Bundler mode */
         "moduleResolution": "node",
         "allowImportingTsExtensions": true,
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
-        "jsx": "react-jsx",
+
         /* Linting */
         "strict": true,
         "noUnusedLocals": false,
         "noUnusedParameters": true,
+
         "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+
         "baseUrl": "./",
         "paths": {
             "@/*": [
-                "./resources/*"
+                "./resources/js/*"
             ],
             "@sass/*": [
                 "./resources/sass/*"
             ],
             "@assets/*": [
-                "./resources/assets/*"
+                "./resources/js/assets/*"
             ],
             "@pages/*": [
-                "./resources/pages/*"
+                "./resources/js/pages/*"
             ],
             "@modules/*": [
-                "./resources/modules/*"
+                "./resources/js/modules/*"
             ],
             "@components/*": [
-                "./resources/components/*"
+                "./resources/js/components/*"
             ],
             "@UI/*": [
-                "./resources/UI/*"
+                "./resources/js/UI/*"
             ],
             "@hooks/*": [
-                "./resources/hooks/*"
+                "./resources/js/hooks/*"
             ]
         }
     },
     "include": [
-        "src"
+        "resources/js"
     ]
 }

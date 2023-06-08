@@ -7,7 +7,7 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/js/index.ts',
+                'resources/js/index.tsx',
             ],
             refresh: true,
         }),
@@ -15,17 +15,16 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            '@': path.resolve(__dirname, './resources/'),
+            '@': path.resolve(__dirname, './resources/js'),
             '@sass': path.resolve(__dirname, './resources/sass/'),
-            '@assets': path.resolve(__dirname, './resources/assets/'),
-            '@pages': path.resolve(__dirname, './resources/pages/'),
-            '@modules': path.resolve(__dirname, './resources/modules/'),
-            '@components': path.resolve(__dirname, './resources/components/'),
-            '@UI': path.resolve(__dirname, './resources/UI/'),
-            '@hooks': path.resolve(__dirname, './resources/hooks/'),
-            '@utils': path.resolve(__dirname, './resources/utils/')
+            '@assets': path.resolve(__dirname, './resources/js/assets/'),
+            '@pages': path.resolve(__dirname, './resources/js/pages/'),
+            '@modules': path.resolve(__dirname, './resources/js/modules/'),
+            '@components': path.resolve(__dirname, './resources/js/components/'),
+            '@UI': path.resolve(__dirname, './resources/js/UI/'),
+            '@hooks': path.resolve(__dirname, './resources/js/hooks/'),
+            '@utils': path.resolve(__dirname, './resources/js/utils/')
         },
         extensions: ['.js', '.ts', '.tsx', '.jsx'],
     },
-
 });

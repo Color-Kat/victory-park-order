@@ -5,7 +5,7 @@ const colors = require('tailwindcss/colors');
 module.exports = {
     content  : [
         "./index.html",
-        "./src/**/*.{js,ts,jsx,tsx}",
+        "./resources/**/*.{js,ts,jsx,tsx}",
     ],
     important: true,
     theme    :
@@ -23,8 +23,6 @@ module.exports = {
                     'app-light' :
                         '#f1f1f1',
                 },
-                // width : {'[300px]': '300px'},
-                // height: {'[370px]': '370px'},
             },
         },
     plugins  : [],
