@@ -1,0 +1,38 @@
+
+// Nav dots position
+#fp-nav.fp-left {
+  left: 317px;
+}
+
+// Navigation Dots
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+  background: 0 0;
+  border: 1px solid #fff;
+}
+
+#fp-nav ul li a.active span {
+  background: #fff;
+  -webkit-box-shadow: 0 0 16.92px 1.08px #fff;
+  box-shadow: 0 0 16.92px 1.08px #fff;
+}
+
+// Active dot size
+#fp-nav ul li a.active span, #fp-nav ul li:hover a.active span {
+  width: 18px;
+  height: 18px;
+  margin: -9px 0 0 -9px;
+}
+
+// Not active dot size
+#fp-nav ul li a span, #fp-nav ul li:hover a span {
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+}
+
+// Dots gaps
+#fp-nav ul li {
+  width: 18px;
+  height: 18px;
+  margin: 10px;
+}
