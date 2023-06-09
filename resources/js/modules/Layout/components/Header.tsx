@@ -82,8 +82,9 @@ export const Header = () => {
 
             {/*  Mobile menu  */}
             <nav
-                className={`lg:hidden flex ${isMobileMenuOpen ? 'h-64' : 'h-0'} w-full absolute bottom-0 translate-y-full bg-white  transition-all overflow-hidden z-20 px-4`}>
-                213
+                className={`lg:hidden flex ${isMobileMenuOpen ? 'h-64' : 'h-0'} w-full absolute bottom-0 translate-y-full bg-white  transition-all overflow-hidden z-20 px-4`}
+            >
+                В разработке
             </nav>
 
             {/* Mobile menu overlay */}

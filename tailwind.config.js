@@ -60,7 +60,8 @@ module.exports = {
                     },
                 },
                 screens: {
-                    'xs': '560px'
+                    'xs': '560px',
+                    // 'lg': '960px',
                 }
             },
         },
