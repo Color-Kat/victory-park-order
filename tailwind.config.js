@@ -13,9 +13,9 @@ module.exports = {
             extend: {
                 colors: {
                     'app-light': '#fff',
-                    'app': '#f2f3f3',
-                    'app-dark': '#484848',
-                    'app-darkest': '#2d2d2d',
+                    'app': '#f3f2f2',
+                    'app-dark': '#242424',
+                    'app-accent': '#f82f38',
                 },
 
                 animation: {
