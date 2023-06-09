@@ -46,7 +46,7 @@
     @vite(['resources/js/index.tsx'])
 
 </head>
-<body>
+<body class="offcanvas-header">
 
 <div id="app">
 

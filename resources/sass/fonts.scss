@@ -37,3 +37,14 @@
 .font-circle {
   font-family: 'Circle', sans-serif;
 }
+
+@font-face {
+  font-family: 'MetaPro';
+  src: url('./fonts/metapro-bold.otf');
+  font-weight: bold;
+}
+
+.font-metapro {
+  font-family: 'MetaPro', sans-serif;
+}
+

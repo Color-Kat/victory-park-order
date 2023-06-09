@@ -6,6 +6,7 @@
         "build": "tsc && vite build"
     },
     "dependencies": {
+        "@fullpage/react-fullpage": "^0.1.40",
         "@reduxjs/toolkit": "^1.9.5",
         "autoprefixer": "^10.4.14",
         "path": "^0.12.7",
