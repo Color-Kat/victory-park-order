@@ -9,7 +9,7 @@ use App\Http\Controllers\ReactController;
 Auth::routes();
 
 Route::middleware('role:admin')->get('/admin', function () {
-    return 'hello, admin';
+    return 'Hello, Admin';
 });
 
 /**
@@ -19,6 +19,7 @@ Route::get('/{path?}', [ReactController::class, 'index'])
     ->where('path', '.*')
     ->name('home')
 ;
+
 
 
 
