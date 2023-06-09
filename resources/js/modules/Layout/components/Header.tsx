@@ -14,7 +14,8 @@ export const Header = () => {
 
     return (
         <header
-            className="relative flex justify-center lg:items-center lg:w-[300px] w-full h-max lg:px-0 px-4 bg-white">
+            className="relative flex justify-center lg:items-center lg:w-[300px] w-full h-max lg:px-0 px-4 bg-white z-10"
+        >
 
             <nav className="flex lg:flex-col lg:pt-8 lg:pb-0 pt-3 pb-3 justify-between items-center lg:h-screen w-full">
 
@@ -81,7 +82,7 @@ export const Header = () => {
 
             {/*  Mobile menu  */}
             <nav
-                className={`lg:hidden flex ${isMobileMenuOpen ? 'h-64' : 'h-0'} w-full absolute bottom-0 translate-y-full bg-white  transition-all overflow-hidden z-10 px-4`}>
+                className={`lg:hidden flex ${isMobileMenuOpen ? 'h-64' : 'h-0'} w-full absolute bottom-0 translate-y-full bg-white  transition-all overflow-hidden z-20 px-4`}>
                 213
             </nav>
 

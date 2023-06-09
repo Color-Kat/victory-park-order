@@ -5,11 +5,9 @@ const Main: React.FC<{ children: React.ReactElement }> =
         return (
             <>
                 <main
-                    className="flex-auto flex-shrink-0 flex justify-center bg-gray-700 w-full"
+                    className="flex-auto flex justify-center bg-gray-700 text-white"
                 >
-                    <div className="text-white">
-                        {children}
-                    </div>
+                    {children}
                 </main>
             </>
 
