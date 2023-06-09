@@ -59,6 +59,9 @@ module.exports = {
                         '100%': {transform: 'scale(1)'},
                     },
                 },
+                screens: {
+                    'xs': '560px'
+                }
             },
         },
     plugins: [],
