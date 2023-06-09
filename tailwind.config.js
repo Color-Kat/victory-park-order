@@ -12,16 +12,10 @@ module.exports = {
         {
             extend: {
                 colors: {
-                    'app':
-                        '#1a1a1d',
-                    'app-dark':
-                        '#0f0f0f',
-                    'app-accent':
-                        '#ff3442',
-                    'app-gray':
-                        '#777777',
-                    'app-light':
-                        '#f1f1f1',
+                    'app-light': '#fff',
+                    'app': '#f2f3f3',
+                    'app-dark': '#484848',
+                    'app-darkest': '#2d2d2d',
                 },
 
                 animation: {
