@@ -2,6 +2,7 @@ import React, {memo} from "react";
 
 import {Header} from "./Header";
 import Main from "./Main";
+import {Footer} from "@modules/Layout";
 // import Footer from "./Footer";
 
 export const Layout: React.FC<{ children: React.ReactElement }> = memo(({children}) => {
@@ -15,10 +16,10 @@ export const Layout: React.FC<{ children: React.ReactElement }> = memo(({childre
 
             <Main>
                 {children}
+
             </Main>
 
-            {/*<Footer/>*/}
-
+            {/*<Footer />*/}
         </div>
     );
 });

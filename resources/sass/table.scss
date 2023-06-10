@@ -46,6 +46,12 @@
 #office-rental-table tbody tr {
   padding: 0 10px;
   height: 50px;
+  cursor: pointer;
+
+
+  &:hover {
+    background-color: #ebebeb;
+  }
 
   &:not(:last-child) {
     border-bottom: 1px solid #ebebeb;
