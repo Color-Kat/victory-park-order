@@ -1,4 +1,4 @@
-import React, {ReactNode, useState} from 'react';
+import React, {ReactNode, useEffect, useState} from 'react';
 import {Logo} from "@UI/Elements/Logo/Logo";
 import {Link, useLocation} from "react-router-dom";
 
@@ -6,34 +6,38 @@ import logo from "@assets/logo.png";
 import {HiOutlineMenu, HiX} from "react-icons/hi";
 import phone from "@assets/phone.png";
 import {RedButton} from "@UI/Buttons";
+import {isMobile} from "@/utils/isMobile.ts";
 
 interface MenuLinkProps {
     children: ReactNode;
     isActive: boolean;
     to?: string;
     href?: string;
+    isMobile: boolean
 }
 
-const MenuLink: React.FC<MenuLinkProps> = ({children, isActive, to, href}) => {
+const MenuLink: React.FC<MenuLinkProps> = ({children, isActive, to, href, isMobile}) => {
     return (
         <li className={`text-lg tracking-wide cursor-pointer menu-item ${isActive ? 'text-app-accent active-menu-item' : ''}`}>
-            {href && <a href={href}>{children}</a>}
+            {href && <a
+                href={isMobile ? href + '-anchor' : href} // Add -anchor for mobile links to scroll to element not by fullpage.js but by native html
+            >{children}</a>}
             {to && <Link to={to}>{children}</Link>}
         </li>
     );
 }
 
-const Navigation = () => {
+const Navigation = ({isMobile = false}: {isMobile?: boolean}) => {
     const {hash, pathname} = useLocation();
 
     return (
         <ul className="space-y-5">
-            <MenuLink isActive={hash == '#page-1'} href="/#page-1">Главная</MenuLink>
-            <MenuLink isActive={hash == '#page-2' || hash == '#page-3'} href="/#page-2">Аренда офисов</MenuLink>
-            <MenuLink isActive={hash == '#page-4'} href="/#page-4">Продажа офисов</MenuLink>
-            <MenuLink isActive={hash == '#page-5'} href="/#page-5">Фотогалерея</MenuLink>
-            <MenuLink isActive={hash == '#page-6' || hash == '#page-7'} href="/#page-6">Контакты</MenuLink>
-            <MenuLink isActive={pathname == '/about'} to="/about">О бизнес-центре</MenuLink>
+            <MenuLink isMobile={isMobile} isActive={hash == '#page-1'} href="/#page-1">Главная</MenuLink>
+            <MenuLink isMobile={isMobile} isActive={hash == '#page-2' || hash == '#page-3'} href="/#page-2">Аренда офисов</MenuLink>
+            <MenuLink isMobile={isMobile} isActive={hash == '#page-4'} href="/#page-4">Продажа офисов</MenuLink>
+            <MenuLink isMobile={isMobile} isActive={hash == '#page-5'} href="/#page-5">Фотогалерея</MenuLink>
+            <MenuLink isMobile={isMobile} isActive={hash == '#page-6' || hash == '#page-7'} href="/#page-6">Контакты</MenuLink>
+            <MenuLink isMobile={isMobile} isActive={pathname == '/about'} to="/about">О бизнес-центре</MenuLink>
         </ul>
     );
 }
@@ -114,9 +118,10 @@ export const Header = () => {
             {/*  Mobile menu  */}
             <nav
                 className={`lg:hidden flex ${isMobileMenuOpen ? 'h-72' : 'h-0'} w-full absolute bottom-0 translate-y-full bg-white  transition-all overflow-hidden z-20 px-4`}
-                // onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => setIsMobileMenuOpen(false)}
+                id="mobile-menu"
             >
-                <Navigation/>
+                <Navigation isMobile={true}/>
             </nav>
 
             {/* Mobile menu overlay */}

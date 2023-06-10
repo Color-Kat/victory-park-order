@@ -23,8 +23,9 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
     const fullPageRef = useRef(null);
 
     useEffect(() => {
-
-    }, [fullPageRef]);
+        // fullpageApi?.setAutoScrolling(true)
+        // fullpageApi?.setAllowScrolling(true)
+    }, [fullpageApi]);
 
     return (
         <>

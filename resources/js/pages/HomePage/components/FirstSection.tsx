@@ -9,6 +9,7 @@ export const FirstSection: React.FC = ({}) => {
         <div
             className="relative section w-full h-full lg:px-5 md:px-16 px-5 flex items-center justify-center fullpage-overlay"
             data-anchor="page-1"
+            id="page-1-anchor"
         >
             <div className="flex flex-col justify-between">
                 <h1 className="font-metapro lg:text-8xl md:text-6xl xs:text-5xl text-4xl text-center font-bold lg:mb-16 mb-8">

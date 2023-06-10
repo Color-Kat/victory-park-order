@@ -22,6 +22,7 @@ export const ContactsSection: React.FC = ({}) => {
         <div
             className="relative section w-full h-full lg:px-16 px-5 flex items-center justify-center"
             data-anchor="page-7"
+            id="page-7-anchor"
         >
             <h2 className="font-metapro lg:text-6xl md:text-6xl xs:text-5xl text-3xl font-bold text-app-accent text-center lg:mb-16 mb-8">
                 Оставьте заявку на просмотр

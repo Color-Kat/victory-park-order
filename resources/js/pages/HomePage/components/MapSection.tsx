@@ -10,6 +10,7 @@ export const MapSection: React.FC = ({}) => {
         <div
             className="relative section h-full w-full"
             data-anchor="page-6"
+            id="page-6-anchor"
         >
             <div className=" flex items-center justify-between flex-col w-full h-screen">
                 <h2 className="font-metapro lg:text-6xl md:text-6xl xs:text-5xl text-3xl font-bold text-app-accent text-center lg:my-12 my-6">
