@@ -19,15 +19,13 @@ export const MapSection: React.FC = ({}) => {
                 </h2>
 
                 <div className="map w-full flex flex-1">
-
-
                     <YMaps query={{
                         // @ts-ignore
                         apikey: import.meta.env.VITE_YANDEX_MAP_API_KEY,
                         lang: 'ru_RU'
                     }}>
                         <Map
-                            defaultState={{center: [55.724140, 37.504663], zoom: 17}}
+                            defaultState={{center: [55.724140, 37.504663], zoom: 17, behaviors: ["disable('scrollZoom')"]}}
                             className="w-full h-full"
                         >
                             <Placemark

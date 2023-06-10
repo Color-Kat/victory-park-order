@@ -31,7 +31,7 @@ export const ThridSection: React.FC = ({}) => {
                     <tbody className="text-gray-900 text-sm border-separate ">
                     <tr
                         className="space-y-2"
-                        href="/block/rent/37111"
+                        // href="/block/rent/37111"
                         data-href="/block/rent/37111"
                         data-block-id="37111"
                         data-block-type="rent"
@@ -57,7 +57,9 @@ export const ThridSection: React.FC = ({}) => {
                             <a href="/block/rent/37111">Готово к въезду </a>
                         </td>
                     </tr>
-                    <tr className="tr-offer-table" href="/block/rent/38866"
+                    <tr
+                        className="tr-offer-table"
+                        // href="/block/rent/38866"
                         data-href="/block/rent/38866" data-block-id="38866"
                         data-block-type="rent">
                         <td>

@@ -1,6 +1,6 @@
 import React, {ReactNode, useEffect, useState} from 'react';
 import {Logo} from "@UI/Elements/Logo/Logo";
-import {Link, useLocation} from "react-router-dom";
+import {Link, NavLink, useLocation} from "react-router-dom";
 
 import logo from "@assets/logo.png";
 import {HiOutlineMenu, HiX} from "react-icons/hi";
@@ -28,16 +28,18 @@ const MenuLink: React.FC<MenuLinkProps> = ({children, isActive, to, href, isMobi
     );
 }
 
-const Navigation = ({isMobile = false}: {isMobile?: boolean}) => {
+const Navigation = ({isMobile = false}: { isMobile?: boolean }) => {
     const {hash, pathname} = useLocation();
 
     return (
         <ul className="space-y-5">
             <MenuLink isMobile={isMobile} isActive={hash == '#page-1'} href="/#page-1">Главная</MenuLink>
-            <MenuLink isMobile={isMobile} isActive={hash == '#page-2' || hash == '#page-3'} href="/#page-2">Аренда офисов</MenuLink>
+            <MenuLink isMobile={isMobile} isActive={hash == '#page-2' || hash == '#page-3'} href="/#page-2">Аренда
+                офисов</MenuLink>
             <MenuLink isMobile={isMobile} isActive={hash == '#page-4'} href="/#page-4">Продажа офисов</MenuLink>
             <MenuLink isMobile={isMobile} isActive={hash == '#page-5'} href="/#page-5">Фотогалерея</MenuLink>
-            <MenuLink isMobile={isMobile} isActive={hash == '#page-6' || hash == '#page-7'} href="/#page-6">Контакты</MenuLink>
+            <MenuLink isMobile={isMobile} isActive={hash == '#page-6' || hash == '#page-7'}
+                      href="/#page-6">Контакты</MenuLink>
             <MenuLink isMobile={isMobile} isActive={pathname == '/about'} to="/about">О бизнес-центре</MenuLink>
         </ul>
     );
@@ -58,7 +60,7 @@ export const Header = () => {
                 {/* Open mobile menu button */}
                 <button
                     onClick={() => setIsMobileMenuOpen(prev => !prev)}
-                    className="absolute xs:relative lg:hidden text-3xl p-2 border bg-app text-app-accent h-max"
+                    className="absolute xs:relative lg:hidden text-3xl p-2 border bg-app text-app-accent h-max rounded"
                 >{
                     isMobileMenuOpen
                         ? <HiX/>
@@ -67,25 +69,28 @@ export const Header = () => {
 
                 {/* Logo block */}
                 <div
-                    className="flex flex-col items-center lg:pb-8 lg:border-b lg:ml-0 xs:ml-[13%] mx-auto xs:mx-0 border-gray-200">
-                    <img
-                        src={logo}
-                        alt="logo"
-                        className="w-fit object-contain"
-                    />
+                    className="lg:pb-8 lg:border-b lg:ml-0 xs:ml-[13%] mx-auto xs:mx-0 border-gray-200"
+                >
+                    <a href="/" className="flex flex-col items-center ">
+                        <img
+                            src={logo}
+                            alt="logo"
+                            className="w-fit object-contain"
+                        />
 
-                    <p className="text-gray-400 mt-3 font-light" style={{fontSize: '13px'}}>
-                        Современный комплекс класса B+
-                    </p>
+                        <p className="text-gray-400 mt-3 font-light" style={{fontSize: '13px'}}>
+                            Современный комплекс класса B+
+                        </p>
+                    </a>
+
                 </div>
-
                 {/* Phone block */}
                 <div className="hidden xs:flex items-center flex-col">
                     <div className="mb-3 flex gap-1.5 items-center">
                         <img className="h-4" src={phone} alt="phone"/>
-                        <span className="sm:text-lg font-bold cursor-pointer">
-                                +7 (495) 21-21-799
-                            </span>
+                        <a className="sm:text-lg font-bold cursor-pointer" href="tel:+74952121799">
+                            +7 (495) 21-21-799
+                        </a>
                     </div>
 
                     <CallRequest filledButton={false}>
@@ -100,7 +105,7 @@ export const Header = () => {
 
                 {/* footer block */}
                 <div className="hidden lg:flex bg-app px-[50px] pb-5 pt-10 text-[#3b4256] flex-col">
-                    <a href="" className="mb-9 uppercase text-xs cursor-pointer">Инфраструктура</a>
+                    <Link to="/infrastructure" className="mb-9 uppercase text-xs cursor-pointer">Инфраструктура</Link>
 
                     <CallRequest filledButton={true}>
                         Оставить заявку

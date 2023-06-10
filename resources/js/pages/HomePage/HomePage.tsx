@@ -15,6 +15,7 @@ import {MapSection} from "@pages/HomePage/components/MapSection.tsx";
 import {GallerySection} from "@pages/HomePage/components/GallerySection.tsx";
 import {ContactsSection} from "@pages/HomePage/components/ContactsSection.tsx";
 import {CallRequest} from "@components/CallRequest/CallRequest.tsx";
+import {Link} from "react-router-dom";
 
 interface IProps {
     fullpageApi: fullpageApi
@@ -51,7 +52,9 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
             <ContactsSection />
 
             <footer className="lg:hidden w-full bg-app px-[50px] pb-5 pt-4 text-[#3b4256] flex-col text-center">
-                <div className="mb-8"><a href="" className="uppercase text-xs">Инфраструктура</a></div>
+                <div className="mb-8">
+                    <Link to="/infrastructure" className="uppercase text-xs">Инфраструктура</Link>
+                </div>
 
                 <CallRequest filledButton={true} className="sm:px-12 sm:w-auto w-max">
                     Оставить заявку
