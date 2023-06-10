@@ -1,31 +1,17 @@
 import React from 'react';
-import {Footer} from "@modules/Layout";
 import {Link} from "react-router-dom";
 
 import "./aboutPage.scss";
 import illustration from "@assets/images/first-screen.jpg";
-
-const AboutSection: React.FC<{ title: string, text: string }> = ({title, text}) => {
-    return (
-        <section className="md:px-8 px-5">
-            <h2 className="sm:mt-12 mt-8 text-app-accent font-bold lg:text-6xl md:text-5xl text-3xl font-metapro">
-                {title}
-            </h2>
-
-            <p className="max-w-3xl mx-auto sm:my-12 my-8">
-                {text}
-            </p>
-        </section>
-    );
-}
+import {TextSection} from "@UI/Sections/TextSection.tsx";
 
 export const AboutPage: React.FC = () => {
-
-
     return (
         <div className="w-full flex flex-col text-center text-[#3b4256]">
 
             <section className="relative md:px-[50px] px-5 z-0 text-white flex flex-col pb-32">
+                <div className="image-overlay w-full h-full pointer-events-none absolute top-0 left-0"/>
+
                 <div className="relative my-12 text-gray-100 text-sm text-left">
                     <Link to="/">Главная</Link><span className="mx-2">/</span>О бизнес-центре
                 </div>
@@ -47,13 +33,13 @@ export const AboutPage: React.FC = () => {
                 </p>
 
                 <img
-                    className="absolute top-0 left-0 w-full h-full object-cover object-center image-overlay z-[-1]"
+                    className="absolute top-0 left-0 w-full h-full object-cover object-center z-[-1]"
                     src={illustration}
                     alt=""
                 />
             </section>
 
-            <AboutSection
+            <TextSection
                 title="Близость от метро"
                 text="Бизнес-центр расположен в шаговой доступности от станции метро «Минская».
                         Расстояние до ТТК –3,5 км, МКАД –8,5 км.
@@ -63,7 +49,7 @@ export const AboutPage: React.FC = () => {
                         «Внуково»"
             />
 
-            <AboutSection
+            <TextSection
                 title="Природа"
                 text="Бизнес-центр расположен в зеленой зоне долины реки Сетунь и одноименного природного
                         заказника.
@@ -72,7 +58,7 @@ export const AboutPage: React.FC = () => {
                         позволит ощутить неповторимую атмосферу данных мест."
             />
 
-            <AboutSection
+            <TextSection
                 title="Техническое оснащение"
                 text="Приточно-вытяжная система вентиляции
                         Современные системы кондиционирования помещений
@@ -99,7 +85,7 @@ export const AboutPage: React.FC = () => {
                 </article>
             </div>
 
-            <AboutSection
+            <TextSection
                 title="Инфраструктура"
                 text="Инфраструктура в бизнес-центре «Аэродом» включает в себя кафе для арендаторов, банкоматы
                         и магазины. Хорошевский район, в котором располагается «Аэродом» также характеризуется
@@ -107,9 +93,6 @@ export const AboutPage: React.FC = () => {
                         торгово-развлекательных комплексов, отделений банков, магазинов, аптек, образовательных
                         учреждений, мест культурного отдыха."
             />
-
-            {/*<Footer/>*/}
-
         </div>
     );
 }
