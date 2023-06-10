@@ -1,11 +1,42 @@
-import React, {useState} from 'react';
+import React, {ReactNode, useState} from 'react';
 import {Logo} from "@UI/Elements/Logo/Logo";
-import {Link} from "react-router-dom";
+import {Link, useLocation } from "react-router-dom";
 
 import logo from "@assets/logo.png";
 import {HiOutlineMenu, HiX} from "react-icons/hi";
 import phone from "@assets/phone.png";
 import {RedButton} from "@UI/Buttons";
+
+interface MenuLinkProps {
+    children: ReactNode;
+    isActive: boolean;
+    to?: string;
+    href?: string;
+}
+
+const MenuLink: React.FC<MenuLinkProps> = ({children, isActive, to, href}) => {
+    return  (
+        <li className={`text-lg tracking-wide cursor-pointer ${isActive ? 'text-app-accent' : ''}`}>
+            {href && <a href={href}>{children}</a>}
+            {to && <Link to={to}>{children}</Link>}
+        </li>
+    );
+}
+
+const Navigation = () => {
+    const {hash, pathname} = useLocation ();
+    console.log(pathname);
+
+    return (
+        <ul>
+            <MenuLink isActive={hash == '#page-1'} href="/#page-1">Главная</MenuLink>
+            <MenuLink isActive={hash == '#page-2' || hash == '#page-3'} href="/#page-2">Аренда офисов</MenuLink>
+            <MenuLink isActive={hash == '#page-4'} href="/#page-4">Продажа офисов</MenuLink>
+            <MenuLink isActive={hash == '#page-5'} href="/#page-4">Фотогалерея</MenuLink>
+            <MenuLink isActive={hash == '#page-6' || hash == '#page-7'} href="/#page-5">Контакты</MenuLink>
+        </ul>
+    );
+}
 
 export const Header = () => {
 
@@ -58,8 +89,8 @@ export const Header = () => {
                 </div>
 
                 {/* Navigation */}
-                <div className="hidden lg:flex ">
-
+                <div className="hidden lg:flex">
+                    <Navigation />
                 </div>
 
                 {/* footer block */}
@@ -84,7 +115,7 @@ export const Header = () => {
             <nav
                 className={`lg:hidden flex ${isMobileMenuOpen ? 'h-64' : 'h-0'} w-full absolute bottom-0 translate-y-full bg-white  transition-all overflow-hidden z-20 px-4`}
             >
-                В разработке
+                <Navigation />
             </nav>
 
             {/* Mobile menu overlay */}
