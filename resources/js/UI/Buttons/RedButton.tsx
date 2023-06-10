@@ -3,7 +3,7 @@ import React from 'react';
 interface RedButtonProps {
     children: string;
     filled: boolean;
-    onClick?: () => void;
+    onClick?: (e?: any) => void;
     className?: string;
 }
 

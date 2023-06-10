@@ -13,6 +13,11 @@ export const ContactsSection: React.FC = ({}) => {
         text: ''
     });
 
+    const send = (e: any) => {
+        e.preventDefault();
+        console.log(form);
+    }
+
     return (
         <div
             className="relative section w-full h-full lg:px-16 px-5 flex items-center justify-center"
@@ -34,7 +39,7 @@ export const ContactsSection: React.FC = ({}) => {
                     />
 
                     <Input
-                        value={form.name}
+                        value={form.phone}
                         setForm={setForm}
                         name="phone"
                         placeholder="Ваш Телефон"
@@ -42,7 +47,7 @@ export const ContactsSection: React.FC = ({}) => {
                     />
 
                     <Input
-                        value={form.name}
+                        value={form.email}
                         setForm={setForm}
                         name="email"
                         placeholder="Ваше E-mail"
@@ -54,11 +59,21 @@ export const ContactsSection: React.FC = ({}) => {
                 <textarea
                     name="text"
                     id="text"
-                    className="bg-app p-3 md:px-12"
+                    className="bg-app p-3 md:px-12 outline-none text-gray-700 mb-10"
                     placeholder="Сообщение"
-                >
+                    value={form.text}
+                    onChange={(e) => setForm((prev: any) => ({
+                        ...prev,
+                        text: e.target.value
+                    }))}
+                ></textarea>
 
-                </textarea>
+                <RedButton
+                    filled={true}
+                    onClick={send}
+                >
+                    Отправить
+                </RedButton>
             </form>
         </div>
     );

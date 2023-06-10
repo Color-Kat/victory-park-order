@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- Title -->
-    <title>Аэродом</title>
+    <title>Victory park</title>
 
     <!-- KeyWords -->
-    <meta name="keywords" content="бц Аэродом, Ленинградский проспект, офис в Хорошевском районе">
+    <meta name="keywords" content="бц Victory Park, бц Минская Плаза, офис в районе Раменки">
 
     <!--  Description  -->
-    <meta name="description" content="Аренда и продажа офисов класса А в бизнес-центре Аэродом на Севере Москвы.">
+    <meta name="description" content="Аренда и продажа офисов класса А в Victory Park (ex. Минская Плаза) в Центре Москвы.">
+
+    <!--  Favicon  -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <!--  Webmanifest  -->
     <!--    <link rel="manifest" href="/manifest.webmanifest">-->
@@ -34,7 +37,6 @@
 
     <!-- CSRF -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
