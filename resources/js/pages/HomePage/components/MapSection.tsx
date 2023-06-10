@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
+
+import {Map, Placemark, YMaps} from '@pbe/react-yandex-maps';
+
 import {RedButton} from "@UI/Buttons";
 import firstScreenImg from "@assets/images/first-screen.jpg";
 
 
 export const MapSection: React.FC = ({}) => {
-
 
     return (
         <div
@@ -18,7 +20,28 @@ export const MapSection: React.FC = ({}) => {
                 </h2>
 
                 <div className="map w-full flex flex-1 bg-red-300">
-                    карта
+                    <YMaps query={{
+                        apikey: '4e63eb10-dd3d-4f39-b3b4-7e88ca026435',
+                        lang: 'ru_RU'
+                    }}>
+                        <Map
+                            defaultState={{center: [55.724140, 37.504663], zoom: 17}}
+                            className="w-full h-full"
+                        >
+                            <Placemark
+                                geometry={[55.724140, 37.504663]}
+                                options={{
+                                    iconColor: '#f82f38',
+                                }}
+
+                                properties={{
+                                    hintContent: '<b> Я появляюсь при наведении на метку </b>',
+                                    // создаём пустой элемент с заданными размерами
+                                    balloonContent: '<div id="driver-2" class="driver-card">Hiii</div>',
+                                }}
+                            />
+                        </Map>
+                    </YMaps>
                 </div>
 
                 <div
