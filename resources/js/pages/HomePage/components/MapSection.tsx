@@ -45,8 +45,8 @@ export const MapSection: React.FC = ({}) => {
                 </div>
 
                 <div
-                    className="absolute w-full px-5 flex items-stretch md:justify-evenly justify-between sm:bottom-10 bottom-5 sm:flex-row flex-col">
-
+                    className="absolute w-full px-5 flex items-stretch md:justify-evenly justify-between sm:bottom-10 lg:bottom-5 bottom-9 sm:flex-row flex-col"
+                >
                     <article
                         className="bg-gray-700 text-center xl:px-14 px-3 sm:py-5 py-2 sm:rounded md:w-1/4 flex flex-col items-center justify-center">
                         <h6 className="font-bold uppercase text-gray-400 mb-2 md:text-base text-sm">Адрес: </h6>
@@ -70,7 +70,6 @@ export const MapSection: React.FC = ({}) => {
                             info@minskayaplaza.ru
                         </a>
                     </article>
-
                 </div>
             </div>
         </div>

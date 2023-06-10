@@ -16,7 +16,8 @@
         "react-helmet": "^6.1.0",
         "react-icons": "^4.9.0",
         "react-redux": "^8.0.5",
-        "react-router-dom": "^6.11.0"
+        "react-router-dom": "^6.11.0",
+        "swiper": "^9.3.2"
     },
     "devDependencies": {
         "@types/node": "^18.16.3",

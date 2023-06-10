@@ -67,7 +67,7 @@ export const AboutPage: React.FC = () => {
                         Телекоммуникации–Интернет / Телефония"
             />
 
-            <div className="specifications-polygon flex flex-wrap justify-center space-x-8 max-w-5xl mx-auto my-8">
+            <div className="specifications-polygon flex flex-wrap sm:justify-center px-5 lg:space-x-8 max-w-6xl mx-auto my-8">
                 <article className="flex items-center">
                     <p>Общая площадь бизнес-центра:<br/><span>35 045 м<sup>2</sup></span></p>
                 </article>
@@ -77,10 +77,10 @@ export const AboutPage: React.FC = () => {
                 <article className="flex items-center">
                     <p>Количество этажей:<br/><span>7</span></p>
                 </article>
-                <article className="flex items-center lg:pr-24">
+                <article className="flex items-center md:pr-16 sm:pr-20">
                     <p>Год постройки:<br/><span>2014</span></p>
                 </article>
-                <article className="flex items-center lg:pr-16">
+                <article className="flex items-center md:pr-24 sm:pr-20">
                     <p>Сетка колонн:<br/><span>6х9 м</span></p>
                 </article>
             </div>

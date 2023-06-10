@@ -16,7 +16,7 @@ Route::middleware('role:admin')->get('/admin', function () {
  * Redirect all routes to ReactController that renders react
  */
 Route::get('/{path?}', [ReactController::class, 'index'])
-    ->where('path', '.*')
+//    ->where('path', '')
     ->name('home')
 ;
 

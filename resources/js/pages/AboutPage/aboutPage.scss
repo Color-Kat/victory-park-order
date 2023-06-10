@@ -2,6 +2,8 @@
   background: url("@assets/polygon.png") no-repeat;
   text-align: left;
   height: 155px;
+  margin-top: 30px;
+  padding: 0 30px;
 
   & p {
     font-size: 1.313rem;
@@ -12,7 +14,7 @@
   }
 
   & span {
-    font-family: MetaPro,sans-serif;
+    font-family: MetaPro, sans-serif;
     font-size: 1.5rem;
     color: #f82f38;
   }
