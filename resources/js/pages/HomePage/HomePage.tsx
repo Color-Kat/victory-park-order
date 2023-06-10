@@ -50,7 +50,7 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
                     className="absolute w-full h-full top-0 left-0 object-cover z-[-1] object-right-top"
                 />
 
-                <div className="section-overlay hidden lg:block" />
+                <div className="section-overlay hidden lg:block"/>
             </div>
 
             {/* Section 2 */}
@@ -60,12 +60,13 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
             >
                 <div className="flex flex-col justify-between text-center mb-8 max-w-4xl">
                     <h1 className="font-metapro lg:text-7xl md:text-6xl xs:text-5xl text-3xl font-bold lg:mb-16 mb-8">
-                        Офисы на Минской улице.
+                        Офисы на Минской улице
                     </h1>
 
                     <div className="text-lg">
                         <p>
-                            Бизнес-центр Victory Park (ex. Минская Плаза) расположен рядом со станцией метро Минская в Москве. На сайте бизнес-центра есть вся необходимая информация по свободным площадям.
+                            Бизнес-центр Victory Park (ex. Минская Плаза) расположен рядом со станцией метро Минская в
+                            Москве. На сайте бизнес-центра есть вся необходимая информация по свободным площадям.
                         </p>
                     </div>
                 </div>
@@ -79,6 +80,90 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
                 />
             </div>
 
+            {/* Section 2 - table */}
+            <div
+                className="relative section w-full h-full lg:px-16 px-5 flex items-center justify-center"
+                data-anchor="page-3"
+            >
+                <h2 className="font-metapro lg:text-6xl md:text-6xl xs:text-5xl text-3xl font-bold text-app-accent text-center lg:mb-16 mb-8">
+                    Офисы на Минской улице в аренду
+                </h2>
+                <div className="">
+                    <table
+                        className="w-full table-auto"
+                        id="office-rental-table"
+                    >
+                        <thead className="">
+                        <tr>
+                            <td>Этаж</td>
+                            <td>Площадь</td>
+                            <td>Арендная<br/>ставка</td>
+                            <td>Налоги</td>
+                            <td>За помещение<br/>в месяц</td>
+                            <td>Состояние</td>
+                        </tr>
+                        </thead>
+                        <tbody className="text-gray-900 text-sm border-separate ">
+                        <tr
+                            className="space-y-2"
+                            href="/block/rent/37111"
+                            data-href="/block/rent/37111"
+                            data-block-id="37111"
+                            data-block-type="rent"
+                        >
+                            <td>
+                                <a href="/block/rent/37111">1 этаж</a>
+                            </td>
+                            <td>
+                                <a href="/block/rent/37111">194 <span> м<sup>2</sup></span></a>
+                            </td>
+                            <td>
+                                <a href="/block/rent/37111">19 550 руб.</a>
+                            </td>
+                            <td className="hidden-xs">
+                                <a href="/block/rent/37111">Включая ндс</a>
+                            </td>
+                            <td className="hidden-xs">
+                                <a href="/block/rent/37111">
+                                    <span className="whitespace-nowrap">316 058 руб.</span>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="/block/rent/37111">Готово к въезду </a>
+                            </td>
+                        </tr>
+                        <tr className="tr-offer-table" href="/block/rent/38866"
+                            data-href="/block/rent/38866" data-block-id="38866"
+                            data-block-type="rent">
+                            <td>
+                                <a href="/block/rent/38866">1 этаж </a>
+                            </td>
+                            <td>
+                                <a href="/block/rent/38866">
+                                    от 94 <span> м<sup>2</sup></span> до
+                                    890 <span> м<sup>2</sup></span>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="/block/rent/38866">19 550 руб.</a>
+                            </td>
+                            <td className="hidden-xs">
+                                <a href="/block/rent/38866">Включая ндс</a>
+                            </td>
+                            <td className="hidden-xs">
+                                <a href="/block/rent/38866">
+                                    <span className="whitespace-nowrap">153 142 руб.</span>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="/block/rent/38866">Готово к въезду </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
             <div className="section" data-anchor="block-2">
                 <p>Section 2</p>
             </div>
@@ -90,5 +175,9 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
     );
 }, {
     anchors: ['page-1', 'page-2', 'page-3', 'page-4', 'page-5', 'page-6'],
-    credits: {}
-});
+    credits
+:
+{
+}
+})
+;
