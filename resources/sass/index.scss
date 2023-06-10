@@ -10,3 +10,41 @@
 a[href="https://alvarotrigo.com/fullPage/"] {
   display: none;
 }
+
+.scroll-container {
+  scroll-behavior: smooth;
+}
+
+.menu-item {
+  display: block;
+  padding-left: 28px;
+  position: relative;
+  transition: all .3s;
+  max-width: 80vw;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 27px;
+    height: 2px;
+    background-color: #f82f38;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: -15px;
+    opacity: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+
+  &.active-menu-item, &:hover {
+    color: #f82f38;
+    transform: translateX(20px);
+
+    &:before {
+      opacity: 1;
+    }
+  }
+
+
+}

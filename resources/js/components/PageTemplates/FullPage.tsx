@@ -6,14 +6,14 @@ export function FullPageHOC(WrappedComponent: any, options?: fullpageOptions) {
 
 
         return (
-            <div className="lg:overflow-hidden relative w-full">
+            <div className="overflow-hidden relative w-full">
                 <ReactFullpage
                     licenseKey = {'YOUR_KEY_HERE'}
                     scrollingSpeed = {700} /* Options here */
                     anchors={options?.anchors ?? []}
                     navigation={true}
                     navigationPosition="left"
-                    responsiveWidth={1024}
+                    // responsiveWidth={1024}
                     credits={{
                         enabled: true,
                     }}

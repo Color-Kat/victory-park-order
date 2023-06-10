@@ -1,6 +1,6 @@
 import React, {ReactNode, useState} from 'react';
 import {Logo} from "@UI/Elements/Logo/Logo";
-import {Link, useLocation } from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 
 import logo from "@assets/logo.png";
 import {HiOutlineMenu, HiX} from "react-icons/hi";
@@ -15,8 +15,8 @@ interface MenuLinkProps {
 }
 
 const MenuLink: React.FC<MenuLinkProps> = ({children, isActive, to, href}) => {
-    return  (
-        <li className={`text-lg tracking-wide cursor-pointer ${isActive ? 'text-app-accent' : ''}`}>
+    return (
+        <li className={`text-lg tracking-wide cursor-pointer menu-item ${isActive ? 'text-app-accent active-menu-item' : ''}`}>
             {href && <a href={href}>{children}</a>}
             {to && <Link to={to}>{children}</Link>}
         </li>
@@ -24,16 +24,16 @@ const MenuLink: React.FC<MenuLinkProps> = ({children, isActive, to, href}) => {
 }
 
 const Navigation = () => {
-    const {hash, pathname} = useLocation ();
-    console.log(pathname);
+    const {hash, pathname} = useLocation();
 
     return (
-        <ul>
+        <ul className="space-y-5">
             <MenuLink isActive={hash == '#page-1'} href="/#page-1">Главная</MenuLink>
             <MenuLink isActive={hash == '#page-2' || hash == '#page-3'} href="/#page-2">Аренда офисов</MenuLink>
             <MenuLink isActive={hash == '#page-4'} href="/#page-4">Продажа офисов</MenuLink>
-            <MenuLink isActive={hash == '#page-5'} href="/#page-4">Фотогалерея</MenuLink>
-            <MenuLink isActive={hash == '#page-6' || hash == '#page-7'} href="/#page-5">Контакты</MenuLink>
+            <MenuLink isActive={hash == '#page-5'} href="/#page-5">Фотогалерея</MenuLink>
+            <MenuLink isActive={hash == '#page-6' || hash == '#page-7'} href="/#page-6">Контакты</MenuLink>
+            <MenuLink isActive={pathname == '/about'} to="/about">О бизнес-центре</MenuLink>
         </ul>
     );
 }
@@ -89,13 +89,13 @@ export const Header = () => {
                 </div>
 
                 {/* Navigation */}
-                <div className="hidden lg:flex">
-                    <Navigation />
+                <div className="hidden lg:flex w-full px-[50px]">
+                    <Navigation/>
                 </div>
 
                 {/* footer block */}
                 <div className="hidden lg:flex bg-app px-[50px] pb-5 pt-10 text-[#3b4256] flex-col">
-                    <a href="" className="mb-9 uppercase text-xs">Инфраструктура</a>
+                    <a href="" className="mb-9 uppercase text-xs cursor-pointer">Инфраструктура</a>
 
                     <RedButton filled={true}>
                         Оставить заявку
@@ -113,9 +113,10 @@ export const Header = () => {
 
             {/*  Mobile menu  */}
             <nav
-                className={`lg:hidden flex ${isMobileMenuOpen ? 'h-64' : 'h-0'} w-full absolute bottom-0 translate-y-full bg-white  transition-all overflow-hidden z-20 px-4`}
+                className={`lg:hidden flex ${isMobileMenuOpen ? 'h-72' : 'h-0'} w-full absolute bottom-0 translate-y-full bg-white  transition-all overflow-hidden z-20 px-4`}
+                // onClick={() => setIsMobileMenuOpen(false)}
             >
-                <Navigation />
+                <Navigation/>
             </nav>
 
             {/* Mobile menu overlay */}

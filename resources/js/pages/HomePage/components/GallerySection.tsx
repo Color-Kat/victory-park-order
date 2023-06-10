@@ -9,7 +9,7 @@ export const GallerySection: React.FC = ({}) => {
     return (
         <div
             className="relative section w-full h-full lg:px-5 md:px-16 px-5 flex justify-center fullpage-overlay"
-            data-anchor="page-6"
+            data-anchor="page-5"
         >
             <div className="flex flex-col text-center mb-8 max-w-4xl">
                 <h1 className="font-metapro lg:text-7xl md:text-6xl xs:text-5xl text-3xl font-bold lg:my-16 my-8">

@@ -9,7 +9,7 @@ export const Layout: React.FC<{ children: React.ReactElement }> = memo(({childre
 
     return (
         <div
-            className="scroll-container flex lg:flex-row flex-col h-screen overflow-auto overflow-x-hidden font-circle bg-white"
+            className="scroll-containe flex lg:flex-row flex-col h-screen overflow-auto overflow-x-hidden font-circle bg-white"
         >
 
             <Header/>

@@ -48,7 +48,7 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
 
             <ContactsSection />
 
-            <footer className="w-full bg-app px-[50px] pb-5 pt-4 text-[#3b4256] flex-col text-center">
+            <footer className="lg:hidden w-full bg-app px-[50px] pb-5 pt-4 text-[#3b4256] flex-col text-center">
                 <div className="mb-8"><a href="" className="uppercase text-xs">Инфраструктура</a></div>
 
                 <RedButton filled={true} className="sm:px-12 sm:w-auto w-max">
@@ -66,6 +66,6 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
         </>
     );
 }, {
-    anchors: ['page-1', 'page-2', 'page-3', 'page-4', 'page-5', 'page-6', 'page-7', 'page-8'],
+    anchors: ['page-1', 'page-2', 'page-3', 'page-4', 'page-5', 'page-6', 'page-7'],
     credits: {}
 });
