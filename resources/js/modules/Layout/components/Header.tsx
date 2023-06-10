@@ -6,6 +6,7 @@ import logo from "@assets/logo.png";
 import {HiOutlineMenu, HiX} from "react-icons/hi";
 import phone from "@assets/phone.png";
 import {RedButton} from "@UI/Buttons";
+import {CallRequest} from "@components/CallRequest/CallRequest";
 import {isMobile} from "@/utils/isMobile.ts";
 
 interface MenuLinkProps {
@@ -87,9 +88,9 @@ export const Header = () => {
                             </span>
                     </div>
 
-                    <RedButton filled={false}>
+                    <CallRequest filledButton={false}>
                         Заказать звонок
-                    </RedButton>
+                    </CallRequest>
                 </div>
 
                 {/* Navigation */}
@@ -101,9 +102,9 @@ export const Header = () => {
                 <div className="hidden lg:flex bg-app px-[50px] pb-5 pt-10 text-[#3b4256] flex-col">
                     <a href="" className="mb-9 uppercase text-xs cursor-pointer">Инфраструктура</a>
 
-                    <RedButton filled={true}>
+                    <CallRequest filledButton={true}>
                         Оставить заявку
-                    </RedButton>
+                    </CallRequest>
 
                     <div className="copyright text-center text-13 mt-14">
                         <span>

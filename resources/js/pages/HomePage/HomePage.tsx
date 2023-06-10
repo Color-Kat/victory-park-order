@@ -14,6 +14,7 @@ import {FourthSection} from "@pages/HomePage/components/FourthSection.tsx";
 import {MapSection} from "@pages/HomePage/components/MapSection.tsx";
 import {GallerySection} from "@pages/HomePage/components/GallerySection.tsx";
 import {ContactsSection} from "@pages/HomePage/components/ContactsSection.tsx";
+import {CallRequest} from "@components/CallRequest/CallRequest.tsx";
 
 interface IProps {
     fullpageApi: fullpageApi
@@ -52,9 +53,9 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
             <footer className="lg:hidden w-full bg-app px-[50px] pb-5 pt-4 text-[#3b4256] flex-col text-center">
                 <div className="mb-8"><a href="" className="uppercase text-xs">Инфраструктура</a></div>
 
-                <RedButton filled={true} className="sm:px-12 sm:w-auto w-max">
+                <CallRequest filledButton={true} className="sm:px-12 sm:w-auto w-max">
                     Оставить заявку
-                </RedButton>
+                </CallRequest>
 
                 <div className="copyright text-center text-13 mt-5">
                     <span>

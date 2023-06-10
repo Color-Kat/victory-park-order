@@ -7,7 +7,6 @@ import firstScreenImg from "@assets/images/first-screen.jpg";
 
 
 export const MapSection: React.FC = ({}) => {
-
     return (
         <div
             className="relative section h-full w-full"
@@ -19,9 +18,12 @@ export const MapSection: React.FC = ({}) => {
                     Контактная информация
                 </h2>
 
-                <div className="map w-full flex flex-1 bg-red-300">
+                <div className="map w-full flex flex-1">
+
+
                     <YMaps query={{
-                        apikey: '4e63eb10-dd3d-4f39-b3b4-7e88ca026435',
+                        // @ts-ignore
+                        apikey: import.meta.env.VITE_YANDEX_MAP_API_KEY,
                         lang: 'ru_RU'
                     }}>
                         <Map
