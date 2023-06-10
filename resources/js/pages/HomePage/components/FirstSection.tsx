@@ -7,7 +7,7 @@ export const FirstSection: React.FC = ({}) => {
 
     return (
         <div
-            className="relative section w-full h-full lg:px-5 md:px-16 px-5 flex items-center justify-center fullpage-overlay"
+            className="relative section w-full h-full lg:px-5 md:px-16 px-5 flex items-center justify-center image-overlay"
             data-anchor="page-1"
             id="page-1-anchor"
         >

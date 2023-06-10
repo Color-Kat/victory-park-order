@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { HomePage } from "@pages/HomePage/HomePage";
-import { FavouritesPage } from "@pages/FavouritesPage/FavouritesPage";
 import { Layout } from "@modules/Layout";
+import {AboutPage} from "@pages/AboutPage/AboutPage.tsx";
 
 function App() {
     return (
@@ -10,7 +10,7 @@ function App() {
             <Layout>
                 <Routes>
                     <Route path="/" element={<HomePage/>}/>
-                    <Route path="/favourites" element={<FavouritesPage/>}/>
+                    <Route path="/about" element={<AboutPage/>}/>
                 </Routes>
             </Layout>
         </BrowserRouter>

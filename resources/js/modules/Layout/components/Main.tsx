@@ -6,9 +6,11 @@ const Main: React.FC<{ children: React.ReactElement }> =
         return (
             <>
                 <main
-                    className="flex-auto flex justify-center flex-col text-white"
+                    className="flex-auto text-white scroll-container overflow-y-auto"
                 >
                     {children}
+
+                    <Footer />
                 </main>
             </>
 

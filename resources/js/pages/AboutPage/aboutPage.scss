@@ -1,0 +1,19 @@
+.specifications-polygon article {
+  background: url("@assets/polygon.png") no-repeat;
+  text-align: left;
+  height: 155px;
+
+  & p {
+    font-size: 1.313rem;
+    color: #242424;
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-left: 50px;
+  }
+
+  & span {
+    font-family: MetaPro,sans-serif;
+    font-size: 1.5rem;
+    color: #f82f38;
+  }
+}

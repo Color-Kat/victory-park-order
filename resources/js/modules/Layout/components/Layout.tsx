@@ -10,7 +10,7 @@ export const Layout: React.FC<{ children: React.ReactElement }> = memo(({childre
 
     return (
         <div
-            className="scroll-container flex lg:flex-row flex-col h-screen overflow-auto overflow-x-hidden font-circle bg-white"
+            className="flex lg:flex-row flex-col h-screen overflow-auto overflow-x-hidden font-circle bg-white"
         >
 
             {/* Modal */}

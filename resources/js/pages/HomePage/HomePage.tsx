@@ -1,12 +1,9 @@
-import ReactFullpage, {fullpageApi} from '@fullpage/react-fullpage';
 
-import Page from '@/components/PageTemplates/Page';
-import React, {useEffect, useRef} from "react";
+import React from "react";
+import {fullpageApi} from '@fullpage/react-fullpage';
+
 import {FullPageHOC} from "@components/PageTemplates/FullPage.tsx";
 
-import scrollImage from "@assets/icons/scroll.png";
-import firstScreenImg from "@assets/images/first-screen.jpg";
-import {RedButton} from "@UI/Buttons";
 import {FirstSection} from "@pages/HomePage/components/FirstSection.tsx";
 import {SecondSection} from "@pages/HomePage/components/SecondSection.tsx";
 import {ThridSection} from "@pages/HomePage/components/ThriSection.tsx";
@@ -14,21 +11,14 @@ import {FourthSection} from "@pages/HomePage/components/FourthSection.tsx";
 import {MapSection} from "@pages/HomePage/components/MapSection.tsx";
 import {GallerySection} from "@pages/HomePage/components/GallerySection.tsx";
 import {ContactsSection} from "@pages/HomePage/components/ContactsSection.tsx";
-import {CallRequest} from "@components/CallRequest/CallRequest.tsx";
-import {Link} from "react-router-dom";
+
+import {Footer} from "@modules/Layout";
 
 interface IProps {
     fullpageApi: fullpageApi
 }
 
 export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
-    const fullPageRef = useRef(null);
-
-    useEffect(() => {
-        // fullpageApi?.setAutoScrolling(true)
-        // fullpageApi?.setAllowScrolling(true)
-    }, [fullpageApi]);
-
     return (
         <>
             {/* Section 1 */}
@@ -51,23 +41,7 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
 
             <ContactsSection />
 
-            <footer className="lg:hidden w-full bg-app px-[50px] pb-5 pt-4 text-[#3b4256] flex-col text-center">
-                <div className="mb-8">
-                    <Link to="/infrastructure" className="uppercase text-xs">Инфраструктура</Link>
-                </div>
-
-                <CallRequest filledButton={true} className="sm:px-12 sm:w-auto w-max">
-                    Оставить заявку
-                </CallRequest>
-
-                <div className="copyright text-center text-13 mt-5">
-                    <span>
-                        © 2023 Бизнес-центр<br/>
-                        Victory Park.<br/>
-                        Все права защищены
-                    </span>
-                </div>
-            </footer>
+            <Footer />
         </>
     );
 }, {

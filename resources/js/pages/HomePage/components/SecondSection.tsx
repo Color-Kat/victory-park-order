@@ -1,6 +1,7 @@
 import React from 'react';
 import {RedButton} from "@UI/Buttons";
 import firstScreenImg from "@assets/images/first-screen.jpg";
+import {Link} from "react-router-dom";
 
 
 export const SecondSection: React.FC = ({}) => {
@@ -25,7 +26,9 @@ export const SecondSection: React.FC = ({}) => {
                 </div>
             </div>
 
-            <RedButton filled={true}>Узнать больше</RedButton>
+            <Link to="/about">
+                <RedButton filled={true}>Узнать больше</RedButton>
+            </Link>
 
             <img
                 src={firstScreenImg}
