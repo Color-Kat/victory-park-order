@@ -1,7 +1,13 @@
 import React from 'react';
+import {useGetRentOfficesQuery} from "@/store/offices/offices.api.ts";
 
 
 export const RentSection: React.FC = ({}) => {
+
+    const {data: offices} = useGetRentOfficesQuery();
+
+    console.log(offices)
+
     return (
         <div
             className="relative section w-full h-full lg:px-16 px-5 flex items-center justify-center"
