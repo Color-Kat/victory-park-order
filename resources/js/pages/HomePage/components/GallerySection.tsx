@@ -41,7 +41,6 @@ export const GallerySection: React.FC = ({}) => {
                     swiper.params.navigation.nextEl = navigationNextRef.current;
                 }}
                 onRealIndexChange={(swiper) => {
-                    console.log(swiper)
                     setCurrentSlideIndex(swiper.realIndex+1);
                 }}
                 loop={true}
