@@ -48,11 +48,13 @@
     @vite(['resources/js/index.tsx'])
 
 </head>
-<body class="offcanvas-header">
+<body class="">
 
 <div id="app">
 
 </div>
+
+<div id="settings" data-settings="{{json_encode($settings->all())}}"></div>
 
 </body>
 </html>

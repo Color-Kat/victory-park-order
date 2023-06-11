@@ -13,25 +13,29 @@ import {GallerySection} from "@pages/HomePage/components/GallerySection.tsx";
 import {ContactsSection} from "@pages/HomePage/components/ContactsSection.tsx";
 
 import {Footer} from "@modules/Layout";
+import {useSettings} from "@hooks/useSettings.ts";
 
 interface IProps {
     fullpageApi: fullpageApi
 }
 
+const {is_rent_active, is_sell_active} = useSettings(); // Get settings
+
 export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
+
     return (
         <>
             {/* Section 1 */}
             <FirstSection />
 
             {/* Section 2 */}
-            <SecondSection />
+            {is_rent_active && <SecondSection />}
 
             {/* Section 3 - table */}
-            <RentSection />
+            {is_rent_active && <RentSection />}
 
             {/* Section 4 */}
-            <SellSection />
+            {is_sell_active && <SellSection />}
 
             {/* Photo gallery section */}
             <GallerySection />
@@ -45,6 +49,14 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
         </>
     );
 }, {
-    anchors: ['page-1', 'page-2', 'page-3', 'page-4', 'page-5', 'page-6', 'page-7'],
+    anchors: [
+        'page-1',
+        (is_rent_active && 'page-2'),
+        (is_rent_active && 'page-3'),
+        (is_sell_active && 'page-4'),
+        'page-5',
+        'page-6',
+        'page-7'
+    ].filter(Boolean),
     credits: {}
 });

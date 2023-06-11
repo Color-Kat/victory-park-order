@@ -8,6 +8,7 @@ import phone from "@assets/phone.png";
 import {RedButton} from "@UI/Buttons";
 import {CallRequest} from "@components/CallRequest/CallRequest";
 import {isMobile} from "@/utils/isMobile.ts";
+import {useSettings} from "@hooks/useSettings.ts";
 
 interface MenuLinkProps {
     children: ReactNode;
@@ -45,12 +46,13 @@ const MenuLink: React.FC<MenuLinkProps> = ({children, isActive, to, href, isMobi
 
 const Navigation = ({isMobile = false}: { isMobile?: boolean }) => {
     const {hash, pathname} = useLocation();
+    const {is_rent_active, is_sell_active} = useSettings(); // Get settings
 
     return (
         <ul className="space-y-5">
             <MenuLink isMobile={isMobile} isActive={hash == '#page-1' || (isMobile && pathname == '/')} href="/#page-1">Главная</MenuLink>
-            <MenuLink isMobile={isMobile} isActive={hash == '#page-2' || hash == '#page-3'} href="/#page-2">Аренда офисов</MenuLink>
-            <MenuLink isMobile={isMobile} isActive={hash == '#page-4'} href="/#page-4">Продажа офисов</MenuLink>
+            {is_rent_active && <MenuLink isMobile={isMobile} isActive={hash == '#page-2' || hash == '#page-3'} href="/#page-2">Аренда офисов</MenuLink>}
+            {is_sell_active && <MenuLink isMobile={isMobile} isActive={hash == '#page-4'} href="/#page-4">Продажа офисов</MenuLink>}
             <MenuLink isMobile={isMobile} isActive={hash == '#page-5'} href="/#page-5">Фотогалерея</MenuLink>
             <MenuLink isMobile={isMobile} isActive={hash == '#page-6' || hash == '#page-7'} href="/#page-6">Контакты</MenuLink>
             <MenuLink isMobile={isMobile} isActive={pathname == '/about'} to="/about">О бизнес-центре</MenuLink>

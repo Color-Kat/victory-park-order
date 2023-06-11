@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Spatie\Valuestore\Valuestore;
 
 class ReactController extends Controller
 {
@@ -23,6 +24,9 @@ class ReactController extends Controller
      */
     public function index()
     {
-        return view('app');
+        // Get settings from file
+        $settings = Valuestore::make(storage_path('app/settings.json'));
+
+        return view('app', compact('settings'));
     }
 }

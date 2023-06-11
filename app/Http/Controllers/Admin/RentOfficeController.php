@@ -36,7 +36,10 @@ class RentOfficeController extends Controller
      */
     public function store(Request $request)
     {
-        RentOffice::query()->create($request->all());
+        $data = $request->all();
+        if(empty($data['areaMax'])) $data['areaMax'] = $data['areaMin'];
+
+        RentOffice::query()->create($data);
 
         return redirect()->route('admin.index')->with('success', 'Офис для аренды успешно добавлен.');
     }
@@ -72,7 +75,10 @@ class RentOfficeController extends Controller
      */
     public function update(Request $request, RentOffice $rentOffice)
     {
-        RentOffice::query()->where('id', $rentOffice->id)->update($request->except(['_token', '_method' ]));
+        $data = $request->except(['_token', '_method' ]);
+        if(empty($data['areaMax'])) $data['areaMax'] = $data['areaMin'];
+
+        RentOffice::query()->where('id', $rentOffice->id)->update($data);
 
         return redirect()->route('admin.index')->with('success', 'Офис для аренды успешно обновлён.');
     }

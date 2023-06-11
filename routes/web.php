@@ -13,6 +13,8 @@ Auth::routes();
 Route::middleware('role:admin')->as('admin.')->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('index');
 
+    Route::post('/admin/update-settings', [AdminController::class, 'updateSettings'])->name('update-settings');
+
     Route::resource('/admin/rent-office', RentOfficeController::class)->names('rent-office');
 
     Route::resource('/admin/sell-office', SellOfficeController::class)->names('sell-office');

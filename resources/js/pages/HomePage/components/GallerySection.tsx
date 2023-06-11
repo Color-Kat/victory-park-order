@@ -63,7 +63,7 @@ export const GallerySection: React.FC = ({}) => {
                 ))}
             </Swiper>
 
-            <div className="absolute bottom-10 w-full justify-center flex items-center gap-8">
+            <div className="absolute left-0 bottom-10 w-full justify-center flex items-center gap-8">
                 <div ref={navigationPrevRef} className="cursor-pointer">
                     <img src={leftArrow} alt=""/>
                 </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {useGetRentOfficesQuery} from "@/store/offices/offices.api.ts";
 
 
@@ -6,7 +6,9 @@ export const RentSection: React.FC = ({}) => {
 
     const {data: offices} = useGetRentOfficesQuery();
 
-    console.log(offices)
+    const openOffice = useCallback((id: number) => {
+        console.log(id);
+    }, []);
 
     return (
         <div
@@ -33,63 +35,40 @@ export const RentSection: React.FC = ({}) => {
                     </tr>
                     </thead>
                     <tbody className="text-gray-900 text-sm border-separate ">
-                    <tr
-                        className="space-y-2"
-                        // href="/block/rent/37111"
-                        data-href="/block/rent/37111"
-                        data-block-id="37111"
-                        data-block-type="rent"
-                    >
-                        <td>
-                            <a href="/block/rent/37111">1 этаж</a>
-                        </td>
-                        <td>
-                            <a href="/block/rent/37111">194 <span> м<sup>2</sup></span></a>
-                        </td>
-                        <td>
-                            <a href="/block/rent/37111">19 550 руб.</a>
-                        </td>
-                        <td className="hidden-xs">
-                            <a href="/block/rent/37111">Включая ндс</a>
-                        </td>
-                        <td className="hidden-xs">
-                            <a href="/block/rent/37111">
-                                <span className="whitespace-nowrap">316 058 руб.</span>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="/block/rent/37111">Готово к въезду </a>
-                        </td>
-                    </tr>
-                    <tr
-                        className="tr-offer-table"
-                        // href="/block/rent/38866"
-                        data-href="/block/rent/38866" data-block-id="38866"
-                        data-block-type="rent">
-                        <td>
-                            <a href="/block/rent/38866">1 этаж </a>
-                        </td>
-                        <td>
-                            <a href="/block/rent/38866">
-                                от 94 <span> м<sup>2</sup></span> до
-                                890 <span> м<sup>2</sup></span>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="/block/rent/38866">19 550 руб.</a>
-                        </td>
-                        <td className="hidden-xs">
-                            <a href="/block/rent/38866">Включая ндс</a>
-                        </td>
-                        <td className="hidden-xs">
-                            <a href="/block/rent/38866">
-                                <span className="whitespace-nowrap">153 142 руб.</span>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="/block/rent/38866">Готово к въезду </a>
-                        </td>
-                    </tr>
+                    {offices?.map(office => {
+                        return (
+                            <tr
+                                className="space-y-2"
+                                data-href={"/rent/"+office.id}
+                                data-block-id={office.crmId}
+                                data-block-type="rent"
+                                onClick={() => openOffice(office.id)}
+                                key={office.id}
+                            >
+                                <td>
+                                    {office.floor} этаж
+                                </td>
+                                <td>
+                                    {office.areaMin == office.areaMax
+                                        ? <>{office.areaMin} <span> м<sup>2</sup></span></>
+                                        : <>от {office.areaMin} <span> м<sup>2</sup></span> до {office.areaMin} <span> м<sup>2</sup></span></>
+                                    }
+                                </td>
+                                <td>
+                                    {office.explPrice.toLocaleString()} {office.explCur}
+                                </td>
+                                <td className="hidden-xs">
+                                    {office.tax}
+                                </td>
+                                <td className="hidden-xs">
+                                    {office.price.toLocaleString()} {office.priceCur}
+                                </td>
+                                <td>
+                                    {office.isReady}
+                                </td>
+                            </tr>
+                        );
+                    })}
                     </tbody>
                 </table>
             </div>

@@ -13,10 +13,12 @@ export const MapSection: React.FC = ({}) => {
             data-anchor="page-6"
             id="page-6-anchor"
         >
-            <div className=" flex items-center justify-between flex-col w-full h-screen">
-                <h2 className="font-metapro lg:text-6xl md:text-6xl xs:text-5xl text-3xl font-bold text-app-accent text-center lg:my-12 my-6">
-                    Контактная информация
-                </h2>
+            <div className="flex items-center justify-between flex-col w-full h-screen">
+                <div className="lg:my-12 my-6">
+                    <h2 className="font-metapro lg:text-6xl md:text-6xl xs:text-5xl text-3xl font-bold text-app-accent text-center">
+                        Контактная информация
+                    </h2>
+                </div>
 
                 <div className="map w-full flex flex-1">
                     <YMaps query={{
@@ -25,7 +27,11 @@ export const MapSection: React.FC = ({}) => {
                         lang: 'ru_RU'
                     }}>
                         <Map
-                            defaultState={{center: [55.724140, 37.504663], zoom: 17, behaviors: ["disable('scrollZoom')"]}}
+                            defaultState={{
+                                center: [55.724140, 37.504663],
+                                zoom: 17,
+                                behaviors: ["disable('scrollZoom')"]
+                            }}
                             className="w-full h-full"
                         >
                             <Placemark

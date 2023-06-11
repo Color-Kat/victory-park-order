@@ -6,7 +6,7 @@ const Main: React.FC<{ children: React.ReactElement }> =
         return (
             <>
                 <main
-                    className="flex-auto text-white scroll-container overflow-y-auto"
+                    className="flex-auto text-white scroll-container overflow-y-auto overflow-x-hidden"
                 >
                     {children}
 

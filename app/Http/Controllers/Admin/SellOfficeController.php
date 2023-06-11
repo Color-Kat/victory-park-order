@@ -36,7 +36,10 @@ class SellOfficeController extends Controller
      */
     public function store(Request $request)
     {
-        SellOffice::query()->create($request->all());
+        $data = $request->all();
+        if(empty($data['areaMax'])) $data['areaMax'] = $data['areaMin'];
+
+        SellOffice::query()->create($data);
 
         return redirect()->route('admin.index')->with('success', 'Офис для продажи успешно добавлен.');
     }
@@ -72,7 +75,10 @@ class SellOfficeController extends Controller
      */
     public function update(Request $request, SellOffice $sellOffice)
     {
-        SellOffice::query()->where('id', $sellOffice->id)->update($request->except(['_token', '_method' ]));
+        $data = $request->except(['_token', '_method' ]);
+        if(empty($data['areaMax'])) $data['areaMax'] = $data['areaMin'];
+
+        SellOffice::query()->where('id', $sellOffice->id)->update($data);
 
         return redirect()->route('admin.index')->with('success', 'Офис для продажи успешно обновлён.');
     }
