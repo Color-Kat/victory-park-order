@@ -2,11 +2,11 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 
 export interface IOffice {
     id: number
+    type: 'rent' | 'sell'
     areaMin: number
     areaMax: number
     isActive: number
     crmId: number
-    type: string
     floor: number
     price: number
     priceCur: string
@@ -37,7 +37,11 @@ export const officesApi = createApi({
             query: () => ({
                 url: `get-sell-offices`,
             }),
-            // transformResponse: (response: any) => (response.items)
+        }),
+        getOfficeById: builder.query<IOffice, number>({
+            query: (officeId) => ({
+                url: `get-office/${officeId}`,
+            }),
         }),
         requestCall: builder.mutation<any, {
             name: string,
@@ -52,13 +56,7 @@ export const officesApi = createApi({
                 method: 'POST',
                 body: payload
             }),
-            // transformResponse: (response: any) => (response.items)
         }),
-        // getUserRepos: builder.query<any[], string>({
-        //     query: (username: string) => ({
-        //         url: `users/${username}/repos`
-        //     })
-        // })
     })
 });
 

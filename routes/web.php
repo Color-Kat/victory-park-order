@@ -7,7 +7,6 @@ use App\Http\Controllers\ReactController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-
 Auth::routes();
 
 Route::middleware('role:admin')->as('admin.')->group(function () {

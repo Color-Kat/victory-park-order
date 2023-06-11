@@ -1,11 +1,18 @@
 import React, {useCallback} from 'react';
 import {useGetSellOfficesQuery} from "@/store/offices/offices.api.ts";
+import {useTDispatch} from "@hooks/redux.ts";
+import {openOfficeModal} from "@/store/modals/modals.slice.tsx";
 
 export const SellSection: React.FC = ({}) => {
     const {data: offices} = useGetSellOfficesQuery();
 
+    const dispatch = useTDispatch();
+
     const openOffice = useCallback((id: number) => {
-        console.log(id);
+        dispatch(openOfficeModal({
+            id,
+            type: 'sell'
+        }));
     }, []);
 
     return (

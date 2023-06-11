@@ -1,13 +1,13 @@
 import {configureStore} from "@reduxjs/toolkit";
 
-import {modalReducer} from "@/store/modal/modal.slice";
+import {modalsReducer} from "@/store/modals/modals.slice";
 import {officesApi} from "@/store/offices/offices.api.ts";
 
 export const store = configureStore({
    reducer: {
        [officesApi.reducerPath]: officesApi.reducer,
        // test: testSlice.reducer,
-       modalCallRequest: modalReducer,
+       modals: modalsReducer,
    },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(officesApi.middleware),
 });

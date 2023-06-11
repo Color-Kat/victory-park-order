@@ -88,7 +88,7 @@
                             <div class="col mb-3">
                                 <label class="col-sm-2 col-label-form">Тип сделки</label>
                                 <div class="col-sm-10">
-                                    <input value="{{$rentOffice->typeDeal}}" type="text" readonly name="typeDeal" class="form-control" value="аренда"/>
+                                    <input value="{{$rentOffice->typeDeal}}" type="text" readonly name="typeDeal" class="form-control"/>
                                 </div>
                             </div>
 

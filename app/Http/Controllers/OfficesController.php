@@ -14,7 +14,7 @@ class OfficesController extends Controller
      * @return \Illuminate\Database\Eloquent\Collection
      */
     public function getRentOffices() {
-        return RentOffice::all();
+        return RentOffice::all()->append('photos');
     }
 
     /**
@@ -23,6 +23,6 @@ class OfficesController extends Controller
      * @return \Illuminate\Database\Eloquent\Collection
      */
     public function getSellOffices() {
-        return SellOffice::all();
+        return SellOffice::all()->append('photos');
     }
 }

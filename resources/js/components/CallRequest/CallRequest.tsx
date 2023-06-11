@@ -1,7 +1,7 @@
 import React from 'react';
 import {RedButton} from "@UI/Buttons";
 import {useTDispatch} from "@hooks/redux.ts";
-import {openModal} from "@/store/modal/modal.slice.tsx";
+import {openCallRequestModal} from "@/store/modals/modals.slice.tsx";
 
 interface CallRequestProps {
     filledButton?: boolean;
@@ -20,7 +20,7 @@ export const CallRequest: React.FC<CallRequestProps> = ({
     return (
         <RedButton
             filled={filledButton}
-            onClick={() => dispatch(openModal())}
+            onClick={() => dispatch(openCallRequestModal())}
             className={className}
         >
             {children}
