@@ -41,7 +41,11 @@ export const officesApi = createApi({
         }),
         requestCall: builder.mutation<any, {
             name: string,
-            phone: string;
+            phone: string,
+            email?: string,
+            message?: string,
+            officeSpace?: number,
+            officeCrmId?: number
         }>({
             query: (payload) => ({
                 url: `request-call`,

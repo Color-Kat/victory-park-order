@@ -8,7 +8,23 @@
     <title>Новая заявка Victory Park</title>
 </head>
 <body>
-    <h2>{{$data['name']}}</h2>
-    <h3>{{$data['phone']}}</h3>
+<h1>Новая заявка Victory Park (<a href="http://minskayaplaza.ru/">Перейти на сайт</a>)</h1>
+<h2>Имя: {{$data['name']}}</h2>
+<span>Тел.: <a href="tel:{{$data['phone']}}">{{$data['phone']}}</a></span>
+
+@if($data['email'])
+    <span>E-mail: <a href="mailto:{{$data['email']}}">{{$data['email']}}</a></span>
+@endif
+
+<p>
+    @if($data['message'])
+        Сообщение: <br> {{$data['message']}} <br>
+    @endif
+
+    @if($data['officeCrmId'])
+        crmId офиса: {{$data['officeCrmId']}} <br>
+        Площадь офиса: {{$data['officeSpace']}} <br>
+    @endif
+</p>
 </body>
 </html>

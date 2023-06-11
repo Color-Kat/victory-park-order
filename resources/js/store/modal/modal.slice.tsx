@@ -2,7 +2,7 @@ import React from "react";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 const initialState: {isOpen: boolean}  = {
-    isOpen: true,
+    isOpen: false,
 };
 
 export const modalCallRequestSlice = createSlice({

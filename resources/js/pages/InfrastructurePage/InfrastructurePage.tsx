@@ -50,7 +50,7 @@ export const InfrastructurePage: React.FC = () => {
                     На личном транспорте можно быстро добраться до Парка Фили и Воробьевых гор."
             />
 
-            <section className="md:px-8 px-5 text-base">
+            <section className="md:px-8 px-5 text-base mb-16">
                 <h2
                     className="sm:mt-12 mt-8 text-app-accent font-bold lg:text-5xl md:text-4xl text-3xl font-metapro max-w-2xl mx-auto"
                 >
@@ -58,7 +58,7 @@ export const InfrastructurePage: React.FC = () => {
                     Victory Park
                 </h2>
 
-                <div className="partner-logos flex items-center sm:my-12 my-8 gap-3 justify-between flex-wrap">
+                <div className="partner-logos flex items-center sm:my-16 my-8 gap-3 justify-between flex-wrap max-w-5xl mx-auto">
                     <img src={partner_logo_1} alt="new cinema lab"/>
                     <img src={partner_logo_2} alt="ОГК Групп"/>
                     <img src={partner_logo_3} alt="ЕНСК"/>
