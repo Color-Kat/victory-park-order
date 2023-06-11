@@ -15,7 +15,10 @@ export const GallerySection: React.FC = ({}) => {
                 </h2>
             </div>
 
-            <Gallery photos={Array.from(Array(10).keys()).map(i => `/storage/gallery/2/${i}.jpg`)}/>
+            <Gallery
+                photos={Array.from(Array(10).keys()).map(i => `/storage/gallery/2/${i}.jpg`)}
+                className="w-full h-full absolute top-0 left-0 z-[-1]"
+            />
 
         </div>
     );

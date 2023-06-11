@@ -10,9 +10,10 @@ import rightArrow from "@assets/icons/r-arrow.png";
 
 interface GalleryProps {
     photos: string[];
+    className?: string;
 }
 
-export const Gallery: React.FC<GalleryProps> = ({photos}) => {
+export const Gallery: React.FC<GalleryProps> = ({photos, className}) => {
     const navigationPrevRef = React.useRef(null);
     const navigationNextRef = React.useRef(null);
 
@@ -33,12 +34,12 @@ export const Gallery: React.FC<GalleryProps> = ({photos}) => {
                     swiper.params.navigation.nextEl = navigationNextRef.current;
                 }}
                 onRealIndexChange={(swiper) => {
-                    setCurrentSlideIndex(swiper.realIndex+1);
+                    setCurrentSlideIndex(+swiper.realIndex+1);
                 }}
                 loop={true}
                 modules={[Navigation, Pagination]}
                 slidesPerView={1}
-                className="w-full h-full absolute top-0 left-0 z-[-1]"
+                className={className}
             >
                 {photos.map(photo => (
                     <SwiperSlide
@@ -53,35 +54,22 @@ export const Gallery: React.FC<GalleryProps> = ({photos}) => {
                     </SwiperSlide>
                 ))}
 
-                {/*{Array.from(Array(10).keys()).map(i => (*/}
-                {/*    <SwiperSlide*/}
-                {/*        key={i}*/}
-                {/*        className=""*/}
-                {/*    >*/}
-                {/*        <img*/}
-                {/*            src={`/storage/gallery/${i}.jpg`}*/}
-                {/*            alt=""*/}
-                {/*            className="w-full h-full object-cover"*/}
-                {/*        />*/}
-                {/*    </SwiperSlide>*/}
-                {/*))}*/}
+                <div className="absolute left-0 bottom-10 w-full justify-center flex items-center gap-8 z-1">
+                    <div ref={navigationPrevRef} className="cursor-pointer">
+                        <img src={leftArrow} alt=""/>
+                    </div>
+
+                    <div className="">
+                        {currentSlideIndex}
+                        <span className="mx-2">/</span>
+                        {slidesCount}
+                    </div>
+
+                    <div ref={navigationNextRef} className="cursor-pointer">
+                        <img src={rightArrow} alt=""/>
+                    </div>
+                </div>
             </Swiper>
-
-            <div className="absolute left-0 bottom-10 w-full justify-center flex items-center gap-8">
-                <div ref={navigationPrevRef} className="cursor-pointer">
-                    <img src={leftArrow} alt=""/>
-                </div>
-
-                <div className="">
-                    {currentSlideIndex}
-                    <span className="mx-2">/</span>
-                    {slidesCount}
-                </div>
-
-                <div ref={navigationNextRef} className="cursor-pointer">
-                    <img src={rightArrow} alt=""/>
-                </div>
-            </div>
         </>
     );
 }

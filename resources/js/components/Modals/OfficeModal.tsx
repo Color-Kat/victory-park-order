@@ -5,6 +5,7 @@ import {closeOfficeModal} from "@/store/modals/modals.slice.tsx";
 import {useGetRentOfficesQuery, useGetSellOfficesQuery} from "@/store/offices/offices.api.ts";
 import {RedButton} from "@UI/Buttons";
 import phone from "@assets/phone.png";
+import {Gallery} from "@modules/Gallery";
 
 export const OfficeParameter: React.FC<{ title: string, children: ReactNode }> = ({title, children}) => (
     <div className="flex justify-between w-full gap-3">
@@ -41,18 +42,16 @@ export const OfficeModal: React.FC = () => {
         console.log('open office' + currentOffice.id);
     }, [currentOffice?.id]);
 
-    console.log(currentOffice?.areaMin, currentOffice?.areaMax)
-
     return (
         <div
-            className={`${officeModalOfficeId ? 'opacity-1 translate-y-0 shadow-2xl' : 'opacity-0 -translate-y-8 pointer-events-none'} fixed w-screen h-screen top-0 left-0 bg-black/[.7] flex items-center justify-center z-50 transition duration-300`}
+            className={`${officeModalOfficeId ? 'opacity-1 translate-y-0 shadow-2xl' : 'opacity-0 -translate-y-8 pointer-events-none'} fixed w-screen h-screen p-2 top-0 left-0 bg-black/[.7] flex items-center justify-center z-50 transition duration-300`}
         >
             <div
-                className="absolute top-0 left-0 w-full -m-16 h-full z-0"
+                className="absolute top-0 left-0 w-full h-full z-0"
                 onClick={closeModal}
             />
 
-            <div className="relative modal bg-white z-10 rounded overflow-hidden mx-2">
+            <div className="relative modal bg-white z-10 rounded max-h-screen overflow-y-scroll mx-2">
                 <div
                     className="absolute top-4 right-4 cursor-pointer font-bold text-gray-800 text-3xl"
                     onClick={closeModal}
@@ -63,7 +62,7 @@ export const OfficeModal: React.FC = () => {
                 {currentOffice && <div className="">
                     <div className="flex lg:flex-row flex-col">
 
-                        <img src={currentOffice.photos[0]} alt="" className="h-96 lg:min-w-[400px] flex-1 object-contain w-auto"/>
+                        <Gallery photos={currentOffice.photos} className="md:h-96 h-64 lg:min-w-[400px] flex-1 w-auto"/>
 
                         <div className="lg:w-1/2 w-full flex flex-col bg-app">
 
