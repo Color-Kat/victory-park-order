@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\RentOffice;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -24,6 +25,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('Admin/Index');
+        $rentOffices = RentOffice::all();
+
+        return view('Admin/Index', compact('rentOffices'));
     }
 }

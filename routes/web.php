@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\RentOfficeController;
+use App\Http\Controllers\SellOfficeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -9,7 +11,13 @@ use App\Http\Controllers\ReactController;
 
 Auth::routes();
 
-Route::middleware('role:admin')->get('/admin', [AdminController::class, 'index']);
+Route::middleware('role:admin')->as('admin.')->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('index');
+
+    Route::resource('/admin/rent-office', RentOfficeController::class)->names('rent-office');
+
+    Route::resource('/admin/sell-office', SellOfficeController::class)->names('sell-office');
+});
 
 /**
  * Redirect all routes to ReactController that renders react
