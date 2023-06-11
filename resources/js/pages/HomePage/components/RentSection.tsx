@@ -58,7 +58,7 @@ export const RentSection: React.FC = ({}) => {
                                 <td>
                                     {office.areaMin == office.areaMax
                                         ? <>{office.areaMin} <span> м<sup>2</sup></span></>
-                                        : <>от {office.areaMin} <span> м<sup>2</sup></span> до {office.areaMin} <span> м<sup>2</sup></span></>
+                                        : <>от {office.areaMin} <span> м<sup>2</sup></span> до {office.areaMax} <span> м<sup>2</sup></span></>
                                     }
                                 </td>
                                 <td>

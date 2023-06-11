@@ -1,18 +1,23 @@
-import React, {useState} from 'react';
+import React, {ReactNode, useCallback, useState} from 'react';
 import {useTDispatch, useTSelector} from "@hooks/redux.ts";
 
 import {closeOfficeModal} from "@/store/modals/modals.slice.tsx";
 import {useGetRentOfficesQuery, useGetSellOfficesQuery} from "@/store/offices/offices.api.ts";
+import {RedButton} from "@UI/Buttons";
+import phone from "@assets/phone.png";
 
-interface ModalProps {
-
-}
+export const OfficeParameter: React.FC<{ title: string, children: ReactNode }> = ({title, children}) => (
+    <div className="flex justify-between w-full gap-3">
+        <div className="w-1/2">{title}:</div>
+        <div className="w-1/2 whitespace-nowrap">{children}</div>
+    </div>
+);
 
 /**
  * Render all offices for ceo and open it by id
  * @constructor
  */
-export const OfficeModal: React.FC<ModalProps> = ({}) => {
+export const OfficeModal: React.FC = () => {
 
     const {officeModalOfficeId, officeModalOfficeType} = useTSelector(state => state.modals);
     const dispatch = useTDispatch();
@@ -30,8 +35,13 @@ export const OfficeModal: React.FC<ModalProps> = ({}) => {
         office.id == officeModalOfficeId &&
         office.typeDeal == officeModalOfficeType
     )[0];
-    console.log(currentOffice)
 
+
+    const openOfficePage = useCallback(() => {
+        console.log('open office' + currentOffice.id);
+    }, [currentOffice?.id]);
+
+    console.log(currentOffice?.areaMin, currentOffice?.areaMax)
 
     return (
         <div
@@ -42,17 +52,65 @@ export const OfficeModal: React.FC<ModalProps> = ({}) => {
                 onClick={closeModal}
             />
 
-            <div className="relative modal px-16 py-16 bg-white z-10">
+            <div className="relative modal bg-white z-10 rounded overflow-hidden mx-2">
                 <div
-                    className="absolute top-4 right-4 cursor-pointer font-bold text-gray-600 text-2xl"
+                    className="absolute top-4 right-4 cursor-pointer font-bold text-gray-800 text-3xl"
                     onClick={closeModal}
                 >
                     &#10005; {/* HTML code for a multiplication sign */}
                 </div>
 
-                <div className="">
+                {currentOffice && <div className="">
+                    <div className="flex lg:flex-row flex-col">
 
-                </div>
+                        <img src={currentOffice.photos[0]} alt="" className="h-96 lg:min-w-[400px] flex-1 object-contain w-auto"/>
+
+                        <div className="lg:w-1/2 w-full flex flex-col bg-app">
+
+                            <div className="flex px-8 pt-8 flex-col space-y-3 mb-4">
+
+                                <OfficeParameter title="Этаж">{currentOffice.floor} этаж</OfficeParameter>
+
+                                <OfficeParameter title="Арендуемая площадь">{currentOffice.areaMin == currentOffice.areaMax
+                                    ? <>{currentOffice.areaMin} <span> м<sup>2</sup></span></>
+                                    : <>от {currentOffice.areaMin} <span> м<sup>2</sup></span> до {currentOffice.areaMax} <span> м<sup>2</sup></span></>
+                                }</OfficeParameter>
+
+                                <OfficeParameter title="Готовность">{currentOffice.isReady}</OfficeParameter>
+
+                                <OfficeParameter title="Ставка аренды">{currentOffice.explPrice} {currentOffice.explCur}/м<sup>2</sup> в год</OfficeParameter>
+
+                                <OfficeParameter title="За помещение в месяц">{currentOffice.price} {currentOffice.priceCur}/м<sup>2</sup> в месяц</OfficeParameter>
+
+                                <OfficeParameter title="Налогообложение">{currentOffice.tax}</OfficeParameter>
+
+                            </div>
+
+                            <div
+                                className="flex items-center sm:flex-row mt-auto flex-col sm:gap-16 gap-5 bg-[#d7d7d7] w-full pt-12 pb-6 lg:px-8 px-4 ">
+                                <div className="flex gap-1.5 items-center">
+                                    <img className="h-4" src={phone} alt="phone"/>
+                                    <a className="text-lg font-bold cursor-pointer whitespace-nowrap"
+                                       href="tel:+74952121799">
+                                        +7 (495) 21-21-799
+                                    </a>
+                                </div>
+
+                                <RedButton filled={true}>
+                                    Заказать звонок
+                                </RedButton>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <RedButton
+                        filled={true}
+                        onClick={openOfficePage}
+                        className="my-4 ml-4"
+                    >Открыть в новом окне</RedButton>
+
+                </div>}
             </div>
         </div>
     );

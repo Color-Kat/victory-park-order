@@ -24,7 +24,6 @@ export const Layout: React.FC<{ children: React.ReactElement }> = memo(({childre
 
             <Main>
                 {children}
-
             </Main>
 
         </div>

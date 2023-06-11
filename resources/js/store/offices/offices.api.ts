@@ -2,7 +2,8 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 
 export interface IOffice {
     id: number
-    type: 'rent' | 'sell'
+    type: 'rent' | 'sell';
+    photos: string[];
     areaMin: number
     areaMax: number
     isActive: number

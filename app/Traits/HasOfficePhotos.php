@@ -16,10 +16,11 @@ trait HasOfficePhotos
         $directory = public_path("storage/gallery/$id/");
 
         if (is_dir($directory))
-            $photos =
+            $photos = array_values(
                 array_map(function ($value) use ($directory, $id) {
                     return "/storage/gallery/$id/" . $value;
-                }, array_diff(scandir($directory), array('..', '.')));
+                }, array_diff(scandir($directory), array('..', '.')))
+            );
 
         return $photos;
     }
