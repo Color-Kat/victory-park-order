@@ -56,11 +56,11 @@ class RentOfficeController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\RentOffice  $rentOffice
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit(RentOffice $rentOffice)
     {
-        //
+        return view('admin/rent-office/edit', compact('rentOffice'));
     }
 
     /**
@@ -68,11 +68,13 @@ class RentOfficeController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\RentOffice  $rentOffice
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, RentOffice $rentOffice)
     {
-        //
+        RentOffice::query()->where('id', $rentOffice->id)->update($request->except(['_token', '_method' ]));
+
+        return redirect()->route('admin.index')->with('success', 'Офис для аренды успешно обновлён.');
     }
 
     /**

@@ -39,11 +39,11 @@
                                         <td>{{$row->typeDeal}}</td>
                                         <td>{{$row->updated_at}}</td>
                                         <td>
-                                            <form method="post" action="{{ route('admin.rent-office.destroy', 1) }}">
+                                            <form method="post" action="{{ route('admin.rent-office.destroy', $row->id) }}">
                                                 @csrf
                                                 @method('DELETE')
 {{--                                                <a href="{{ route('admin.rent-office.show', $row->id) }}" class="btn btn-primary btn-sm"></a>--}}
-                                                <a href="{{ route('admin.rent-office.edit', 1) }}" class="btn btn-warning btn-sm my-1">Изменить</a>
+                                                <a href="{{ route('admin.rent-office.edit', $row->id) }}" class="btn btn-warning btn-sm my-1">Изменить</a>
                                                 <input type="submit" class="btn btn-danger btn-sm my-1" value="Delete" />
                                             </form>
                                         </td>
