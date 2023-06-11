@@ -47,7 +47,11 @@
                                         <td>{{$row->typeDeal}}</td>
                                         <td>{{$row->updated_at ?? $row->created_at}}</td>
                                         <td>
-                                            <form method="post" action="{{ route('admin.rent-office.destroy', $row->id) }}">
+                                            <form
+                                                method="post"
+                                                action="{{ route('admin.rent-office.destroy', $row->id) }}"
+                                                onsubmit="return confirm('Вы уверены, что хотите удалить офис?');"
+                                            >
                                                 @csrf
                                                 @method('DELETE')
 {{--                                                <a href="{{ route('admin.rent-office.show', $row->id) }}" class="btn btn-primary btn-sm"></a>--}}
@@ -103,7 +107,11 @@
                                         <td>{{$row->typeDeal}}</td>
                                         <td>{{$row->updated_at ?? $row->created_at}}</td>
                                         <td>
-                                            <form method="post" action="{{ route('admin.sell-office.destroy', $row->id) }}">
+                                            <form
+                                                method="post"
+                                                action="{{ route('admin.sell-office.destroy', $row->id) }}"
+                                                onsubmit="return confirm('Вы уверены, что хотите удалить офис?');"
+                                            >
                                                 @csrf
                                                 @method('DELETE')
                                                 {{--                                                <a href="{{ route('admin.rent-office.show', $row->id) }}" class="btn btn-primary btn-sm"></a>--}}

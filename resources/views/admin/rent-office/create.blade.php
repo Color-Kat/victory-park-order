@@ -87,7 +87,7 @@
                             <div class="col mb-3">
                                 <label class="col-sm-2 col-label-form">Тип сделки</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="typeDeal" disabled class="form-control" value="аренда"/>
+                                    <input type="text" name="typeDeal" readonly class="form-control" value="аренда"/>
                                 </div>
                             </div>
 
