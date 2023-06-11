@@ -4,6 +4,7 @@ import {useTDispatch, useTSelector} from "@hooks/redux.ts";
 import {closeModal} from "@/store/modal/modal.slice.tsx";
 import Input from "@UI/Form/Input.tsx";
 import {RedButton} from "@UI/Buttons";
+import {useRequestCallMutation} from "@/store/offices/offices.api.ts";
 
 interface ModalProps {
 
@@ -13,11 +14,22 @@ export const CallRequestModal: React.FC<ModalProps> = ({}) => {
 
     const {isOpen} = useTSelector(state => state.modalCallRequest);
     const dispatch = useTDispatch();
+    const [requestCall] = useRequestCallMutation();
 
+    const [isSent, setIsSent] = useState(false);
     const [form, setForm] = useState({
         name: '',
         phone: ''
     });
+    
+    const sendRequest = async () => {
+        await requestCall({
+            name: form.name,
+            phone: form.phone
+        });
+
+        setIsSent(true);
+    }
 
     return (
         <div
@@ -36,15 +48,24 @@ export const CallRequestModal: React.FC<ModalProps> = ({}) => {
                     &#10005; {/* HTML code for a multiplication sign */}
                 </div>
 
-                <div className="flex flex-col justify-center gap-5">
+                {!isSent && <div className="flex flex-col justify-center gap-5">
                     <h3 className="text-app-accent font-bold text-2xl text-center">Заказать звонок</h3>
 
                     <Input name="name" placeholder="Имя" value={form.name} setForm={setForm} type="text"/>
 
                     <Input name="phone" placeholder="Телефон" value={form.phone} setForm={setForm} type="text"/>
 
-                    <RedButton filled={true} className="sm:w-full">Отправить</RedButton>
-                </div>
+                    <RedButton 
+                        filled={true} 
+                        className="sm:w-full"
+                        onClick={sendRequest}
+                    >Отправить</RedButton>
+                </div>}
+
+                {isSent && <div className="mt-4 text-lg text-center max-w-xs">
+                    Спасибо за обращение! <br/>
+                    В ближайшее время с Вами свяжется наш специалист.
+                </div>}
             </div>
         </div>
     );

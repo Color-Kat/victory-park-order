@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CallController;
 use App\Http\Controllers\OfficesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -12,3 +13,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/get-rent-offices', [OfficesController::class, 'getRentOffices'])->name('get-rent-offices');
 Route::get('/get-sell-offices', [OfficesController::class, 'getSellOffices'])->name('get-sell-offices');
+
+Route::post('/request-call', [CallController::class, 'requestCall'])->name('request-call');

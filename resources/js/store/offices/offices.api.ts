@@ -39,6 +39,17 @@ export const officesApi = createApi({
             }),
             // transformResponse: (response: any) => (response.items)
         }),
+        requestCall: builder.mutation<any, {
+            name: string,
+            phone: string;
+        }>({
+            query: (payload) => ({
+                url: `request-call`,
+                method: 'POST',
+                body: payload
+            }),
+            // transformResponse: (response: any) => (response.items)
+        }),
         // getUserRepos: builder.query<any[], string>({
         //     query: (username: string) => ({
         //         url: `users/${username}/repos`
@@ -47,4 +58,4 @@ export const officesApi = createApi({
     })
 });
 
-export const {useGetRentOfficesQuery, useGetSellOfficesQuery} = officesApi;
+export const {useGetRentOfficesQuery, useGetSellOfficesQuery, useRequestCallMutation} = officesApi;
