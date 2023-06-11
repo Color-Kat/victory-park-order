@@ -81,10 +81,12 @@ class RentOfficeController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\RentOffice  $rentOffice
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(RentOffice $rentOffice)
     {
-        //
+        $rentOffice->delete();
+
+        return redirect()->route('admin.index')->with('success', 'Офис для аренды успешно удалён');
     }
 }

@@ -2,11 +2,10 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\RentOfficeController;
-use App\Http\Controllers\SellOfficeController;
+use App\Http\Controllers\Admin\SellOfficeController;
+use App\Http\Controllers\ReactController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
-use App\Http\Controllers\ReactController;
 
 
 Auth::routes();

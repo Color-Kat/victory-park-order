@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\SellOffice;
 use Illuminate\Http\Request;
 
@@ -20,22 +21,24 @@ class SellOfficeController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
-        //
+        return view('admin/sell-office/create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        SellOffice::query()->create($request->all());
+
+        return redirect()->route('admin.index')->with('success', 'Офис для продажи успешно добавлен.');
     }
 
     /**
@@ -53,11 +56,11 @@ class SellOfficeController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\SellOffice  $sellOffice
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit(SellOffice $sellOffice)
     {
-        //
+        return view('admin/sell-office/edit', compact('sellOffice'));
     }
 
     /**
@@ -69,7 +72,9 @@ class SellOfficeController extends Controller
      */
     public function update(Request $request, SellOffice $sellOffice)
     {
-        //
+        SellOffice::query()->where('id', $sellOffice->id)->update($request->except(['_token', '_method' ]));
+
+        return redirect()->route('admin.index')->with('success', 'Офис для продажи успешно обновлён.');
     }
 
     /**
@@ -80,6 +85,8 @@ class SellOfficeController extends Controller
      */
     public function destroy(SellOffice $sellOffice)
     {
-        //
+        $sellOffice->delete();
+
+        return redirect()->route('admin.index')->with('success', 'Офис для продажи успешно удалён');
     }
 }
