@@ -6,8 +6,8 @@ import {FullPageHOC} from "@components/PageTemplates/FullPage.tsx";
 
 import {FirstSection} from "@pages/HomePage/components/FirstSection.tsx";
 import {SecondSection} from "@pages/HomePage/components/SecondSection.tsx";
-import {ThridSection} from "@pages/HomePage/components/ThriSection.tsx";
-import {FourthSection} from "@pages/HomePage/components/FourthSection.tsx";
+import {RentSection} from "@pages/HomePage/components/RentSection.tsx";
+import {SellSection} from "@pages/HomePage/components/SellSection.tsx";
 import {MapSection} from "@pages/HomePage/components/MapSection.tsx";
 import {GallerySection} from "@pages/HomePage/components/GallerySection.tsx";
 import {ContactsSection} from "@pages/HomePage/components/ContactsSection.tsx";
@@ -28,10 +28,10 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
             <SecondSection />
 
             {/* Section 3 - table */}
-            <ThridSection />
+            <RentSection />
 
             {/* Section 4 */}
-            <FourthSection />
+            <SellSection />
 
             {/* Photo gallery section */}
             <GallerySection />
