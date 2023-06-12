@@ -84,7 +84,16 @@ export const SellOfficePage: React.FC = ({}) => {
                             </div>
 
                             <div className="my-5 flex justify-between items-center">
-                                <CallRequest className="ml-0">Обратный звонок</CallRequest>
+                                <CallRequest
+                                    className="ml-0"
+                                    filledButton={true}
+                                    data={{
+                                        officeCrmId: office.crmId,
+                                        officeSpace: `${office.areaMin} м2 - ${office.areaMax} м2 `
+                                    }}
+                                >
+                                    Обратный звонок
+                                </CallRequest>
 
                                 <PhoneNumber className="text-black" />
                             </div>

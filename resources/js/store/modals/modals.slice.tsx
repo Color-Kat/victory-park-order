@@ -21,7 +21,7 @@ export const modalsSlice = createSlice({
     reducers: {
         openCallRequestModal(state, action: PayloadAction<any>) {
             state.isCallRequestModalOpen = true;
-            state.callRequestModalData = action.payload.data;
+            state.callRequestModalData = action.payload;
         },
         closeCallRequestModal(state) {
             state.isCallRequestModalOpen = false;

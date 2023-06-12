@@ -12,7 +12,7 @@ import {PhoneNumber} from "@UI/Elements/PhoneNumber.tsx";
 import {CallRequest} from "@components/CallRequest/CallRequest.tsx";
 
 
-export const OfficeParameter: React.FC<{title: string, children: ReactNode}> = ({title, children}) => {
+export const OfficeParameter: React.FC<{ title: string, children: ReactNode }> = ({title, children}) => {
     return (
         <div className="flex justify-between py-5 px-5 border-b border-gray-300 cursor-pointer hover:bg-app">
             <div className="w-1/2">{title}:</div>
@@ -36,7 +36,7 @@ export const RentOfficePage: React.FC = ({}) => {
 
                     <div className="lg:my-12 my-6 px-5">
                         <h2 className="font-metapro lg:text-6xl md:text-6xl xs:text-5xl text-3xl max-w-5xl mx-auto font-bold text-app-accent text-center">
-                            Аренда офиса <OfficeArea office={office} /> в бизнес-центре Victory Park
+                            Аренда офиса <OfficeArea office={office}/> в бизнес-центре Victory Park
                         </h2>
                     </div>
 
@@ -55,13 +55,14 @@ export const RentOfficePage: React.FC = ({}) => {
 
                         <div className="flex-1">
 
-                            <div className="flex flex-col border-l border border-b-0 text-sm text-gray-800 border-gray-300 h-max">
+                            <div
+                                className="flex flex-col border-l border border-b-0 text-sm text-gray-800 border-gray-300 h-max">
                                 <OfficeParameter title="Этаж">
                                     {office.floor} этаж
                                 </OfficeParameter>
 
                                 <OfficeParameter title="Арендуемая площадь">
-                                    <OfficeArea office={office} />
+                                    <OfficeArea office={office}/>
                                 </OfficeParameter>
 
                                 <OfficeParameter title="Готовность">
@@ -86,9 +87,18 @@ export const RentOfficePage: React.FC = ({}) => {
                             </div>
 
                             <div className="my-5 flex justify-between items-center">
-                                <CallRequest className="ml-0">Обратный звонок</CallRequest>
+                                <CallRequest
+                                    className="ml-0"
+                                    filledButton={true}
+                                    data={{
+                                        officeCrmId: office.crmId,
+                                        officeSpace: `${office.areaMin} м2 - ${office.areaMax} м2 `
+                                    }}
+                                >
+                                    Обратный звонок
+                                </CallRequest>
 
-                                <PhoneNumber className="text-black" />
+                                <PhoneNumber className="text-black"/>
                             </div>
                         </div>
                     </div>

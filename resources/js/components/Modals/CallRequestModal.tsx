@@ -21,7 +21,7 @@ export const CallRequestModal: React.FC<ModalProps> = ({}) => {
         name: '',
         phone: ''
     });
-    
+
     const sendRequest = async () => {
         await requestCall({
             name: form.name,

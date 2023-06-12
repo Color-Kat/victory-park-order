@@ -7,6 +7,7 @@ import {RedButton} from "@UI/Buttons";
 import phone from "@assets/phone.png";
 import {Gallery} from "@modules/Gallery";
 import {PhoneNumber} from "@UI/Elements/PhoneNumber.tsx";
+import {CallRequest} from "@components/CallRequest/CallRequest.tsx";
 
 export const OfficeParameter: React.FC<{ title: string, children: ReactNode }> = ({title, children}) => (
     <div className="flex justify-between w-full gap-3">
@@ -40,7 +41,7 @@ export const OfficeModal: React.FC = () => {
 
     return (
         <div
-            className={`${officeModalOfficeId ? 'opacity-1 translate-y-0 shadow-2xl' : 'opacity-0 -translate-y-8 pointer-events-none'} fixed w-screen h-screen p-2 top-0 left-0 bg-black/[.7] flex items-center justify-center z-50 transition duration-300`}
+            className={`${officeModalOfficeId ? 'opacity-1 translate-y-0 shadow-2xl' : 'opacity-0 -translate-y-8 pointer-events-none'} fixed w-screen h-screen p-2 top-0 left-0 bg-black/[.7] flex items-center justify-center z-40 transition duration-300`}
         >
             <div
                 className="absolute top-0 left-0 w-full h-full z-0"
@@ -86,9 +87,12 @@ export const OfficeModal: React.FC = () => {
 
                                 <PhoneNumber />
 
-                                <RedButton filled={true}>
+                                <CallRequest filledButton={true} data={{
+                                    officeCrmId: currentOffice.crmId,
+                                    officeSpace: `${currentOffice.areaMin} м2 - ${currentOffice.areaMax} м2 `
+                                }}>
                                     Заказать звонок
-                                </RedButton>
+                                </CallRequest>
                             </div>
                         </div>
 
