@@ -10,7 +10,7 @@ interface CallRequestProps {
     className?: string;
 }
 
-export const CallRequest: React.FC<CallRequestProps> = ({
+export const CallRequestButton: React.FC<CallRequestProps> = ({
                                                             filledButton = true,
                                                             data = {},
                                                             children,

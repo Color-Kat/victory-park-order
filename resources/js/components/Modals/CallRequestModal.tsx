@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import {useTDispatch, useTSelector} from "@hooks/redux.ts";
 
-import {openCallRequestModal, closeCallRequestModal} from "@/store/modals/modals.slice.tsx";
+import {closeCallRequestModal} from "@/store/modals/modals.slice.tsx";
 import Input from "@UI/Form/Input.tsx";
 import {RedButton} from "@UI/Buttons";
 import {useRequestCallMutation} from "@/store/offices/offices.api.ts";
+import Checkbox from "@UI/Form/Checkbox.tsx";
 
 interface ModalProps {
 
@@ -17,15 +18,17 @@ export const CallRequestModal: React.FC<ModalProps> = ({}) => {
     const [requestCall] = useRequestCallMutation();
 
     const [isSent, setIsSent] = useState(false);
-    const [isError, setIsError] = useState(false);
+    const [error, setError] = useState<boolean|string>(false);
     const [form, setForm] = useState({
         name: '',
-        phone: ''
+        phone: '',
+        agree: false
     });
 
     const sendRequest = async () => {
-        if(!form.name || !form.phone) return setIsError(true);
-        else setIsError(false);
+        if(!form.name || !form.phone) return setError("Пожалуйста, заполните все поля.");
+        if(!form.agree) return setError("Вы должны принять политику обработки персональных данных");
+        else setError(false);
 
         await requestCall({
             name: form.name,
@@ -45,7 +48,7 @@ export const CallRequestModal: React.FC<ModalProps> = ({}) => {
                 onClick={() => dispatch(closeCallRequestModal())}
             />
 
-            <div className="relative modal px-16 py-16 bg-white z-10">
+            <div className="relative modal px-16 py-16 bg-white z-10 max-w-md">
                 <div
                     className="absolute top-4 right-4 cursor-pointer font-bold text-gray-600 text-2xl"
                     onClick={() => dispatch(closeCallRequestModal())}
@@ -56,13 +59,21 @@ export const CallRequestModal: React.FC<ModalProps> = ({}) => {
                 {!isSent && <div className="flex flex-col justify-center gap-5">
                     <h3 className="text-app-accent font-bold text-2xl text-center">Заказать звонок</h3>
 
-                    <div className={`text-lg text-gray-900 text-center my-2 ${isError ? 'block' : 'hidden'}`}>
-                        Пожалуйста, заполните все поля.
+                    <div className={`text-lg text-gray-900 text-center my-2 ${error ? 'block' : 'hidden'} max-w-sm`}>
+                        {error}
                     </div>
 
                     <Input name="name" placeholder="Имя" value={form.name} setForm={setForm} type="text"/>
 
                     <Input name="phone" placeholder="Телефон" value={form.phone} setForm={setForm} type="text"/>
+
+                    <Checkbox
+                        name="agree"
+                        checked={form.agree}
+                        setForm={setForm}
+                    >
+                        Отправляя свои данные я соглашаюсь с Политикой обработки персональных данных и Пользовательским соглашением
+                    </Checkbox>
 
                     <RedButton 
                         filled={true} 

@@ -7,7 +7,7 @@ import {RedButton} from "@UI/Buttons";
 import phone from "@assets/phone.png";
 import {Gallery} from "@modules/Gallery";
 import {PhoneNumber} from "@UI/Elements/PhoneNumber.tsx";
-import {CallRequest} from "@components/CallRequest/CallRequest.tsx";
+import {CallRequestButton} from "@components/CallRequest/CallRequestButton.tsx";
 
 export const OfficeParameter: React.FC<{ title: string, children: ReactNode }> = ({title, children}) => (
     <div className="flex justify-between w-full gap-3">
@@ -87,12 +87,12 @@ export const OfficeModal: React.FC = () => {
 
                                 <PhoneNumber />
 
-                                <CallRequest filledButton={true} data={{
+                                <CallRequestButton filledButton={true} data={{
                                     officeCrmId: currentOffice.crmId,
                                     officeSpace: `${currentOffice.areaMin} м2 - ${currentOffice.areaMax} м2 `
                                 }}>
                                     Заказать звонок
-                                </CallRequest>
+                                </CallRequestButton>
                             </div>
                         </div>
 

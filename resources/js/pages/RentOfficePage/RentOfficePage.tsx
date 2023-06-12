@@ -9,7 +9,7 @@ import {useParams} from "react-router-dom";
 import "react-image-gallery/styles/scss/image-gallery.scss";
 import {OfficeArea} from "@UI/OfficeArea.tsx";
 import {PhoneNumber} from "@UI/Elements/PhoneNumber.tsx";
-import {CallRequest} from "@components/CallRequest/CallRequest.tsx";
+import {CallRequestButton} from "@components/CallRequest/CallRequestButton.tsx";
 import {Page404} from "@pages/Other/Page404.tsx";
 import {Helmet} from "react-helmet";
 import {officeArea} from "@/utils/officeArea.ts";
@@ -95,7 +95,7 @@ export const RentOfficePage: React.FC = ({}) => {
                             </div>
 
                             <div className="my-5 flex justify-between items-center">
-                                <CallRequest
+                                <CallRequestButton
                                     className="ml-0"
                                     filledButton={true}
                                     data={{
@@ -104,7 +104,7 @@ export const RentOfficePage: React.FC = ({}) => {
                                     }}
                                 >
                                     Обратный звонок
-                                </CallRequest>
+                                </CallRequestButton>
 
                                 <PhoneNumber className="text-black"/>
                             </div>

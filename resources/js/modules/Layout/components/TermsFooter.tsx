@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import {Link} from "react-router-dom";
-import {CallRequest} from "@components/CallRequest/CallRequest.tsx";
+import {CallRequestButton} from "@components/CallRequest/CallRequestButton.tsx";
 
 export const TermsFooter: React.FC = memo(() => {
     return (

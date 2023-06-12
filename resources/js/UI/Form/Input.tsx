@@ -14,7 +14,7 @@ const Input: FunctionComponent<InputProps> = ({type, value, name, setForm, place
         <div className="relative h-[48px] w-full">
             <input
                 type={type ?? "text"}
-                className={"bg-app text-gray-700 py-2 px-4 pl-12 h-[48px] rounded-sm flex items-center outline-none " + className}
+                className={"w-full bg-app text-gray-700 py-2 px-4 pl-12 h-[48px] rounded-sm flex items-center outline-none " + className}
                 placeholder={placeholder ?? ""}
                 value={value}
                 onChange={

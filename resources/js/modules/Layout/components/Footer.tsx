@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import {Link} from "react-router-dom";
-import {CallRequest} from "@components/CallRequest/CallRequest.tsx";
+import {CallRequestButton} from "@components/CallRequest/CallRequestButton.tsx";
 
 export const Footer: React.FC<{className?: string}> = memo(({className}) => {
 
@@ -11,9 +11,9 @@ export const Footer: React.FC<{className?: string}> = memo(({className}) => {
                 <Link to="/infrastructure" className="uppercase text-xs">Инфраструктура</Link>
             </div>
 
-            <CallRequest filledButton={true} className="sm:px-12 sm:w-auto w-max">
+            <CallRequestButton filledButton={true} className="sm:px-12 sm:w-auto w-max">
                 Оставить заявку
-            </CallRequest>
+            </CallRequestButton>
 
             <div className="copyright text-center text-13 mt-4 whitespace-pre">
                 <p>

@@ -3,7 +3,7 @@ import {Link, useLocation} from "react-router-dom";
 
 import logo from "@assets/logo.png";
 import {HiOutlineMenu, HiX} from "react-icons/hi";
-import {CallRequest} from "@components/CallRequest/CallRequest";
+import {CallRequestButton} from "@components/CallRequest/CallRequestButton.tsx";
 import {useSettings} from "@hooks/useSettings.ts";
 import {PhoneNumber} from "@UI/Elements/PhoneNumber.tsx";
 
@@ -101,9 +101,9 @@ export const Header = () => {
                 <div className="hidden xs:flex items-center flex-col">
                     <PhoneNumber className="mb-3"/>
 
-                    <CallRequest filledButton={false}>
+                    <CallRequestButton filledButton={false}>
                         Заказать звонок
-                    </CallRequest>
+                    </CallRequestButton>
                 </div>
 
                 {/* Navigation */}
@@ -115,9 +115,9 @@ export const Header = () => {
                 <div className="hidden lg:flex bg-app px-[50px] pb-5 pt-10 text-[#3b4256] flex-col">
                     <Link to="/infrastructure" className="mb-9 uppercase text-xs cursor-pointer">Инфраструктура</Link>
 
-                    <CallRequest filledButton={true}>
+                    <CallRequestButton filledButton={true}>
                         Оставить заявку
-                    </CallRequest>
+                    </CallRequestButton>
 
                     <div className="copyright text-center text-13 mt-14">
                         <span>
@@ -140,9 +140,9 @@ export const Header = () => {
                 <div className="flex xs:hidden flex-wrap items-center mt-8 gap-3 justify-between">
                     <PhoneNumber className=""/>
 
-                    <CallRequest filledButton={false} className="mr-0">
+                    <CallRequestButton filledButton={false} className="mr-0">
                         Заказать звонок
-                    </CallRequest>
+                    </CallRequestButton>
                 </div>
             </nav>
 
