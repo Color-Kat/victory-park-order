@@ -6,6 +6,7 @@ import {useGetRentOfficesQuery, useGetSellOfficesQuery} from "@/store/offices/of
 import {RedButton} from "@UI/Buttons";
 import phone from "@assets/phone.png";
 import {Gallery} from "@modules/Gallery";
+import {PhoneNumber} from "@UI/Elements/PhoneNumber.tsx";
 
 export const OfficeParameter: React.FC<{ title: string, children: ReactNode }> = ({title, children}) => (
     <div className="flex justify-between w-full gap-3">
@@ -89,13 +90,8 @@ export const OfficeModal: React.FC = () => {
 
                             <div
                                 className="flex items-center sm:flex-row mt-auto flex-col sm:gap-16 gap-5 bg-[#d7d7d7] w-full pt-12 pb-6 lg:px-8 px-4 ">
-                                <div className="flex gap-1.5 items-center">
-                                    <img className="h-4" src={phone} alt="phone"/>
-                                    <a className="text-lg font-bold cursor-pointer whitespace-nowrap"
-                                       href="tel:+74952121799">
-                                        +7 (495) 21-21-799
-                                    </a>
-                                </div>
+
+                                <PhoneNumber />
 
                                 <RedButton filled={true}>
                                     Заказать звонок

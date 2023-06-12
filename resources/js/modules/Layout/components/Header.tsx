@@ -1,14 +1,11 @@
-import React, {ReactNode, useEffect, useState} from 'react';
-import {Logo} from "@UI/Elements/Logo/Logo";
-import {Link, NavLink, useLocation} from "react-router-dom";
+import React, {ReactNode, useState} from 'react';
+import {Link, useLocation} from "react-router-dom";
 
 import logo from "@assets/logo.png";
 import {HiOutlineMenu, HiX} from "react-icons/hi";
-import phone from "@assets/phone.png";
-import {RedButton} from "@UI/Buttons";
 import {CallRequest} from "@components/CallRequest/CallRequest";
-import {isMobile} from "@/utils/isMobile.ts";
 import {useSettings} from "@hooks/useSettings.ts";
+import {PhoneNumber} from "@UI/Elements/PhoneNumber.tsx";
 
 interface MenuLinkProps {
     children: ReactNode;
@@ -101,12 +98,7 @@ export const Header = () => {
                 </div>
                 {/* Phone block */}
                 <div className="hidden xs:flex items-center flex-col">
-                    <div className="mb-3 flex gap-1.5 items-center">
-                        <img className="h-4" src={phone} alt="phone"/>
-                        <a className="sm:text-lg font-bold cursor-pointer" href="tel:+74952121799">
-                            +7 (495) 21-21-799
-                        </a>
-                    </div>
+                    <PhoneNumber className="mb-3"/>
 
                     <CallRequest filledButton={false}>
                         Заказать звонок

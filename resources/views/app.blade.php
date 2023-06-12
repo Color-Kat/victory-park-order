@@ -15,7 +15,7 @@
     <meta name="description" content="Аренда и продажа офисов класса А в Victory Park (ex. Минская Плаза) в Центре Москвы.">
 
     <!--  Favicon  -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <!--  Webmanifest  -->
     <!--    <link rel="manifest" href="/manifest.webmanifest">-->
