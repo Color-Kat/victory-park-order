@@ -3,10 +3,14 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 const initialState: {
     isCallRequestModalOpen: boolean,
+    callRequestModalData: any,
+
     officeModalOfficeId: false|number,
     officeModalOfficeType: 'rent' | 'sell'
 }  = {
     isCallRequestModalOpen: false,
+    callRequestModalData: null,
+
     officeModalOfficeId: false,
     officeModalOfficeType: 'rent'
 };
@@ -15,8 +19,9 @@ export const modalsSlice = createSlice({
     name: 'modals',
     initialState,
     reducers: {
-        openCallRequestModal(state) {
+        openCallRequestModal(state, action: PayloadAction<any>) {
             state.isCallRequestModalOpen = true;
+            state.callRequestModalData = action.payload.data;
         },
         closeCallRequestModal(state) {
             state.isCallRequestModalOpen = false;

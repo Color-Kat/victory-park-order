@@ -2,7 +2,7 @@ import {FunctionComponent} from "react";
 import {BsPerson} from "react-icons/bs";
 
 interface InputProps {
-    type?: 'text' | 'number' | 'select';
+    type?: 'text' | 'number' | 'select' | 'email';
     className?: string;
     placeholder?: string;
     name: string;

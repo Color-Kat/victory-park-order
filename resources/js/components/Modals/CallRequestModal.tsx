@@ -12,7 +12,7 @@ interface ModalProps {
 
 export const CallRequestModal: React.FC<ModalProps> = ({}) => {
 
-    const {isCallRequestModalOpen} = useTSelector(state => state.modals);
+    const {isCallRequestModalOpen, callRequestModalData} = useTSelector(state => state.modals);
     const dispatch = useTDispatch();
     const [requestCall] = useRequestCallMutation();
 
@@ -25,7 +25,8 @@ export const CallRequestModal: React.FC<ModalProps> = ({}) => {
     const sendRequest = async () => {
         await requestCall({
             name: form.name,
-            phone: form.phone
+            phone: form.phone,
+            ...callRequestModalData
         });
 
         setIsSent(true);

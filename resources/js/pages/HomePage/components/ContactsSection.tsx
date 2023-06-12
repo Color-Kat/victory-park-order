@@ -45,6 +45,7 @@ export const ContactsSection: React.FC = ({}) => {
                     <Input
                         value={form.name}
                         setForm={setForm}
+                        type="text"
                         name="name"
                         placeholder="Ваше Имя"
                         className="xl:w-auto flex flex-1 flex-shrink-1 w-full"
@@ -53,6 +54,7 @@ export const ContactsSection: React.FC = ({}) => {
                     <Input
                         value={form.phone}
                         setForm={setForm}
+                        type="text"
                         name="phone"
                         placeholder="Ваш Телефон"
                         className="xl:w-auto w-full"
@@ -61,6 +63,7 @@ export const ContactsSection: React.FC = ({}) => {
                     <Input
                         value={form.email}
                         setForm={setForm}
+                        type="email"
                         name="email"
                         placeholder="Ваше E-mail"
                         className="xl:w-auto w-full"

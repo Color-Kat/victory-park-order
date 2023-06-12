@@ -5,12 +5,14 @@ import {openCallRequestModal} from "@/store/modals/modals.slice.tsx";
 
 interface CallRequestProps {
     filledButton?: boolean;
+    data?: {};
     children: string;
     className?: string;
 }
 
 export const CallRequest: React.FC<CallRequestProps> = ({
                                                             filledButton = true,
+                                                            data = {},
                                                             children,
                                                             className
                                                         }) => {
@@ -20,7 +22,7 @@ export const CallRequest: React.FC<CallRequestProps> = ({
     return (
         <RedButton
             filled={filledButton}
-            onClick={() => dispatch(openCallRequestModal())}
+            onClick={() => dispatch(openCallRequestModal(data))}
             className={className}
         >
             {children}
