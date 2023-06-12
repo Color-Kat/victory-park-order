@@ -13,8 +13,11 @@ class OfficesController extends Controller
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getRentOffices() {
-        return RentOffice::all();
+    public function getRentOffices()
+    {
+        return RentOffice::query()
+            ->where('isActive', 1)
+            ->get();
     }
 
     /**
@@ -22,19 +25,23 @@ class OfficesController extends Controller
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getSellOffices() {
-        return SellOffice::all();
+    public function getSellOffices()
+    {
+        return SellOffice::query()
+            ->where('isActive', 1)
+            ->get();
     }
 
-    public function getOffice(Request $request) {
+    public function getOffice(Request $request)
+    {
         $typeDeal = $request->route('typeDeal');
         $id = $request->route('id');
 
         $office = null;
 
-        if($typeDeal == 'rent')
+        if ($typeDeal == 'rent')
             $office = RentOffice::query()->where('id', $id)->first();
-        if($typeDeal == 'sell')
+        if ($typeDeal == 'sell')
             $office = SellOffice::query()->where('id', $id)->first();
 
         if (!$office) return response()->json(null, 404);

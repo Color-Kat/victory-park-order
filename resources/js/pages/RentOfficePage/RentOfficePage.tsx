@@ -28,6 +28,7 @@ export const RentOfficePage: React.FC = ({}) => {
         id: +officeId!
     });
 
+
     return (
         <div className="w-full pb-10 px-5">
             {office &&
