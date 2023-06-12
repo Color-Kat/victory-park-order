@@ -1,17 +1,15 @@
-import {FunctionComponent} from "react";
+import {FunctionComponent, InputHTMLAttributes} from "react";
 import {BsPerson} from "react-icons/bs";
 
-interface InputProps {
-    type?: 'text' | 'number' | 'select' | 'email';
+interface InputProps extends InputHTMLAttributes<any>{
     className?: string;
     placeholder?: string;
     name: string;
     value: string | number;
-    onChange?: (e: string) => void;
     setForm?: any;
 }
 
-const Input: FunctionComponent<InputProps> = ({type, value, name, setForm, placeholder, onChange, className}) => {
+const Input: FunctionComponent<InputProps> = ({type, value, name, setForm, placeholder, onChange, className, ...props}) => {
     return (
         <div className="relative h-[48px] w-full">
             <input
@@ -21,9 +19,10 @@ const Input: FunctionComponent<InputProps> = ({type, value, name, setForm, place
                 value={value}
                 onChange={
                     onChange
-                        ? (e) => onChange(e.target.value)
+                        ? (e) => onChange(e.target.value as any)
                         : (e) => setForm((prev: any) => ({...prev, [name]: e.target.value}))
                 }
+                {...props}
             />
 
             <BsPerson className="absolute left-3 text-app-accent top-1/2 -translate-y-1/2 text-2xl"/>

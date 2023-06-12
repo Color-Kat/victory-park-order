@@ -14,13 +14,17 @@ export const ContactsSection: React.FC = ({}) => {
     });
 
     const [isSent, setIsSent] = useState(false);
+    const [isError, setIsError] = useState(false);
     const send = async (e: any) => {
         e.preventDefault();
+
+        if(!form.name || !form.phone) return setIsError(true);
 
         await requestCall({
             ...form
         });
 
+        setIsError(false);
         setIsSent(true);
     }
 
@@ -39,12 +43,17 @@ export const ContactsSection: React.FC = ({}) => {
                 В ближайшее время с Вами свяжется наш специалист.
             </div>
 
+            <div className={`text-lg text-gray-900 text-center my-3 ${isError ? 'block' : 'hidden'}`}>
+                Пожалуйста, заполните все поля.
+            </div>
+
             <form className="flex flex-col w-full">
                 <div className="relative w-full xl:space-x-6 xl:space-y-0 space-y-6 mb-6 flex xl:flex-row flex-col items-center">
 
                     <Input
                         value={form.name}
                         setForm={setForm}
+                        required
                         type="text"
                         name="name"
                         placeholder="Ваше Имя"
@@ -54,6 +63,7 @@ export const ContactsSection: React.FC = ({}) => {
                     <Input
                         value={form.phone}
                         setForm={setForm}
+                        required
                         type="text"
                         name="phone"
                         placeholder="Ваш Телефон"
@@ -86,6 +96,7 @@ export const ContactsSection: React.FC = ({}) => {
                 <RedButton
                     filled={true}
                     onClick={send}
+
                 >
                     Отправить
                 </RedButton>

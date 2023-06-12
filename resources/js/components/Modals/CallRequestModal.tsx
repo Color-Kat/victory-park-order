@@ -17,12 +17,16 @@ export const CallRequestModal: React.FC<ModalProps> = ({}) => {
     const [requestCall] = useRequestCallMutation();
 
     const [isSent, setIsSent] = useState(false);
+    const [isError, setIsError] = useState(false);
     const [form, setForm] = useState({
         name: '',
         phone: ''
     });
 
     const sendRequest = async () => {
+        if(!form.name || !form.phone) return setIsError(true);
+        else setIsError(true);
+
         await requestCall({
             name: form.name,
             phone: form.phone,
@@ -51,6 +55,10 @@ export const CallRequestModal: React.FC<ModalProps> = ({}) => {
 
                 {!isSent && <div className="flex flex-col justify-center gap-5">
                     <h3 className="text-app-accent font-bold text-2xl text-center">Заказать звонок</h3>
+
+                    <div className={`text-lg text-gray-900 text-center my-2 ${isError ? 'block' : 'hidden'}`}>
+                        Пожалуйста, заполните все поля.
+                    </div>
 
                     <Input name="name" placeholder="Имя" value={form.name} setForm={setForm} type="text"/>
 
