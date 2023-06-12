@@ -34,7 +34,9 @@ export const Gallery: React.FC<GalleryProps> = ({photos, className}) => {
                     swiper.params.navigation.nextEl = navigationNextRef.current;
                 }}
                 onRealIndexChange={(swiper) => {
-                    setCurrentSlideIndex((swiper.realIndex || -1)+1);
+                    console.log(swiper.realIndex)
+                    const slideIndex = swiper.realIndex >= 0 ? swiper.realIndex : -1;
+                    setCurrentSlideIndex(slideIndex+1);
                 }}
                 loop={true}
                 modules={[Navigation, Pagination]}

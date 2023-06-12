@@ -1,7 +1,17 @@
 import React from 'react';
 import {Gallery} from "@modules/Gallery";
+import {useGetRentOfficesQuery, useGetSellOfficesQuery} from "@/store/offices/offices.api.ts";
 
 export const GallerySection: React.FC = ({}) => {
+
+    const {data: rentOffices = []} = useGetRentOfficesQuery();
+    const {data: sellOffices = []} = useGetSellOfficesQuery();
+    const offices = [
+        ...rentOffices,
+        ...sellOffices
+    ];
+    // Get photos off all offices
+    const photos = offices.map(office => ([...office.photos])).flat();
 
     return (
         <div
@@ -16,7 +26,7 @@ export const GallerySection: React.FC = ({}) => {
             </div>
 
             <Gallery
-                photos={Array.from(Array(10).keys()).map(i => `/storage/gallery/2/${i}.jpg`)}
+                photos={photos}
                 className="w-full h-full absolute top-0 left-0 z-[-1]"
             />
 

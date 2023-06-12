@@ -38,13 +38,6 @@ export const OfficeModal: React.FC = () => {
         office.typeDeal == officeModalOfficeType
     )[0];
 
-    // const openOfficePage = useCallback(() => {
-    //     console.log('open office' + currentOffice.id);
-    //     if(!currentOffice) return;
-    //
-    //     window.open(`/${currentOffice.typeDeal}/${currentOffice.id}`, '_blank')?.focus();
-    // }, [currentOffice?.id]);
-
     return (
         <div
             className={`${officeModalOfficeId ? 'opacity-1 translate-y-0 shadow-2xl' : 'opacity-0 -translate-y-8 pointer-events-none'} fixed w-screen h-screen p-2 top-0 left-0 bg-black/[.7] flex items-center justify-center z-50 transition duration-300`}
