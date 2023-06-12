@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- Title -->
-    <title>Victory park</title>
+    <title>Бизнес-центр Victory Park (ex. Минская Плаза) в Москве</title>
 
     <!-- KeyWords -->
-    <meta name="keywords" content="бц Victory Park, бц Минская Плаза, офис в районе Раменки">
+    <meta name="keywords" content="бц Victory Park, бц Минская Плаза, офис в районе Раменки" data-react-helmet="true">
 
     <!--  Description  -->
-    <meta name="description" content="Аренда и продажа офисов класса А в Victory Park (ex. Минская Плаза) в Центре Москвы.">
+    <meta name="description" content="Аренда и продажа офисов класса А в Victory Park (ex. Минская Плаза) в Центре Москвы." data-react-helmet="true">
 
     <!--  Favicon  -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">

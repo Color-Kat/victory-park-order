@@ -4,10 +4,16 @@ import {Link} from "react-router-dom";
 import "./aboutPage.scss";
 import illustration from "@assets/images/first-screen.jpg";
 import {TextSection} from "@UI/Sections/TextSection.tsx";
+import {Helmet} from "react-helmet";
 
 export const AboutPage: React.FC = () => {
     return (
         <div className="w-full flex flex-col text-center text-[#3b4256]">
+
+            <Helmet>
+                <title>Описание бизнес-центра Виктори Парк. Инфраструктура, характеристики Victory Park</title>
+                <meta name="description" content="Информация о бизнес-центре Victory Park. Victory Park Plaza был построен в 2014 году рядом с Минской улицей в Москве. Бизнес-центр расположен в зеленой зоне, метро в шаговой доступности, современное техническое оснащение." />
+            </Helmet>
 
             <section className="relative md:px-[50px] px-5 z-0 text-white flex flex-col pb-32">
                 <div className="image-overlay w-full h-full pointer-events-none absolute top-0 left-0"/>

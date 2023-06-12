@@ -14,6 +14,7 @@ import {ContactsSection} from "@pages/HomePage/components/ContactsSection.tsx";
 
 import {Footer} from "@modules/Layout";
 import {useSettings} from "@hooks/useSettings.ts";
+import {Helmet} from "react-helmet";
 
 interface IProps {
     fullpageApi: fullpageApi
@@ -25,6 +26,11 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
 
     return (
         <>
+            <Helmet>
+                <title>Бизнес-центр Victory Park (ex. Минская Плаза) в Москве</title>
+                <meta name="description" content="Аренда и продажа офисов класса А в Victory Park (ex. Минская Плаза) в Центре Москвы." />
+            </Helmet>
+
             {/* Section 1 */}
             <FirstSection />
 

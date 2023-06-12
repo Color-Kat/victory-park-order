@@ -10,10 +10,16 @@ import partner_logo_3 from "@assets/partner-logos/logo-3.png";
 import partner_logo_4 from "@assets/partner-logos/logo-4.png";
 
 import "./infrastructure.scss";
+import {Helmet} from "react-helmet";
 
 export const InfrastructurePage: React.FC = () => {
     return (
         <div className="w-full flex flex-col text-center text-[#3b4256]">
+
+            <Helmet>
+                <title>Инфраструктура | Бизнес-центр Victory Park</title>
+                <meta name="description" content="Инфраструктура района, в котором расположен бизнес-центр Victory Park хорошо развита, здесь есть, заправки, аптеки, кафе, рестораны, супермаркеты, торговые центры, например, Океания и Времена Года. В самом бизнес-центре также есть необходимые объекты инфраструктуры." />
+            </Helmet>
 
             <section className="relative md:px-[50px] px-5 z-0 text-white flex flex-col pb-32 w-full mb-8">
                 <div className="image-overlay w-full h-full pointer-events-none absolute top-0 left-0"/>
