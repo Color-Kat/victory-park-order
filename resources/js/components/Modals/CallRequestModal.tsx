@@ -25,7 +25,7 @@ export const CallRequestModal: React.FC<ModalProps> = ({}) => {
 
     const sendRequest = async () => {
         if(!form.name || !form.phone) return setIsError(true);
-        else setIsError(true);
+        else setIsError(false);
 
         await requestCall({
             name: form.name,

@@ -6,6 +6,7 @@ import {AboutPage} from "@pages/AboutPage/AboutPage.tsx";
 import {InfrastructurePage} from "@pages/InfrastructurePage/InfrastructurePage.tsx";
 import {RentOfficePage} from "@pages/RentOfficePage/RentOfficePage.tsx";
 import {SellOfficePage} from "@pages/SellOfficePage/SellOfficePage.tsx";
+import {Page404} from "@pages/ErrorPages/Page404.tsx";
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                     <Route path="/sell/:officeId" element={<SellOfficePage/>}/>
                     <Route path="/about" element={<AboutPage/>}/>
                     <Route path="/infrastructure" element={<InfrastructurePage/>}/>
+                    <Route path='*' element={<Page404 />}/>
                 </Routes>
             </Layout>
         </BrowserRouter>

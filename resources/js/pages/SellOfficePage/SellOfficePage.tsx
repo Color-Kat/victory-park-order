@@ -10,6 +10,7 @@ import "react-image-gallery/styles/scss/image-gallery.scss";
 import {OfficeArea} from "@UI/OfficeArea.tsx";
 import {PhoneNumber} from "@UI/Elements/PhoneNumber.tsx";
 import {CallRequest} from "@components/CallRequest/CallRequest.tsx";
+import {Page404} from "@pages/ErrorPages/Page404.tsx";
 
 
 export const OfficeParameter: React.FC<{title: string, children: ReactNode}> = ({title, children}) => {
@@ -23,15 +24,15 @@ export const OfficeParameter: React.FC<{title: string, children: ReactNode}> = (
 
 export const SellOfficePage: React.FC = ({}) => {
     const {officeId} = useParams();
-    const {data: office} = useGetOfficeByIdQuery({
+    const {data: office, isLoading} = useGetOfficeByIdQuery({
         typeDeal: 'sell',
         id: +officeId!
     });
 
     return (
-        <div className="w-full pb-10 px-5">
+        <div className="w-full">
             {office &&
-                <div className="">
+                <div className="pb-10 px-5">
 
                     <div className="lg:my-12 my-6 px-5">
                         <h2 className="font-metapro lg:text-6xl md:text-6xl xs:text-5xl text-3xl max-w-5xl mx-auto font-bold text-app-accent text-center">
@@ -101,6 +102,8 @@ export const SellOfficePage: React.FC = ({}) => {
                     </div>
                 </div>
             }
+
+            {!office && !isLoading && <Page404 />}
         </div>
     );
 }
