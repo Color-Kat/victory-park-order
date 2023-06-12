@@ -39,9 +39,9 @@ export const officesApi = createApi({
                 url: `get-sell-offices`,
             }),
         }),
-        getOfficeById: builder.query<IOffice, number>({
-            query: (officeId) => ({
-                url: `get-office/${officeId}`,
+        getOfficeById: builder.query<IOffice, {id: number, typeDeal: 'rent' | 'sell'}>({
+            query: (data) => ({
+                url: `get-office/${data.typeDeal}/${data.id}`,
             }),
         }),
         requestCall: builder.mutation<any, {
@@ -61,4 +61,9 @@ export const officesApi = createApi({
     })
 });
 
-export const {useGetRentOfficesQuery, useGetSellOfficesQuery, useRequestCallMutation} = officesApi;
+export const {
+    useGetRentOfficesQuery,
+    useGetSellOfficesQuery,
+    useGetOfficeByIdQuery,
+    useRequestCallMutation
+} = officesApi;

@@ -2,6 +2,7 @@ import React, {useCallback,} from 'react';
 import {useGetRentOfficesQuery} from "@/store/offices/offices.api.ts";
 import {useTDispatch} from "@hooks/redux.ts";
 import {openOfficeModal} from "@/store/modals/modals.slice.tsx";
+import {OfficeArea} from "@UI/OfficeArea.tsx";
 
 
 export const RentSection: React.FC = ({}) => {
@@ -26,7 +27,7 @@ export const RentSection: React.FC = ({}) => {
                 Офисы на Минской улице в аренду
             </h2>
 
-            <div className="overflow-x-auto w-screen lg:w-full">
+            <div className="overflow-x-auto w-screen lg:w-full px-2">
                 <table
                     className="w-full table-auto"
                     id="office-rental-table"
@@ -56,10 +57,9 @@ export const RentSection: React.FC = ({}) => {
                                     {office.floor} этаж
                                 </td>
                                 <td>
-                                    {office.areaMin == office.areaMax
-                                        ? <>{office.areaMin} <span> м<sup>2</sup></span></>
-                                        : <>от {office.areaMin} <span> м<sup>2</sup></span> до {office.areaMax} <span> м<sup>2</sup></span></>
-                                    }
+
+                                    <OfficeArea office={office} />
+
                                 </td>
                                 <td>
                                     {office.explPrice.toLocaleString()} {office.explCur}

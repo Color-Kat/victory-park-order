@@ -37,10 +37,12 @@ export const OfficeModal: React.FC = () => {
         office.typeDeal == officeModalOfficeType
     )[0];
 
-
-    const openOfficePage = useCallback(() => {
-        console.log('open office' + currentOffice.id);
-    }, [currentOffice?.id]);
+    // const openOfficePage = useCallback(() => {
+    //     console.log('open office' + currentOffice.id);
+    //     if(!currentOffice) return;
+    //
+    //     window.open(`/${currentOffice.typeDeal}/${currentOffice.id}`, '_blank')?.focus();
+    // }, [currentOffice?.id]);
 
     return (
         <div
@@ -51,7 +53,7 @@ export const OfficeModal: React.FC = () => {
                 onClick={closeModal}
             />
 
-            <div className="relative modal bg-white z-10 rounded max-h-screen overflow-y-scroll mx-2 max-w-5xl lg:mx-auto max-h-full">
+            <div className="relative modal bg-white z-10 rounded overflow-y-auto mx-2 max-w-5xl lg:mx-auto max-h-full">
                 <div
                     className="absolute top-4 right-4 cursor-pointer font-bold text-gray-800 text-3xl z-30"
                     onClick={closeModal}
@@ -103,11 +105,15 @@ export const OfficeModal: React.FC = () => {
 
                     </div>
 
-                    <RedButton
-                        filled={true}
-                        onClick={openOfficePage}
-                        className="my-4 ml-4"
-                    >Открыть в новом окне</RedButton>
+                    <a href={`/${currentOffice.typeDeal}/${currentOffice.id}`} target="_blank">
+                        <RedButton
+                            filled={true}
+                            className="my-4 ml-4"
+                        >
+                                Открыть в новом окне
+                        </RedButton>
+                    </a>
+
 
                 </div>}
             </div>

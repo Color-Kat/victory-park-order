@@ -14,6 +14,8 @@ class RentOffice extends Model
 
     protected $guarded = ['id'];
 
+    protected $appends = ['photos'];
+
 //    public function getPhotosAttribute() {
 //        $id = $this->id;
 //        $photos = [];

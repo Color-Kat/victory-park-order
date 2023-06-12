@@ -12,4 +12,6 @@ class SellOffice extends Model
     use HasOfficePhotos;
 
     protected $guarded = ['id'];
+
+    protected $appends = ['photos'];
 }
