@@ -13,6 +13,7 @@ import {CallRequest} from "@components/CallRequest/CallRequest.tsx";
 import {Page404} from "@pages/Other/Page404.tsx";
 import {Helmet} from "react-helmet";
 import {officeArea} from "@/utils/officeArea.ts";
+import {TermsFooter} from "@modules/Layout/components/TermsFooter.tsx";
 
 
 export const OfficeParameter: React.FC<{ title: string, children: ReactNode }> = ({title, children}) => {
@@ -32,17 +33,16 @@ export const RentOfficePage: React.FC = ({}) => {
     });
 
     return (
-        <div className="w-full pb-10 px-5">
+        <div className="relative w-full px-5 min-h-screen top-0">
             {office &&
-                <div className="">
-
+                <div className="pb-10">
                     <Helmet>
                         <title>Аренда офиса {officeArea(office)} в бизнес-центре Victory Park</title>
                         <meta name="description" content={`Аренда офисов в бизнес-центре Victory Park (Минская Плаза). Площадь ${officeArea(office)}, ${office.floor} этаж.`} />
                         <meta name="keywords" content="бц Victory Park, аренда офиса в БЦ Victory Park, снять офис в БЦ Victory Park, бц Минская Плаза" />
                     </Helmet>
 
-                    <div className="lg:my-12 my-6 px-5">
+                    <div className="lg:py-12 py-6 px-5">
                         <h2 className="font-metapro lg:text-6xl md:text-6xl xs:text-5xl text-3xl max-w-5xl mx-auto font-bold text-app-accent text-center">
                             Аренда офиса <OfficeArea office={office}/> в бизнес-центре Victory Park
                         </h2>
@@ -114,6 +114,8 @@ export const RentOfficePage: React.FC = ({}) => {
             }
 
             {!office && !isLoading && <Page404 />}
+
+            <TermsFooter />
         </div>
     );
 }

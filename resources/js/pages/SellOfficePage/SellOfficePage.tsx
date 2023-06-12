@@ -13,6 +13,7 @@ import {CallRequest} from "@components/CallRequest/CallRequest.tsx";
 import {Page404} from "@pages/Other/Page404.tsx";
 import {Helmet} from "react-helmet";
 import {officeArea} from "@/utils/officeArea.ts";
+import {TermsFooter} from "@modules/Layout/components/TermsFooter.tsx";
 
 
 export const OfficeParameter: React.FC<{title: string, children: ReactNode}> = ({title, children}) => {
@@ -32,7 +33,7 @@ export const SellOfficePage: React.FC = ({}) => {
     });
 
     return (
-        <div className="w-full">
+        <div className="relative w-full min-h-screen">
             {office &&
                 <div className="pb-10 px-5">
 
@@ -42,7 +43,7 @@ export const SellOfficePage: React.FC = ({}) => {
                         <meta name="keywords" content="бц Victory Park, купить офис в БЦ Victory Park, продажа офиса в БЦ Victory Park, бц Минская Плаза" />
                     </Helmet>
 
-                    <div className="lg:my-12 my-6 px-5">
+                    <div className="lg:py-12 py-6 px-5">
                         <h2 className="font-metapro lg:text-6xl md:text-6xl xs:text-5xl text-3xl max-w-5xl mx-auto font-bold text-app-accent text-center">
                             Продажа офиса <OfficeArea office={office} /> в бизнес-центре Victory Park
                         </h2>
@@ -112,6 +113,8 @@ export const SellOfficePage: React.FC = ({}) => {
             }
 
             {!office && !isLoading && <Page404 />}
+
+            <TermsFooter />
         </div>
     );
 }
