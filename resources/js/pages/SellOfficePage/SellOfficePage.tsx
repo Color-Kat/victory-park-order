@@ -21,10 +21,10 @@ export const OfficeParameter: React.FC<{title: string, children: ReactNode}> = (
     );
 }
 
-export const RentPage: React.FC = ({}) => {
+export const SellOfficePage: React.FC = ({}) => {
     const {officeId} = useParams();
     const {data: office} = useGetOfficeByIdQuery({
-        typeDeal: 'rent',
+        typeDeal: 'sell',
         id: +officeId!
     });
 
@@ -35,7 +35,7 @@ export const RentPage: React.FC = ({}) => {
 
                     <div className="lg:my-12 my-6 px-5">
                         <h2 className="font-metapro lg:text-6xl md:text-6xl xs:text-5xl text-3xl max-w-5xl mx-auto font-bold text-app-accent text-center">
-                            Аренда офиса <OfficeArea office={office} /> в бизнес-центре Victory Park
+                            Продажа офиса <OfficeArea office={office} /> в бизнес-центре Victory Park
                         </h2>
                     </div>
 
@@ -53,13 +53,12 @@ export const RentPage: React.FC = ({}) => {
                         />
 
                         <div className="flex-1">
-
                             <div className="flex flex-col border-l border border-b-0 text-sm text-gray-800 border-gray-300 h-max">
                                 <OfficeParameter title="Этаж">
                                     {office.floor} этаж
                                 </OfficeParameter>
 
-                                <OfficeParameter title="Арендуемая площадь">
+                                <OfficeParameter title="Продаваемая площадь">
                                     <OfficeArea office={office} />
                                 </OfficeParameter>
 
@@ -91,44 +90,6 @@ export const RentPage: React.FC = ({}) => {
                             </div>
                         </div>
                     </div>
-
-                    {/*<div className="lg:w-1/2 w-full flex flex-col bg-app">*/}
-
-                    {/*    <div className="flex md:px-8 px-2 pt-8 flex-col space-y-3 mb-4">*/}
-
-                            {/*<OfficeParameter title="Этаж">{currentOffice.floor} этаж</OfficeParameter>*/}
-
-                            {/*<OfficeParameter title="Арендуемая площадь">{currentOffice.areaMin == currentOffice.areaMax*/}
-                            {/*    ? <>{currentOffice.areaMin} <span> м<sup>2</sup></span></>*/}
-                            {/*    : <>от {currentOffice.areaMin} <span> м<sup>2</sup></span> до {currentOffice.areaMax} <span> м<sup>2</sup></span></>*/}
-                            {/*}</OfficeParameter>*/}
-
-                            {/*<OfficeParameter title="Готовность">{currentOffice.isReady}</OfficeParameter>*/}
-
-                            {/*<OfficeParameter title="Ставка аренды">{currentOffice.explPrice} {currentOffice.explCur}/м<sup>2</sup> в год</OfficeParameter>*/}
-
-                            {/*<OfficeParameter title="За помещение в месяц">{currentOffice.price} {currentOffice.priceCur}/м<sup>2</sup> в месяц</OfficeParameter>*/}
-
-                            {/*<OfficeParameter title="Налогообложение">{currentOffice.tax}</OfficeParameter>*/}
-
-                    {/*    </div>*/}
-
-                    {/*    <div*/}
-                    {/*        className="flex items-center sm:flex-row mt-auto flex-col sm:gap-16 gap-5 bg-[#d7d7d7] w-full pt-12 pb-6 lg:px-8 px-4 ">*/}
-                    {/*        <div className="flex gap-1.5 items-center">*/}
-                    {/*            <img className="h-4" src={phone} alt="phone"/>*/}
-                    {/*            <a className="text-lg font-bold cursor-pointer whitespace-nowrap"*/}
-                    {/*               href="tel:+74952121799">*/}
-                    {/*                +7 (495) 21-21-799*/}
-                    {/*            </a>*/}
-                    {/*        </div>*/}
-
-                    {/*        <RedButton filled={true}>*/}
-                    {/*            Заказать звонок*/}
-                    {/*        </RedButton>*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
-
                 </div>
             }
         </div>
