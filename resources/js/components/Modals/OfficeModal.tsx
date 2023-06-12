@@ -51,9 +51,9 @@ export const OfficeModal: React.FC = () => {
                 onClick={closeModal}
             />
 
-            <div className="relative modal bg-white z-10 rounded max-h-screen overflow-y-scroll mx-2">
+            <div className="relative modal bg-white z-10 rounded max-h-screen overflow-y-scroll mx-2 max-w-5xl lg:mx-auto max-h-full">
                 <div
-                    className="absolute top-4 right-4 cursor-pointer font-bold text-gray-800 text-3xl"
+                    className="absolute top-4 right-4 cursor-pointer font-bold text-gray-800 text-3xl z-30"
                     onClick={closeModal}
                 >
                     &#10005; {/* HTML code for a multiplication sign */}
@@ -62,11 +62,11 @@ export const OfficeModal: React.FC = () => {
                 {currentOffice && <div className="">
                     <div className="flex lg:flex-row flex-col">
 
-                        <Gallery photos={currentOffice.photos} className="md:h-96 h-64 lg:min-w-[400px] flex-1 w-auto"/>
+                        <Gallery photos={currentOffice.photos} className="relative md:h-96 h-64 lg:min-w-[400px] w-full lg:flex-1"/>
 
                         <div className="lg:w-1/2 w-full flex flex-col bg-app">
 
-                            <div className="flex px-8 pt-8 flex-col space-y-3 mb-4">
+                            <div className="flex md:px-8 px-2 pt-8 flex-col space-y-3 mb-4">
 
                                 <OfficeParameter title="Этаж">{currentOffice.floor} этаж</OfficeParameter>
 

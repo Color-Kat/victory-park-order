@@ -34,7 +34,7 @@ export const Gallery: React.FC<GalleryProps> = ({photos, className}) => {
                     swiper.params.navigation.nextEl = navigationNextRef.current;
                 }}
                 onRealIndexChange={(swiper) => {
-                    setCurrentSlideIndex(+swiper.realIndex+1);
+                    setCurrentSlideIndex((swiper.realIndex || -1)+1);
                 }}
                 loop={true}
                 modules={[Navigation, Pagination]}
@@ -54,7 +54,7 @@ export const Gallery: React.FC<GalleryProps> = ({photos, className}) => {
                     </SwiperSlide>
                 ))}
 
-                <div className="absolute left-0 bottom-10 w-full justify-center flex items-center gap-8 z-1">
+                <div className="absolute left-0 bottom-10 w-full justify-center flex items-center gap-8 z-10 text-white">
                     <div ref={navigationPrevRef} className="cursor-pointer">
                         <img src={leftArrow} alt=""/>
                     </div>
