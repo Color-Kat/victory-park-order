@@ -3,6 +3,7 @@ import {RedButton} from "@UI/Buttons";
 import Input from "@UI/Form/Input.tsx";
 import {useRequestCallMutation} from "@/store/offices/offices.api.ts";
 import {TermsFooter} from "@modules/Layout/components/TermsFooter.tsx";
+import Checkbox from "@UI/Form/Checkbox.tsx";
 
 export const ContactsSection: React.FC = ({}) => {
     const [requestCall] = useRequestCallMutation();
@@ -10,22 +11,24 @@ export const ContactsSection: React.FC = ({}) => {
     const [form, setForm] = useState({
         name: '',
         phone: '',
+        agree: false,
         email: '',
         message: ''
     });
 
     const [isSent, setIsSent] = useState(false);
-    const [isError, setIsError] = useState(false);
+    const [error, setError] = useState<false|string>(false);
     const send = async (e: any) => {
         e.preventDefault();
 
-        if(!form.name || !form.phone) return setIsError(true);
+        if(!form.name || !form.phone) return setError('Пожалуйста, заполните все поля.');
+        if(!form.agree) return setError('Вы должны принять политику обработки персональных данных');
+        else setError(false);
 
         await requestCall({
             ...form
         });
 
-        setIsError(false);
         setIsSent(true);
     }
 
@@ -44,13 +47,12 @@ export const ContactsSection: React.FC = ({}) => {
                 В ближайшее время с Вами свяжется наш специалист.
             </div>
 
-            <div className={`text-lg text-gray-900 text-center my-3 ${isError ? 'block' : 'hidden'}`}>
-                Пожалуйста, заполните все поля.
+            <div className={`text-lg text-gray-900 text-center my-3 ${error ? 'block' : 'hidden'}`}>
+                {error}
             </div>
 
             <form className="flex flex-col w-full">
                 <div className="relative w-full xl:space-x-6 xl:space-y-0 space-y-6 mb-6 flex xl:flex-row flex-col items-center">
-
                     <Input
                         value={form.name}
                         setForm={setForm}
@@ -79,13 +81,12 @@ export const ContactsSection: React.FC = ({}) => {
                         placeholder="Ваш E-mail"
                         className="xl:w-auto w-full"
                     />
-
                 </div>
 
                 <textarea
                     name="message"
                     id="message"
-                    className="bg-app p-3 md:px-12 outline-none text-gray-700 mb-10"
+                    className="bg-app p-3 md:px-12 outline-none text-gray-700 mb-6"
                     placeholder="Сообщение"
                     value={form.message}
                     onChange={(e) => setForm((prev: any) => ({
@@ -93,6 +94,16 @@ export const ContactsSection: React.FC = ({}) => {
                         message: e.target.value
                     }))}
                 ></textarea>
+
+                <div className="mb-10">
+                    <Checkbox
+                        name="agree"
+                        checked={form.agree}
+                        setForm={setForm}
+                    >
+                        Отправляя свои данные, я соглашаюсь с Политикой обработки персональных данных и Пользовательским соглашением
+                    </Checkbox>
+                </div>
 
                 <RedButton
                     filled={true}
