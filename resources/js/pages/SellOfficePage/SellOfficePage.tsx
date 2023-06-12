@@ -10,7 +10,7 @@ import "react-image-gallery/styles/scss/image-gallery.scss";
 import {OfficeArea} from "@UI/OfficeArea.tsx";
 import {PhoneNumber} from "@UI/Elements/PhoneNumber.tsx";
 import {CallRequest} from "@components/CallRequest/CallRequest.tsx";
-import {Page404} from "@pages/ErrorPages/Page404.tsx";
+import {Page404} from "@pages/Other/Page404.tsx";
 import {Helmet} from "react-helmet";
 import {officeArea} from "@/utils/officeArea.ts";
 

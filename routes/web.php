@@ -23,7 +23,8 @@ Route::middleware('role:admin')->as('admin.')->group(function () {
  * Redirect all routes to ReactController that renders react
  */
 Route::get('/{path?}', [ReactController::class, 'index'])
-    ->where('path', '.*')
+//    ->where('path', '.*')
+    ->where('path', "(.(?!\.md))*")
     ->name('home')
 ;
 

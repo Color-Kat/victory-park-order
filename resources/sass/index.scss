@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "./tailwind-unreset.scss";
 
 @import "./fonts.scss";
 //@import "./scrollbar.scss";

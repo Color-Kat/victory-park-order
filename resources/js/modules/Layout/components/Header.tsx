@@ -96,6 +96,7 @@ export const Header = () => {
                     </a>
 
                 </div>
+
                 {/* Phone block */}
                 <div className="hidden xs:flex items-center flex-col">
                     <PhoneNumber className="mb-3"/>
@@ -130,11 +131,19 @@ export const Header = () => {
 
             {/*  Mobile menu  */}
             <nav
-                className={`lg:hidden flex ${isMobileMenuOpen ? 'h-72' : 'h-0'} w-full absolute bottom-0 translate-y-full bg-white  transition-all overflow-hidden z-20 px-4`}
+                className={`lg:hidden flex ${isMobileMenuOpen ? 'h-96 xs:h-72' : 'h-0'} flex-col w-full absolute bottom-0 translate-y-full bg-white  transition-all overflow-hidden z-20 px-4`}
                 onClick={() => setIsMobileMenuOpen(false)}
                 id="mobile-menu"
             >
                 <Navigation isMobile={true}/>
+
+                <div className="flex xs:hidden flex-wrap items-center mt-8 gap-3 justify-between">
+                    <PhoneNumber className=""/>
+
+                    <CallRequest filledButton={false} className="mr-0">
+                        Заказать звонок
+                    </CallRequest>
+                </div>
             </nav>
 
             {/* Mobile menu overlay */}

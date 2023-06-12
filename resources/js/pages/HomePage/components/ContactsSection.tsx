@@ -75,7 +75,7 @@ export const ContactsSection: React.FC = ({}) => {
                         setForm={setForm}
                         type="email"
                         name="email"
-                        placeholder="Ваше E-mail"
+                        placeholder="Ваш E-mail"
                         className="xl:w-auto w-full"
                     />
 
@@ -101,6 +101,11 @@ export const ContactsSection: React.FC = ({}) => {
                     Отправить
                 </RedButton>
             </form>
+
+            <div className="bg-app w-full px-3 py-2 text-xs underline absolute bottom-0 left-0 text-gray-600 sm:gap-5 gap-2 text-right flex flex-wrap justify-end">
+                <a href="/personal-data" target="_blank">Политика обработки персональных данных</a>
+                <a href="/terms-of-service" target="_blank">Пользовательское соглашение</a>
+            </div>
         </div>
     );
 }
