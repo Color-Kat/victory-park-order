@@ -21,7 +21,7 @@ export const TermsOfService: React.FC = () => {
                 <title>Victory Park - пользовательское соглашение</title>
             </Helmet>
 
-            <section className="relative md:px-[50px] px-5 z-0 text-white flex flex-col pb-32 w-full mb-8">
+            <section className="relative md:px-[50px] px-5 z-0 text-white flex flex-col pb-32 w-full">
                 <div className="image-overlay w-full h-full pointer-events-none absolute top-0 left-0"/>
 
                 <div className="relative my-12 text-gray-100 text-sm text-left">
