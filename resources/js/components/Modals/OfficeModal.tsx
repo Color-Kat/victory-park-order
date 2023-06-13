@@ -8,6 +8,8 @@ import phone from "@assets/phone.png";
 import {Gallery} from "@modules/Gallery";
 import {PhoneNumber} from "@UI/Elements/PhoneNumber.tsx";
 import {CallRequestButton} from "@components/CallRequest/CallRequestButton.tsx";
+import {OfficeArea} from "@UI/OfficeArea.tsx";
+import {monthPrice, rents} from "@/utils/officeParameters.ts";
 
 export const OfficeParameter: React.FC<{ title: string, children: ReactNode }> = ({title, children}) => (
     <div className="flex justify-between w-full gap-3">
@@ -67,16 +69,21 @@ export const OfficeModal: React.FC = () => {
 
                                 <OfficeParameter title="Этаж">{currentOffice.floor} этаж</OfficeParameter>
 
-                                <OfficeParameter title="Арендуемая площадь">{currentOffice.areaMin == currentOffice.areaMax
-                                    ? <>{currentOffice.areaMin} <span> м<sup>2</sup></span></>
-                                    : <>от {currentOffice.areaMin} <span> м<sup>2</sup></span> до {currentOffice.areaMax} <span> м<sup>2</sup></span></>
-                                }</OfficeParameter>
+                                <OfficeParameter title={currentOffice.typeDeal == 'rent' ? 'Арендуемая площадь' : 'Площадь'}>
+                                    <OfficeArea office={currentOffice} />
+                                </OfficeParameter>
 
                                 <OfficeParameter title="Готовность">{currentOffice.isReady}</OfficeParameter>
 
-                                <OfficeParameter title="Ставка аренды">{currentOffice.explPrice} {currentOffice.explCur}/м<sup>2</sup> в год</OfficeParameter>
+                                <OfficeParameter title={currentOffice.typeDeal == 'rent' ? 'Ставка аренды' : 'Цена за м2'}>
+                                    {/*{currentOffice.explPrice} {currentOffice.explCur}/м<sup>2</sup> в год*/}
+                                    {rents(currentOffice)}
+                                </OfficeParameter>
 
-                                <OfficeParameter title="За помещение в месяц">{currentOffice.price} {currentOffice.priceCur}/м<sup>2</sup> в месяц</OfficeParameter>
+                                <OfficeParameter title={currentOffice.typeDeal == 'rent' ? 'За помещение в месяц' : 'Стоимость'}>
+                                    {/* {currentOffice.price} {currentOffice.priceCur}/м<sup>2</sup> в месяц*/}
+                                    {monthPrice(currentOffice, true)}
+                                </OfficeParameter>
 
                                 <OfficeParameter title="Налогообложение">{currentOffice.tax}</OfficeParameter>
 

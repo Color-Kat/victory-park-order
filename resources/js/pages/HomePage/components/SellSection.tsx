@@ -3,6 +3,7 @@ import {useGetSellOfficesQuery} from "@/store/offices/offices.api.ts";
 import {useTDispatch} from "@hooks/redux.ts";
 import {openOfficeModal} from "@/store/modals/modals.slice.tsx";
 import {OfficeArea} from "@UI/OfficeArea.tsx";
+import {monthPrice, rents, sellM2Price, sellPrice} from "@/utils/officeParameters.ts";
 
 export const SellSection: React.FC = ({}) => {
     const {data: offices} = useGetSellOfficesQuery();
@@ -34,9 +35,9 @@ export const SellSection: React.FC = ({}) => {
                     <tr>
                         <td>Этаж</td>
                         <td>Площадь</td>
-                        <td>Арендная<br/>ставка</td>
+                        <td>Цена за м<sup>2</sup></td>
                         <td>Налоги</td>
-                        <td>За помещение<br/>в месяц</td>
+                        <td>Стоимость</td>
                         <td>Состояние</td>
                     </tr>
                     </thead>
@@ -57,14 +58,14 @@ export const SellSection: React.FC = ({}) => {
                                 <td>
                                     <OfficeArea office={office} />
                                 </td>
-                                <td>
-                                    {office.explPrice.toLocaleString()} {office.explCur}
+                                <td className="">
+                                    {sellM2Price(office)}
                                 </td>
-                                <td className="hidden-xs">
+                                <td className="">
                                     {office.tax}
                                 </td>
-                                <td className="hidden-xs">
-                                    {office.price.toLocaleString()} {office.priceCur}
+                                <td className="whitespace-nowrap">
+                                    {sellPrice(office)}
                                 </td>
                                 <td>
                                     {office.isReady}

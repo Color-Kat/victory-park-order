@@ -3,6 +3,7 @@ import {useGetRentOfficesQuery} from "@/store/offices/offices.api.ts";
 import {useTDispatch} from "@hooks/redux.ts";
 import {openOfficeModal} from "@/store/modals/modals.slice.tsx";
 import {OfficeArea} from "@UI/OfficeArea.tsx";
+import {monthPrice, rents} from "@/utils/officeParameters.ts";
 
 
 export const RentSection: React.FC = ({}) => {
@@ -62,13 +63,13 @@ export const RentSection: React.FC = ({}) => {
 
                                 </td>
                                 <td>
-                                    {office.explPrice.toLocaleString()} {office.explCur}
+                                    {rents(office)}
                                 </td>
                                 <td className="hidden-xs">
                                     {office.tax}
                                 </td>
                                 <td className="hidden-xs">
-                                    {office.price.toLocaleString()} {office.priceCur}
+                                    {monthPrice(office)}
                                 </td>
                                 <td>
                                     {office.isReady}

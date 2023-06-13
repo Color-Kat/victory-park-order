@@ -1,8 +1,5 @@
 import React, {ReactNode} from 'react';
 import ImageGallery from 'react-image-gallery';
-
-import phone from "@assets/phone.png";
-import {RedButton} from "@UI/Buttons";
 import {useGetOfficeByIdQuery} from "@/store/offices/offices.api.ts";
 import {useParams} from "react-router-dom";
 
@@ -12,7 +9,7 @@ import {PhoneNumber} from "@UI/Elements/PhoneNumber.tsx";
 import {CallRequestButton} from "@components/CallRequest/CallRequestButton.tsx";
 import {Page404} from "@pages/Other/Page404.tsx";
 import {Helmet} from "react-helmet";
-import {officeArea} from "@/utils/officeArea.ts";
+import {officeArea} from "@/utils/officeParameters";
 import {TermsFooter} from "@modules/Layout/components/TermsFooter.tsx";
 
 

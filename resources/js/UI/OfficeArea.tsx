@@ -3,9 +3,9 @@ import React from "react";
 
 export const OfficeArea = ({office}: {office: IOffice}) => (
     <>
-        {office.areaMin == office.areaMax
-                ? <>{office.areaMin} <span> м<sup>2</sup></span></>
-                : <>от {office.areaMin} <span> м<sup>2</sup></span> до {office.areaMax} <span> м<sup>2</sup></span></>
+        {office.areaMin > 0
+            ? <>от {office.areaMin} до {office.areaMax} <span> м<sup>2</sup></span></>
+            : <>{office.areaMax} <span> м<sup>2</sup></span></>
         }
     </>
 )

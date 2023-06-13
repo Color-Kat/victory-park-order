@@ -12,7 +12,7 @@ import {PhoneNumber} from "@UI/Elements/PhoneNumber.tsx";
 import {CallRequestButton} from "@components/CallRequest/CallRequestButton.tsx";
 import {Page404} from "@pages/Other/Page404.tsx";
 import {Helmet} from "react-helmet";
-import {officeArea} from "@/utils/officeArea.ts";
+import {officeArea} from "@/utils/officeParameters";
 import {TermsFooter} from "@modules/Layout/components/TermsFooter.tsx";
 
 
