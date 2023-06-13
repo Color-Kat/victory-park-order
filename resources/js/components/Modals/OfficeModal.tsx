@@ -106,7 +106,7 @@ export const OfficeModal: React.FC = () => {
 
                     </div>
 
-                    <div className="flex justify-between my-4 px-4">
+                    <div className="flex justify-between my-4 px-4 gap-2">
                         <a href={`/${currentOffice.typeDeal}/${currentOffice.id}`} target="_blank">
                             <RedButton
                                 filled={true}
@@ -116,7 +116,7 @@ export const OfficeModal: React.FC = () => {
                             </RedButton>
                         </a>
 
-                        <button className="uppercase border border-[#4ed35d] rounded cursor-pointer sm:p-3.5 p-2 sm:w-[200px] sm:h-[47px] flex justify-center transition-colors text-13 bg-[#4ed35d] hover:bg-transparent text-white hover:text-[#4ed35d]"
+                        <button className="uppercase border border-[#4ed35d] rounded cursor-pointer sm:p-3.5 p-2 sm:w-[200px] sm:h-[47px] flex justify-center transition-colors text-13 bg-[#4ed35d] hover:bg-transparent text-white hover:text-[#4ed35d] flex items-center"
                                 onClick={() => dispatch(openWhatsAppRequestModal({
                                     officeCrmId: currentOffice.crmId,
                                     officeSpace: `${currentOffice.areaMin} - ${currentOffice.areaMax} м2 `

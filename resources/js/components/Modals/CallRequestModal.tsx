@@ -41,7 +41,7 @@ export const CallRequestModal: React.FC<ModalProps> = ({}) => {
 
     return (
         <div
-            className={`${isCallRequestModalOpen ? 'opacity-1 translate-y-0 shadow-2xl' : 'opacity-0 -translate-y-8 pointer-events-none'} fixed w-screen h-screen top-0 left-0 bg-black/[.7] flex items-center justify-center z-50 transition duration-300`}
+            className={`${isCallRequestModalOpen ? 'opacity-1 translate-y-0 shadow-2xl' : 'opacity-0 -translate-y-8 pointer-events-none'} fixed w-screen h-screen top-0 left-0 bg-black/[.7] flex items-center justify-center z-50 transition duration-300 px-2`}
         >
             <div
                 className="absolute top-0 left-0 w-full h-full z-0"

@@ -34,7 +34,7 @@ export const ContactsSection: React.FC = ({}) => {
 
     return (
         <div
-            className="relative section w-full h-full lg:px-16 px-5 flex items-center justify-center"
+            className="relative section w-full lg:px-16 px-5 flex items-center justify-center xs:pb-16 pb-24"
             data-anchor="page-7"
             id="page-7-anchor"
         >

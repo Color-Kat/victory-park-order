@@ -18,7 +18,7 @@ class CallController extends Controller
         $officeSpace = $request->get('officeSpace') ?? '';
         $officeCrmId = $request->get('officeCrmId') ?? '';
 
-        Mail::to('katik7979@gmail.com')->send(new NewCallRequestMail([
+        Mail::to('office@of.ru')->send(new NewCallRequestMail([
             'name' => $name,
             'phone' => $phone,
             'email' => $email,
@@ -36,7 +36,7 @@ class CallController extends Controller
         $officeSpace = $request->get('officeSpace') ?? '';
         $officeCrmId = $request->get('officeCrmId') ?? '';
 
-        Mail::to('katik7979@gmail.com')->send(new NewWhatsappRequestMail([
+        Mail::to('office@of.ru')->send(new NewWhatsappRequestMail([
             'name' => $name,
             'phone' => $phone,
             'officeCrmId' => $officeCrmId,
