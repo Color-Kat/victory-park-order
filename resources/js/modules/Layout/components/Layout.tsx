@@ -5,6 +5,7 @@ import Main from "./Main";
 import {Footer} from "@modules/Layout";
 import {CallRequestModal} from "@components/Modals";
 import {OfficeModal} from "@components/Modals/OfficeModal.tsx";
+import {WhatsAppRequestModal} from "@components/Modals/WhatsAppRequestModal.tsx";
 // import Footer from "./Footer";
 
 export const Layout: React.FC<{ children: React.ReactElement }> = memo(({children}) => {
@@ -19,6 +20,9 @@ export const Layout: React.FC<{ children: React.ReactElement }> = memo(({childre
 
             {/* Offices modal */}
             <OfficeModal />
+
+            {/* Whatsapp modal */}
+            <WhatsAppRequestModal />
 
             <Header/>
 

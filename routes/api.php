@@ -16,3 +16,4 @@ Route::get('/get-sell-offices', [OfficesController::class, 'getSellOffices'])->n
 Route::get('/get-office/{typeDeal}/{id}', [OfficesController::class, 'getOffice'])->name('get-office');
 
 Route::post('/request-call', [CallController::class, 'requestCall'])->name('request-call');
+Route::post('/request-whatsapp', [CallController::class, 'requestWhatsapp'])->name('request-whatsapp');

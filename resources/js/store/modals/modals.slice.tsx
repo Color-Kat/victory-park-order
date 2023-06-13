@@ -5,11 +5,17 @@ const initialState: {
     isCallRequestModalOpen: boolean,
     callRequestModalData: any,
 
+    isWhatsAppRequestModalOpen: boolean,
+    whatsAppRequestModalData: any,
+
     officeModalOfficeId: false|number,
     officeModalOfficeType: 'rent' | 'sell'
 }  = {
     isCallRequestModalOpen: false,
     callRequestModalData: null,
+
+    isWhatsAppRequestModalOpen: false,
+    whatsAppRequestModalData: null,
 
     officeModalOfficeId: false,
     officeModalOfficeType: 'rent'
@@ -25,6 +31,14 @@ export const modalsSlice = createSlice({
         },
         closeCallRequestModal(state) {
             state.isCallRequestModalOpen = false;
+        },
+
+        openWhatsAppRequestModal(state, action: PayloadAction<any>) {
+            state.isWhatsAppRequestModalOpen = true;
+            state.whatsAppRequestModalData = action.payload;
+        },
+        closeWhatsAppRequestModal(state) {
+            state.isWhatsAppRequestModalOpen = false;
         },
 
         openOfficeModal(state, action: PayloadAction<{
@@ -43,6 +57,8 @@ export const modalsSlice = createSlice({
 export const {
     openCallRequestModal,
     closeCallRequestModal,
+    openWhatsAppRequestModal,
+    closeWhatsAppRequestModal,
     openOfficeModal,
     closeOfficeModal
 } = modalsSlice.actions;

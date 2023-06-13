@@ -58,6 +58,19 @@ export const officesApi = createApi({
                 body: payload
             }),
         }),
+
+        requestWhatsApp: builder.mutation<any, {
+            name: string,
+            phone: string,
+            officeSpace?: number,
+            officeCrmId?: number
+        }>({
+            query: (payload) => ({
+                url: `request-whatsapp`,
+                method: 'POST',
+                body: payload
+            }),
+        }),
     })
 });
 
@@ -65,5 +78,6 @@ export const {
     useGetRentOfficesQuery,
     useGetSellOfficesQuery,
     useGetOfficeByIdQuery,
-    useRequestCallMutation
+    useRequestCallMutation,
+    useRequestWhatsAppMutation
 } = officesApi;

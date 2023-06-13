@@ -1,7 +1,7 @@
 import React, {ReactNode, useCallback, useState} from 'react';
 import {useTDispatch, useTSelector} from "@hooks/redux.ts";
 
-import {closeOfficeModal} from "@/store/modals/modals.slice.tsx";
+import {closeOfficeModal, openWhatsAppRequestModal} from "@/store/modals/modals.slice.tsx";
 import {useGetRentOfficesQuery, useGetSellOfficesQuery} from "@/store/offices/offices.api.ts";
 import {RedButton} from "@UI/Buttons";
 import phone from "@assets/phone.png";
@@ -10,6 +10,7 @@ import {PhoneNumber} from "@UI/Elements/PhoneNumber.tsx";
 import {CallRequestButton} from "@components/CallRequest/CallRequestButton.tsx";
 import {OfficeArea} from "@UI/OfficeArea.tsx";
 import {monthPrice, rents} from "@/utils/officeParameters.ts";
+import {BsWhatsapp} from "react-icons/bs";
 
 export const OfficeParameter: React.FC<{ title: string, children: ReactNode }> = ({title, children}) => (
     <div className="flex justify-between w-full gap-3">
@@ -96,7 +97,7 @@ export const OfficeModal: React.FC = () => {
 
                                 <CallRequestButton filledButton={true} data={{
                                     officeCrmId: currentOffice.crmId,
-                                    officeSpace: `${currentOffice.areaMin} м2 - ${currentOffice.areaMax} м2 `
+                                    officeSpace: `${currentOffice.areaMin} - ${currentOffice.areaMax} м2 `
                                 }}>
                                     Заказать звонок
                                 </CallRequestButton>
@@ -105,14 +106,27 @@ export const OfficeModal: React.FC = () => {
 
                     </div>
 
-                    <a href={`/${currentOffice.typeDeal}/${currentOffice.id}`} target="_blank">
-                        <RedButton
-                            filled={true}
-                            className="my-4 ml-4"
-                        >
+                    <div className="flex justify-between my-4 px-4">
+                        <a href={`/${currentOffice.typeDeal}/${currentOffice.id}`} target="_blank">
+                            <RedButton
+                                filled={true}
+                                className=""
+                            >
                                 Открыть в новом окне
-                        </RedButton>
-                    </a>
+                            </RedButton>
+                        </a>
+
+                        <button className="uppercase border border-[#4ed35d] rounded cursor-pointer sm:p-3.5 p-2 sm:w-[200px] sm:h-[47px] flex justify-center transition-colors text-13 bg-[#4ed35d] hover:bg-transparent text-white hover:text-[#4ed35d]"
+                                onClick={() => dispatch(openWhatsAppRequestModal({
+                                    officeCrmId: currentOffice.crmId,
+                                    officeSpace: `${currentOffice.areaMin} - ${currentOffice.areaMax} м2 `
+                                }))}
+                        >
+                            <BsWhatsapp className="text-xl mr-2" />
+                            Презентация
+                        </button>
+
+                    </div>
 
 
                 </div>}
