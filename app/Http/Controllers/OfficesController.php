@@ -37,14 +37,14 @@ class OfficesController extends Controller
     public function getOffice(Request $request)
     {
         $typeDeal = $request->route('typeDeal');
-        $id = $request->route('id');
+        $crmId = $request->route('crmId');
 
         $office = null;
 
         if ($typeDeal == 'rent')
-            $office = RentOffice::query()->where('id', $id)->first();
+            $office = RentOffice::query()->where('crmId', $crmId)->first();
         if ($typeDeal == 'sell')
-            $office = SellOffice::query()->where('id', $id)->first();
+            $office = SellOffice::query()->where('crmId', $crmId)->first();
 
         if (!$office) return response()->json(null, 404);
 

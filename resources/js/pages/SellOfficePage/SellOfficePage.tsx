@@ -1,6 +1,6 @@
 import React, {ReactNode} from 'react';
 import ImageGallery from 'react-image-gallery';
-import {useGetOfficeByIdQuery} from "@/store/offices/offices.api.ts";
+import {useGetOfficeByCrmIdQuery} from "@/store/offices/offices.api.ts";
 import {useParams} from "react-router-dom";
 
 import "react-image-gallery/styles/scss/image-gallery.scss";
@@ -23,10 +23,10 @@ export const OfficeParameter: React.FC<{title: string, children: ReactNode}> = (
 }
 
 export const SellOfficePage: React.FC = ({}) => {
-    const {officeId} = useParams();
-    const {data: office, isLoading} = useGetOfficeByIdQuery({
+    const {officeCrmId} = useParams();
+    const {data: office, isLoading} = useGetOfficeByCrmIdQuery({
         typeDeal: 'sell',
-        id: +officeId!
+        crmId: +officeCrmId!
     });
 
     return (

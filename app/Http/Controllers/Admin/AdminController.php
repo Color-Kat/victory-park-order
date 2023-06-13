@@ -31,10 +31,8 @@ class AdminController extends Controller
         $sellOffices = SellOffice::all();
 
         $settings = Valuestore::make(storage_path('app/settings.json'));
-//        $settings->put('is_rent_active', true);
-//        $settings->put('is_sell_active', true);
 
-        return view('Admin/Index', compact('rentOffices', 'sellOffices', 'settings'));
+        return view('admin/index', compact('rentOffices', 'sellOffices', 'settings'));
     }
 
     public function updateSettings(Request $request) {

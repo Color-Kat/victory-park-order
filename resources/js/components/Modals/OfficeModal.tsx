@@ -107,7 +107,7 @@ export const OfficeModal: React.FC = () => {
                     </div>
 
                     <div className="flex justify-between my-4 px-4 gap-2">
-                        <a href={`/${currentOffice.typeDeal}/${currentOffice.id}`} target="_blank">
+                        <a href={`/${currentOffice.typeDeal}/${currentOffice.crmId}`} target="_blank">
                             <RedButton
                                 filled={true}
                                 className=""

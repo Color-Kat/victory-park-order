@@ -3,7 +3,7 @@ import ImageGallery from 'react-image-gallery';
 
 import phone from "@assets/phone.png";
 import {RedButton} from "@UI/Buttons";
-import {useGetOfficeByIdQuery} from "@/store/offices/offices.api.ts";
+import {useGetOfficeByCrmIdQuery} from "@/store/offices/offices.api.ts";
 import {useParams} from "react-router-dom";
 
 import "react-image-gallery/styles/scss/image-gallery.scss";
@@ -26,10 +26,10 @@ export const OfficeParameter: React.FC<{ title: string, children: ReactNode }> =
 }
 
 export const RentOfficePage: React.FC = ({}) => {
-    const {officeId} = useParams();
-    const {data: office, isLoading} = useGetOfficeByIdQuery({
+    const {officeCrmId} = useParams();
+    const {data: office, isLoading} = useGetOfficeByCrmIdQuery({
         typeDeal: 'rent',
-        id: +officeId!
+        crmId: +officeCrmId!
     });
 
     return (
