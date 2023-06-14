@@ -9,7 +9,7 @@ import {PhoneNumber} from "@UI/Elements/PhoneNumber.tsx";
 import {CallRequestButton} from "@components/CallRequest/CallRequestButton.tsx";
 import {Page404} from "@pages/Other/Page404.tsx";
 import {Helmet} from "react-helmet";
-import {officeArea} from "@/utils/officeParameters";
+import {monthPrice, officeArea} from "@/utils/officeParameters";
 import {TermsFooter} from "@modules/Layout/components/TermsFooter.tsx";
 
 
@@ -83,6 +83,10 @@ export const SellOfficePage: React.FC = ({}) => {
 
                                 <OfficeParameter title="Эксплуатационные расходы">
                                     {office.explPrice} {office.explCur} за м<sup>2</sup> в год
+                                </OfficeParameter>
+
+                                <OfficeParameter title="За помещение в месяц">
+                                    {monthPrice(office, true)}
                                 </OfficeParameter>
 
                                 <OfficeParameter title="Налогообложение">

@@ -34,6 +34,7 @@ export const Gallery: React.FC<GalleryProps> = ({photos, className}) => {
                     swiper.params.navigation.nextEl = navigationNextRef.current;
                 }}
                 onRealIndexChange={(swiper) => {
+
                     const slideIndex = swiper.realIndex >= 0 ? swiper.realIndex : -1;
                     setCurrentSlideIndex(slideIndex+1);
                 }}

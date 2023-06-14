@@ -35,7 +35,7 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
             <FirstSection />
 
             {/* Section 2 */}
-            {is_rent_active && <SecondSection />}
+            <SecondSection />
 
             {/* Section 3 - table */}
             {is_rent_active && <RentSection />}
@@ -57,7 +57,7 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
 }, {
     anchors: [
         'page-1',
-        (is_rent_active && 'page-2'),
+        'page-2',
         (is_rent_active && 'page-3'),
         (is_sell_active && 'page-4'),
         'page-5',

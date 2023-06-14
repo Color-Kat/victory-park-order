@@ -44,10 +44,10 @@ export const OfficeModal: React.FC = () => {
 
     return (
         <div
-            className={`${officeModalOfficeId ? 'opacity-1 translate-y-0 shadow-2xl' : 'opacity-0 -translate-y-8 pointer-events-none'} fixed w-screen h-screen p-2 top-0 left-0 bg-black/[.7] flex items-center justify-center z-40 transition duration-300`}
+            className={`${officeModalOfficeId ? 'opacity-1 translate-y-0 shadow-2xl' : 'opacity-0 -translate-y-8 pointer-events-none'} fixed w-screen h-screen p-2 py-8 top-0 left-0 bg-black/[.7] flex items-center justify-center z-40 transition duration-300`}
         >
             <div
-                className="absolute top-0 left-0 w-full h-full z-0"
+                className="absolute top-0 left-0 bottom-0 right-0 w-full h-full z-0"
                 onClick={closeModal}
             />
 
