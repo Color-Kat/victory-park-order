@@ -17,41 +17,41 @@
 
 // Nav dots position
 #fp-nav.fp-left {
-  left: 317px;
-  background: rgba(0, 0, 0, .05);
-  border-radius: 100px;
-  z-index: 1;
+  left: 317px !important;
+  background: rgba(0, 0, 0, .05) !important;
+  border-radius: 100px !important;
+  z-index: 1 !important;
 }
 
 // Navigation Dots
 #fp-nav ul li a span, .fp-slidesNav ul li a span {
-  background: 0 0;
-  border: 1px solid #fff;
+  background: 0 0 !important;
+  border: 1px solid #fff !important;
 }
 
 #fp-nav ul li a.active span {
-  background: #fff;
-  -webkit-box-shadow: 0 0 16.92px 1.08px #fff;
-  box-shadow: 0 0 16.92px 1.08px #fff;
+  background: #fff !important;
+  -webkit-box-shadow: 0 0 16.92px 1.08px #fff !important;
+  box-shadow: 0 0 16.92px 1.08px #fff !important;
 }
 
 // Active dot size
 #fp-nav ul li a.active span, #fp-nav ul li:hover a.active span {
-  width: 18px;
-  height: 18px;
-  margin: -9px 0 0 -9px;
+  width: 18px !important;
+  height: 18px !important;
+  margin: -9px 0 0 -9px !important;
 }
 
 // Not active dot size
 #fp-nav ul li a span, #fp-nav ul li:hover a span {
-  width: 12px;
-  height: 12px;
-  margin: -6px 0 0 -6px;
+  width: 12px !important;
+  height: 12px !important;
+  margin: -6px 0 0 -6px !important;
 }
 
 // Dots gaps
 #fp-nav ul li {
-  width: 18px;
-  height: 18px;
-  margin: 10px;
+  width: 18px !important;
+  height: 18px !important;
+  margin: 10px !important;
 }
