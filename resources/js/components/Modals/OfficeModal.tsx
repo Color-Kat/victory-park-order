@@ -91,16 +91,29 @@ export const OfficeModal: React.FC = () => {
                             </div>
 
                             <div
-                                className="flex items-center sm:flex-row mt-auto flex-col sm:gap-16 gap-5 bg-[#d7d7d7] w-full pt-12 pb-6 lg:px-8 px-4 ">
+                                className="flex items-center justify-between sm:flex-row mt-auto flex-col sm:gap-16 gap-5 bg-[#d7d7d7] w-full py-3 lg:px-8 px-4"
+                            >
 
                                 <PhoneNumber />
 
-                                <CallRequestButton filledButton={true} data={{
-                                    officeCrmId: currentOffice.crmId,
-                                    officeSpace: `${currentOffice.areaMin} - ${currentOffice.areaMax} м2 `
-                                }}>
-                                    Заказать звонок
-                                </CallRequestButton>
+                                <div className="gap-2 flex flex-col ">
+                                    <CallRequestButton filledButton={true} data={{
+                                        officeCrmId: currentOffice.crmId,
+                                        officeSpace: `${currentOffice.areaMin} - ${currentOffice.areaMax} м2 `
+                                    }}>
+                                        Заказать звонок
+                                    </CallRequestButton>
+
+                                    <button className="uppercase border border-[#4ed35d] rounded cursor-pointer sm:p-3.5 p-2 sm:w-[200px] sm:h-[47px] justify-center transition-colors text-xs bg-[#4ed35d] hover:bg-transparent text-white hover:text-[#4ed35d] flex items-center"
+                                            onClick={() => dispatch(openWhatsAppRequestModal({
+                                                officeCrmId: currentOffice.crmId,
+                                                officeSpace: `${currentOffice.areaMin} - ${currentOffice.areaMax} м2 `
+                                            }))}
+                                    >
+                                        {/*<BsWhatsapp className="text-xl mr-2" />*/}
+                                        Получить презентацию на Whatsapp
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
@@ -115,17 +128,6 @@ export const OfficeModal: React.FC = () => {
                                 Открыть в новом окне
                             </RedButton>
                         </a>
-
-                        <button className="uppercase border border-[#4ed35d] rounded cursor-pointer sm:p-3.5 p-2 sm:w-[200px] sm:h-[47px] flex justify-center transition-colors text-13 bg-[#4ed35d] hover:bg-transparent text-white hover:text-[#4ed35d] flex items-center"
-                                onClick={() => dispatch(openWhatsAppRequestModal({
-                                    officeCrmId: currentOffice.crmId,
-                                    officeSpace: `${currentOffice.areaMin} - ${currentOffice.areaMax} м2 `
-                                }))}
-                        >
-                            <BsWhatsapp className="text-xl mr-2" />
-                            Презентация
-                        </button>
-
                     </div>
 
 
