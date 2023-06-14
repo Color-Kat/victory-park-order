@@ -60,7 +60,9 @@
                             <tr>
                                 <th>Id</th>
                                 <th>crmId</th>
-                                <th>Мин. площадь офиса</th>
+                                <th>Активность</th>
+                                <th>Мин. площадь</th>
+                                <th>Макс. площадь</th>
                                 <th>Тип помещения</th>
                                 <th>Этаж</th>
                                 <th>Цена</th>
@@ -73,7 +75,9 @@
                                     <tr>
                                         <td>{{$row->id}}</td>
                                         <td>{{$row->crmId}}</td>
-                                        <td>от {{$row->areaMin}} м<sup>2</sup> до {{$row->areaMax}} м<sup>2</sup></td>
+                                        <td>{{$row->isActive}}</td>
+                                        <td>{{$row->areaMin}} м<sup>2</sup></td>
+                                        <td>{{$row->areaMax}} м<sup>2</sup></td>
                                         <td>{{$row->type}}</td>
                                         <td>{{$row->floor}}</td>
                                         <td>{{$row->price . ' ' . $row->priceCur}}</td>

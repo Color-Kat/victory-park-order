@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreOfficeRequest;
+use App\Http\Requests\UpdateOfficeRequest;
 use App\Models\RentOffice;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class RentOfficeController extends Controller
@@ -31,11 +34,13 @@ class RentOfficeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @param StoreOfficeRequest $request
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(StoreOfficeRequest $request)
     {
+//        $request->reso
+
         $data = $request->all();
         if(empty($data['areaMax'])) $data['areaMax'] = $data['areaMin'];
 
@@ -69,11 +74,11 @@ class RentOfficeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\RentOffice  $rentOffice
-     * @return \Illuminate\Http\RedirectResponse
+     * @param UpdateOfficeRequest $request
+     * @param RentOffice $rentOffice
+     * @return RedirectResponse
      */
-    public function update(Request $request, RentOffice $rentOffice)
+    public function update(UpdateOfficeRequest $request, RentOffice $rentOffice)
     {
         $data = $request->except(['_token', '_method' ]);
         if(empty($data['areaMax'])) $data['areaMax'] = $data['areaMin'];

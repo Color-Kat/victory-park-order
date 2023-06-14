@@ -32,105 +32,105 @@
                             <div class="col mb-3">
                                 <label class="col-sm-2 col-label-form">Мин. площадь офиса</label>
                                 <div class="col-sm-10">
-                                    <input value="{{$rentOffice->areaMin}}" type="number" name="areaMin" class="form-control"/>
+                                    <input value="{{old('areaMin') ?? $rentOffice->areaMin}}" type="number" name="areaMin" class="form-control"/>
                                 </div>
                             </div>
 
                             <div class="col mb-3">
                                 <label class="col-sm-2 col-label-form">Макс. площадь офиса</label>
                                 <div class="col-sm-10">
-                                    <input value="{{$rentOffice->areaMax}}" type="number" name="areaMax" class="form-control"/>
+                                    <input value="{{old('areaMax') ?? $rentOffice->areaMax}}" type="number" name="areaMax" class="form-control"/>
                                 </div>
                             </div>
 
                             <div class="col mb-3">
                                 <label class="col-sm-2 col-label-form">Активность</label>
                                 <div class="col-sm-10">
-                                    <input value="{{$rentOffice->isActive}}" type="number" placeholder="0 или 1" name="isActive" class="form-control"/>
+                                    <input value="{{old('isActive') ?? $rentOffice->isActive}}" type="number" placeholder="0 или 1" name="isActive" class="form-control"/>
                                 </div>
                             </div>
 
                             <div class="col mb-3">
                                 <label class="col-sm-2 col-label-form">crmId</label>
                                 <div class="col-sm-10">
-                                    <input value="{{$rentOffice->crmId}}" type="number" name="crmId" class="form-control"/>
+                                    <input value="{{old('crmId') ?? $rentOffice->crmId}}" type="number" name="crmId" class="form-control"/>
                                 </div>
                             </div>
 
                             <div class="col mb-3">
                                 <label class="col-sm-2 col-label-form">Тип помещения</label>
                                 <div class="col-sm-10">
-                                    <input value="{{$rentOffice->type}}" type="text" name="type" class="form-control"/>
+                                    <input value="{{old('type') ?? $rentOffice->type}}" type="text" name="type" class="form-control"/>
                                 </div>
                             </div>
 
                             <div class="col mb-3">
                                 <label class="col-sm-2 col-label-form">Этаж</label>
                                 <div class="col-sm-10">
-                                    <input value="{{$rentOffice->floor}}" type="number" name="floor" class="form-control"/>
+                                    <input value="{{old('floor') ?? $rentOffice->floor}}" type="number" name="floor" class="form-control"/>
                                 </div>
                             </div>
 
                             <div class="col mb-3">
                                 <label class="col-sm-2 col-label-form">Цена</label>
                                 <div class="col-sm-10">
-                                    <input value="{{$rentOffice->price}}" type="number" name="price" class="form-control"/>
+                                    <input value="{{old('price') ?? $rentOffice->price}}" type="number" name="price" class="form-control"/>
                                 </div>
                             </div>
 
                             <div class="col mb-3">
                                 <label class="col-sm-2 col-label-form">Валюта</label>
                                 <div class="col-sm-10">
-                                    <input value="{{$rentOffice->priceCur}}" type="text" name="priceCur" class="form-control"/>
+                                    <input value="{{old('priceCur') ?? $rentOffice->priceCur}}" type="text" name="priceCur" class="form-control"/>
                                 </div>
                             </div>
 
                             <div class="col mb-3">
                                 <label class="col-sm-2 col-label-form">Тип сделки</label>
                                 <div class="col-sm-10">
-                                    <input value="{{$rentOffice->typeDeal}}" type="text" readonly name="typeDeal" class="form-control"/>
+                                    <input value="{{old('typeDeal') ?? $rentOffice->typeDeal}}" type="text" readonly name="typeDeal" class="form-control"/>
                                 </div>
                             </div>
 
                             <div class="col mb-3">
                                 <label class="col-sm-2 col-label-form">Налог</label>
                                 <div class="col-sm-10">
-                                    <input value="{{$rentOffice->tax}}" type="text" name="tax" class="form-control"/>
+                                    <input value="{{old('tax') ?? $rentOffice->tax}}" type="text" name="tax" class="form-control"/>
                                 </div>
                             </div>
 
                             <div class="col mb-3">
                                 <label class="col-sm-2 col-label-form">Состояние</label>
                                 <div class="col-sm-10">
-                                    <input value="{{$rentOffice->isReady}}" type="text" name="isReady" class="form-control"/>
+                                    <input value="{{old('isReady') ?? $rentOffice->isReady}}" type="text" name="isReady" class="form-control"/>
                                 </div>
                             </div>
 
                             <div class="col mb-3">
                                 <label class="col-sm-2 col-label-form">Дата готовности</label>
                                 <div class="col-sm-10">
-                                    <input value="{{$rentOffice->readyDate}}" type="date" name="readyDate" class="form-control"/>
+                                    <input value="{{old('readyDate') ?? $rentOffice->readyDate}}" type="date" name="readyDate" class="form-control"/>
                                 </div>
                             </div>
 
                             <div class="col mb-3">
                                 <label class="col-sm-2 col-label-form">Эксплуатация</label>
                                 <div class="col-sm-10">
-                                    <input value="{{$rentOffice->explPrice}}" type="number" name="explPrice" class="form-control"/>
+                                    <input value="{{old('explPrice') ?? $rentOffice->explPrice}}" type="number" name="explPrice" class="form-control"/>
                                 </div>
                             </div>
 
                             <div class="col mb-3">
                                 <label class="col-sm-2 col-label-form">Валюты эксплуатации</label>
                                 <div class="col-sm-10">
-                                    <input value="{{$rentOffice->explCur}}" type="text" name="explCur" class="form-control"/>
+                                    <input value="{{old('explCur') ?? $rentOffice->explCur}}" type="text" name="explCur" class="form-control"/>
                                 </div>
                             </div>
 
                             <div class="col mb-3">
                                 <label class="col-sm-2 col-label-form">Планировка</label>
                                 <div class="col-sm-10">
-                                    <input value="{{$rentOffice->layout}}" type="text" name="layout" class="form-control"/>
+                                    <input value="{{old('layout') ?? $rentOffice->layout}}" type="text" name="layout" class="form-control"/>
                                 </div>
                             </div>
 

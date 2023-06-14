@@ -4,6 +4,7 @@ import Input from "@UI/Form/Input.tsx";
 import {useRequestCallMutation} from "@/store/offices/offices.api.ts";
 import {TermsFooter} from "@modules/Layout/components/TermsFooter.tsx";
 import Checkbox from "@UI/Form/Checkbox.tsx";
+import {isPhoneNumber} from "@/utils/formValidation.ts";
 
 export const ContactsSection: React.FC = ({}) => {
     const [requestCall] = useRequestCallMutation();
@@ -23,6 +24,8 @@ export const ContactsSection: React.FC = ({}) => {
 
         if(!form.name || !form.phone) return setError('Пожалуйста, заполните все поля.');
         if(!form.agree) return setError('Вы должны принять политику обработки персональных данных');
+        if(!isPhoneNumber(form.phone)) return setError("Введите корректный номер телефона");
+        if(!form.email.includes('@')) return setError("Введите корректный E-mail");
         else setError(false);
 
         await requestCall({

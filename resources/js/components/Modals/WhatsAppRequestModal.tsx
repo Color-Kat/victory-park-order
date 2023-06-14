@@ -6,6 +6,7 @@ import Input from "@UI/Form/Input.tsx";
 import {RedButton} from "@UI/Buttons";
 import {useRequestCallMutation, useRequestWhatsAppMutation} from "@/store/offices/offices.api.ts";
 import Checkbox from "@UI/Form/Checkbox.tsx";
+import {isPhoneNumber} from "@/utils/formValidation.ts";
 
 interface ModalProps {
 
@@ -28,6 +29,7 @@ export const WhatsAppRequestModal: React.FC<ModalProps> = ({}) => {
     const sendRequest = async () => {
         if(!form.name || !form.phone) return setError("Пожалуйста, заполните все поля.");
         if(!form.agree) return setError("Вы должны принять политику обработки персональных данных");
+        if(!isPhoneNumber(form.phone)) return setError("Введите корректный номер телефона");
         else setError(false);
 
         await requestWhatsApp({

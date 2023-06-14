@@ -46,7 +46,7 @@ class CallController extends Controller
 
     public function requestCall(Request $request)
     {
-
+        return;
         $name = $request->get('name');
         $phone = '+' . preg_replace('/[^0-9]/', '', $request->get('phone'));
         $email = $request->get('email') ?? '';
@@ -72,6 +72,7 @@ class CallController extends Controller
 
     public function requestWhatsapp(Request $request)
     {
+        return;
 
         $name = $request->get('name');
         $phone = '+' . preg_replace('/[^0-9]/', '', $request->get('phone'));
@@ -89,6 +90,5 @@ class CallController extends Controller
         $this->sendRoistat($data);
 
         Mail::to('office@of.ru')->send(new NewWhatsappRequestMail($data));
-
     }
 }
