@@ -28,7 +28,7 @@ export const RentSection: React.FC = ({}) => {
                 Офисы на Минской улице в аренду
             </h2>
 
-            <div className="overflow-x-auto mobile-scroll-visible w-screen lg:w-full px-2">
+            <div className="md:overflow-x-auto overflow-x-scroll w-screen lg:w-full px-2">
                 <table
                     className="w-full table-auto"
                     id="office-rental-table"

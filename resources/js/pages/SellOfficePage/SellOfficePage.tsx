@@ -32,7 +32,7 @@ export const SellOfficePage: React.FC = ({}) => {
     return (
         <div className="relative w-full min-h-screen">
             {office &&
-                <div className="pb-10 px-5">
+                <div className="pb-14 px-5">
 
                     <Helmet>
                         <title>Продажа офиса {officeArea(office)} в бизнес-центре Victory Park</title>
@@ -94,7 +94,7 @@ export const SellOfficePage: React.FC = ({}) => {
                                 </OfficeParameter>
                             </div>
 
-                            <div className="my-5 flex justify-between items-center">
+                            <div className="my-5 flex gap-3 justify-between items-center">
                                 <CallRequestButton
                                     className="ml-0"
                                     filledButton={true}
