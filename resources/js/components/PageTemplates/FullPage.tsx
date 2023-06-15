@@ -1,6 +1,8 @@
 import React, {ReactNode} from 'react';
 import ReactFullpage, {fullpageOptions} from "@fullpage/react-fullpage";
 
+import './fullpage.scss';
+
 export function FullPageHOC(WrappedComponent: any, options?: fullpageOptions) {
     return () => {
 

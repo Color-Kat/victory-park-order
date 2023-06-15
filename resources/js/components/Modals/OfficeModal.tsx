@@ -62,7 +62,8 @@ export const OfficeModal: React.FC = () => {
                 {currentOffice && <div className="">
                     <div className="flex lg:flex-row flex-col">
 
-                        <Gallery photos={currentOffice.photos} className="relative md:h-96 h-64 lg:min-w-[400px] w-full lg:flex-1"/>
+                        <Gallery photos={currentOffice.photos}
+                                 className="relative md:h-96 h-64 lg:min-w-[400px] w-full lg:flex-1"/>
 
                         <div className="lg:w-1/2 w-full flex flex-col bg-app">
 
@@ -70,18 +71,21 @@ export const OfficeModal: React.FC = () => {
 
                                 <OfficeParameter title="Этаж">{currentOffice.floor} этаж</OfficeParameter>
 
-                                <OfficeParameter title={currentOffice.typeDeal == 'rent' ? 'Арендуемая площадь' : 'Площадь'}>
-                                    <OfficeArea office={currentOffice} />
+                                <OfficeParameter
+                                    title={currentOffice.typeDeal == 'rent' ? 'Арендуемая площадь' : 'Площадь'}>
+                                    <OfficeArea office={currentOffice}/>
                                 </OfficeParameter>
 
                                 <OfficeParameter title="Готовность">{currentOffice.isReady}</OfficeParameter>
 
-                                <OfficeParameter title={currentOffice.typeDeal == 'rent' ? 'Ставка аренды' : 'Цена за м2'}>
+                                <OfficeParameter
+                                    title={currentOffice.typeDeal == 'rent' ? 'Ставка аренды' : 'Цена за м2'}>
                                     {/*{currentOffice.explPrice} {currentOffice.explCur}/м<sup>2</sup> в год*/}
                                     {rents(currentOffice)}
                                 </OfficeParameter>
 
-                                <OfficeParameter title={currentOffice.typeDeal == 'rent' ? 'За помещение в месяц' : 'Стоимость'}>
+                                <OfficeParameter
+                                    title={currentOffice.typeDeal == 'rent' ? 'За помещение в месяц' : 'Стоимость'}>
                                     {/* {currentOffice.price} {currentOffice.priceCur}/м<sup>2</sup> в месяц*/}
                                     {monthPrice(currentOffice, true)}
                                 </OfficeParameter>
@@ -94,21 +98,26 @@ export const OfficeModal: React.FC = () => {
                                 className="flex items-center justify-between sm:flex-row mt-auto flex-col sm:gap-16 gap-5 bg-[#d7d7d7] w-full py-3 lg:px-8 px-4"
                             >
 
-                                <PhoneNumber />
+                                <PhoneNumber/>
 
                                 <div className="gap-2 flex flex-col ">
-                                    <CallRequestButton filledButton={true} data={{
-                                        officeCrmId: currentOffice.crmId,
-                                        officeSpace: `${currentOffice.areaMin} - ${currentOffice.areaMax} м2 `
-                                    }}>
+                                    <CallRequestButton
+                                        filledButton={true}
+                                        data={{
+                                            officeCrmId: currentOffice.crmId,
+                                            officeSpace: `${currentOffice.areaMin} - ${currentOffice.areaMax} м2 `
+                                        }}
+                                        className="w-full"
+                                    >
                                         Заказать звонок
                                     </CallRequestButton>
 
-                                    <button className="uppercase border border-[#4ed35d] rounded cursor-pointer sm:p-3.5 p-2 sm:w-[200px] sm:h-[47px] justify-center transition-colors text-xs bg-[#4ed35d] hover:bg-transparent text-white hover:text-[#4ed35d] flex items-center"
-                                            onClick={() => dispatch(openWhatsAppRequestModal({
-                                                officeCrmId: currentOffice.crmId,
-                                                officeSpace: `${currentOffice.areaMin} - ${currentOffice.areaMax} м2 `
-                                            }))}
+                                    <button
+                                        className="uppercase border border-[#4ed35d] rounded cursor-pointer sm:p-3.5 p-2 sm:w-[200px] sm:h-[47px] justify-center transition-colors text-xs bg-[#4ed35d] hover:bg-transparent text-white hover:text-[#4ed35d] flex items-center"
+                                        onClick={() => dispatch(openWhatsAppRequestModal({
+                                            officeCrmId: currentOffice.crmId,
+                                            officeSpace: `${currentOffice.areaMin} - ${currentOffice.areaMax} м2 `
+                                        }))}
                                     >
                                         {/*<BsWhatsapp className="text-xl mr-2" />*/}
                                         Получить презентацию на Whatsapp
