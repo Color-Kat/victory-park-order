@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
-import {Navigation, Pagination, Scrollbar, A11y, FreeMode} from 'swiper';
-import {Swiper, SwiperRef, SwiperSlide} from 'swiper/react';
+import {Navigation, Swiper as SwiperType} from 'swiper';
+import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -14,8 +14,7 @@ interface GalleryProps {
 }
 
 export const Gallery: React.FC<GalleryProps> = ({photos, className}) => {
-    const navigationPrevRef = React.useRef(null);
-    const navigationNextRef = React.useRef(null);
+    const swiperRef = React.useRef<SwiperType>();
 
     const [currentSlideIndex, setCurrentSlideIndex] = useState(1);
     const slidesCount = photos.length;
@@ -23,22 +22,20 @@ export const Gallery: React.FC<GalleryProps> = ({photos, className}) => {
     return (
         <>
             <Swiper
-                navigation={{
-                    prevEl: navigationPrevRef.current,
-                    nextEl: navigationNextRef.current,
-                }}
                 onBeforeInit={(swiper) => {
-                    // @ts-ignore
-                    swiper.params.navigation.prevEl = navigationPrevRef.current;
-                    // @ts-ignore
-                    swiper.params.navigation.nextEl = navigationNextRef.current;
+                    swiperRef.current = swiper;
+                }}
+                onAfterInit={(swiper) => {
+                    setTimeout(() => {
+                        swiper.slideTo(1, 200);
+                    }, 500);
                 }}
                 onRealIndexChange={(swiper) => {
                     const slideIndex = swiper.realIndex >= 0 ? swiper.realIndex : -1;
                     setCurrentSlideIndex((slideIndex+1) ?? 0);
                 }}
                 loop={true}
-                modules={[Navigation, Pagination]}
+                modules={[Navigation]}
                 slidesPerView={1}
                 className={className}
             >
@@ -56,7 +53,7 @@ export const Gallery: React.FC<GalleryProps> = ({photos, className}) => {
                 ))}
 
                 <div className="absolute left-0 bottom-10 w-full justify-center flex items-center gap-8 z-10 text-white">
-                    <div ref={navigationPrevRef} className="cursor-pointer">
+                    <div onClick={() => swiperRef.current?.slidePrev()} className="cursor-pointer">
                         <img src={leftArrow} alt=""/>
                     </div>
 
@@ -66,7 +63,7 @@ export const Gallery: React.FC<GalleryProps> = ({photos, className}) => {
                         {slidesCount}
                     </div>
 
-                    <div ref={navigationNextRef} className="cursor-pointer">
+                    <div onClick={() => swiperRef.current?.slideNext()} className="cursor-pointer">
                         <img src={rightArrow} alt=""/>
                     </div>
                 </div>

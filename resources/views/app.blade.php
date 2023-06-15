@@ -60,7 +60,7 @@
     @vite(['resources/js/index.tsx'])
 
 </head>
-<body class="overflow-hidden">
+<body class="">
 
 <div id="app">
 

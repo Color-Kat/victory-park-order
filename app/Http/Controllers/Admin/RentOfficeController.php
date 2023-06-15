@@ -8,6 +8,8 @@ use App\Http\Requests\UpdateOfficeRequest;
 use App\Models\RentOffice;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class RentOfficeController extends Controller
 {
@@ -39,7 +41,7 @@ class RentOfficeController extends Controller
      */
     public function store(StoreOfficeRequest $request)
     {
-//        $request->reso
+        RentOffice::storePhotos($request);
 
         $data = $request->all();
         if(empty($data['areaMax'])) $data['areaMax'] = $data['areaMin'];
