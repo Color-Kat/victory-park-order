@@ -28,7 +28,11 @@ trait HasOfficePhotos
         return $photos;
     }
 
-    public static function storePhotos( $request) {
+    public static function storePhotos($request) {
+        $inputPhotos = $request->hasFile('photos');
+
+        if(empty($inputPhotos)) return [];
+
         $photos = [];
         $photosPath = public_path("storage/gallery/rent/{$request->crmId}/");
 
@@ -36,7 +40,7 @@ trait HasOfficePhotos
         File::deleteDirectory($photosPath);
 
         // Upload new photos
-        if ($request->hasFile('photos')) {
+        if ($inputPhotos) {
             foreach($request->file('photos') as $key => $photo){
                 $photoName = uniqid(). '.' .$photo->extension();
 
@@ -46,6 +50,8 @@ trait HasOfficePhotos
                 );
             }
         }
+
+        return $photos;
     }
 }
 

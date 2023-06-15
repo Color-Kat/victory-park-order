@@ -82,7 +82,9 @@ class RentOfficeController extends Controller
      */
     public function update(UpdateOfficeRequest $request, RentOffice $rentOffice)
     {
-        $data = $request->except(['_token', '_method' ]);
+        RentOffice::storePhotos($request);
+
+        $data = $request->except(['_token', '_method', 'photos' ]);
         if(empty($data['areaMax'])) $data['areaMax'] = $data['areaMin'];
 
         RentOffice::query()->where('id', $rentOffice->id)->update($data);
