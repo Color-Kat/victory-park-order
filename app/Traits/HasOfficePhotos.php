@@ -18,23 +18,28 @@ trait HasOfficePhotos
 
         $directory = public_path("storage/gallery/$type/$crmId/");
 
-        if (is_dir($directory))
+        if (is_dir($directory)) {
+
+
             $photos = array_values(
                 array_map(function ($value) use ($directory, $crmId, $type) {
                     return "/storage/gallery/$type/$crmId/" . $value;
                 }, array_diff(scandir($directory), array('..', '.')))
             );
+        }
+
+        natcasesort($photos);
 
         return $photos;
     }
 
-    public static function storePhotos($request) {
+    public static function storePhotos($request, $type) {
         $inputPhotos = $request->hasFile('photos');
 
         if(empty($inputPhotos)) return [];
 
         $photos = [];
-        $photosPath = public_path("storage/gallery/rent/{$request->crmId}/");
+        $photosPath = public_path("storage/gallery/{$type}/{$request->crmId}/");
 
         // Delete previous files
         File::deleteDirectory($photosPath);
@@ -42,7 +47,7 @@ trait HasOfficePhotos
         // Upload new photos
         if ($inputPhotos) {
             foreach($request->file('photos') as $key => $photo){
-                $photoName = uniqid(). '.' .$photo->extension();
+                $photoName = $photo->getClientOriginalName() . '.' .$photo->extension();
 
                 $photos[] = $photo->move(
                     $photosPath,

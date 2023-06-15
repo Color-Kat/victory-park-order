@@ -41,7 +41,7 @@ class RentOfficeController extends Controller
      */
     public function store(StoreOfficeRequest $request)
     {
-        RentOffice::storePhotos($request);
+        RentOffice::storePhotos($request, 'rent');
 
         $data = $request->all();
         if(empty($data['areaMax'])) $data['areaMax'] = $data['areaMin'];
@@ -82,7 +82,7 @@ class RentOfficeController extends Controller
      */
     public function update(UpdateOfficeRequest $request, RentOffice $rentOffice)
     {
-        RentOffice::storePhotos($request);
+        RentOffice::storePhotos($request, 'rent');
 
         $data = $request->except(['_token', '_method', 'photos' ]);
         if(empty($data['areaMax'])) $data['areaMax'] = $data['areaMin'];

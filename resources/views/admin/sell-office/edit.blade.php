@@ -18,6 +18,16 @@
 
     <div class="container">
         <div class="row justify-content-center">
+
+            {{--      Old Photos      --}}
+            <div class="mb-2 f-flex">
+                @foreach($sellOffice->photos as $photo)
+
+                    <img src="{{$photo}}" alt="" style="height: 100px">
+
+                @endforeach
+            </div>
+
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Изменить офис для продажи</div>
@@ -138,6 +148,14 @@
                                 <label class="col-sm-2 col-label-form">Дата обновления</label>
                                 <div class="col-sm-10">
                                     <input value="{{($sellOffice->updated_at ?? $sellOffice->created_at)->format('Y-m-d')}}" type="date" name="updated_at" class="form-control"/>
+                                </div>
+                            </div>
+
+                            <div class="col mb-3">
+                                <label class="col-label-form">Фотографии ({{count($sellOffice->photos)}} фотографии на сервере)</label>
+                                <p class="">Загрузите сюда фотографии, чтобы перезаписать старые</p>
+                                <div class="col-sm-10">
+                                    <input type="file" name="photos[]" value="{{old('photos')}}" multiple>
                                 </div>
                             </div>
 

@@ -37,7 +37,7 @@ export const Gallery: React.FC<GalleryProps> = ({photos, className}) => {
                 loop={true}
                 modules={[Navigation]}
                 slidesPerView={1}
-                className={className}
+                className={className + ' will-change-transform'}
             >
                 {photos.map(photo => (
                     <SwiperSlide

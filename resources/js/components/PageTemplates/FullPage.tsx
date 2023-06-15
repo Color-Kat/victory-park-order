@@ -6,7 +6,7 @@ export function FullPageHOC(WrappedComponent: any, options?: fullpageOptions) {
 
 
         return (
-            <div className="lg:overflow-hidden relative w-full">
+            <div className="lg:overflow-hidden relative w-full lg:will-change-transform">
                 <ReactFullpage
                     licenseKey = {'YOUR_KEY_HERE'}
                     scrollingSpeed = {700} /* Options here */

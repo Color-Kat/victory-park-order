@@ -143,7 +143,7 @@
                             <div class="col mb-3">
                                 <label class="col-sm-2 col-label-form">Фотографии</label>
                                 <div class="col-sm-10">
-                                    <input type="file" value="{{old('photos')}}" name="photos[]" multiple>
+                                    <input type="file" name="photos[]" multiple>
                                 </div>
                             </div>
 

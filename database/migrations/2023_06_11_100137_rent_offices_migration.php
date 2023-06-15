@@ -15,19 +15,19 @@ return new class extends Migration
     {
         Schema::create('rent_offices', function (Blueprint $table) {
             $table->id();
-            $table->float('areaMin');
+            $table->float('areaMin')->default(0);
             $table->float('areaMax');
             $table->boolean('isActive');
-            $table->foreignId('crmId');
+            $table->foreignId('crmId')->unique();
             $table->string('type');
             $table->mediumInteger('floor');
             $table->integer('price');
-            $table->string('priceCur')->default('RUB');
+            $table->string('priceCur')->default("руб.");
             $table->string('typeDeal');
             $table->string('tax');
             $table->string('isReady');
-            $table->string('readyDate');
-            $table->string('explCur');
+            $table->string('readyDate')->nullable();
+            $table->string('explCur')->default("руб.");;
             $table->integer('explPrice');
             $table->string('layout');
             $table->timestamps();
