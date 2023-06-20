@@ -58,4 +58,24 @@ class OfficesController extends Controller
 
         return $office;
     }
+
+    /**
+     * Return list of photos from storage/gallery-photos/
+     * @return array
+     */
+    public function getGalleryPhotos() {
+        $directory = public_path("storage/gallery-photos/");
+
+        if (is_dir($directory)) {
+            $photos = array_values(
+                array_map(function ($value) {
+                    return "/storage/gallery-photos/" . $value;
+                }, array_diff(scandir($directory), array('..', '.')))
+            );
+        }
+
+        natcasesort($photos);
+
+        return $photos;
+    }
 }

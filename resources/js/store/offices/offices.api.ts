@@ -71,6 +71,12 @@ export const officesApi = createApi({
                 body: payload
             }),
         }),
+        getGalleryPhotos: builder.query<string[], void>({
+            query: () => ({
+                url: `get-gallery-photos`,
+            }),
+            // transformResponse: (response: any) => (response.items)
+        }),
     })
 });
 
@@ -78,6 +84,7 @@ export const {
     useGetRentOfficesQuery,
     useGetSellOfficesQuery,
     useGetOfficeByCrmIdQuery,
+    useGetGalleryPhotosQuery,
     useRequestCallMutation,
     useRequestWhatsAppMutation
 } = officesApi;

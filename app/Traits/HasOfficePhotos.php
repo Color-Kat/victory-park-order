@@ -19,8 +19,6 @@ trait HasOfficePhotos
         $directory = public_path("storage/gallery/$type/$crmId/");
 
         if (is_dir($directory)) {
-
-
             $photos = array_values(
                 array_map(function ($value) use ($directory, $crmId, $type) {
                     return "/storage/gallery/$type/$crmId/" . $value;

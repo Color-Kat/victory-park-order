@@ -1,17 +1,10 @@
 import React from 'react';
 import {Gallery} from "@modules/Gallery";
-import {useGetRentOfficesQuery, useGetSellOfficesQuery} from "@/store/offices/offices.api.ts";
+import {useGetGalleryPhotosQuery, useGetRentOfficesQuery, useGetSellOfficesQuery} from "@/store/offices/offices.api.ts";
 
 export const GallerySection: React.FC = ({}) => {
 
-    const {data: rentOffices = []} = useGetRentOfficesQuery();
-    const {data: sellOffices = []} = useGetSellOfficesQuery();
-    const offices = [
-        ...rentOffices,
-        ...sellOffices
-    ];
-    // Get photos off all offices
-    const photos = offices.map(office => ([...office.photos])).flat();
+    const {data: photos = []} = useGetGalleryPhotosQuery();
 
     return (
         <div

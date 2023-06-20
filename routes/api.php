@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/get-rent-offices', [OfficesController::class, 'getRentOffices'])->name('get-rent-offices');
 Route::get('/get-sell-offices', [OfficesController::class, 'getSellOffices'])->name('get-sell-offices');
 Route::get('/get-office/{typeDeal}/{crmId}', [OfficesController::class, 'getOffice'])->name('get-office');
+Route::get('/get-gallery-photos', [OfficesController::class, 'getGalleryPhotos'])->name('get-gallery-photos');
 
 Route::post('/request-call', [CallController::class, 'requestCall'])->name('request-call');
 Route::post('/request-whatsapp', [CallController::class, 'requestWhatsapp'])->name('request-whatsapp');

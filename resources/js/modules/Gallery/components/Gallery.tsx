@@ -29,14 +29,14 @@ export const Gallery: React.FC<GalleryProps> = ({photos, className}) => {
                 onAfterInit={(swiper) => {
                     setTimeout(() => {
                         swiper.slideTo(1, 200);
-                    }, 500);
+                    }, 1000);
                 }}
                 onRealIndexChange={(swiper) => {
                     const slideIndex = swiper.realIndex >= 0 ? swiper.realIndex : -1;
                     setCurrentSlideIndex((slideIndex+1) ?? 0);
                 }}
                 loop={true}
-                modules={[Navigation]}
+                // modules={[Navigation]}
                 slidesPerView={1}
                 className={className + ' will-change-transform'}
             >
