@@ -40,6 +40,7 @@ export const RentOfficePage: React.FC = ({}) => {
                         <title>Аренда офиса {officeArea(office)} в бизнес-центре Victory Park</title>
                         <meta name="description" content={`Аренда офисов в бизнес-центре Victory Park (Минская Плаза). Площадь ${officeArea(office)}, ${office.floor} этаж.`} />
                         <meta name="keywords" content="бц Victory Park, аренда офиса в БЦ Victory Park, снять офис в БЦ Victory Park, бц Минская Плаза" />
+                        <link rel="canonical" href={(import.meta as any).env.VITE_APP_URL + '/rent/' + officeCrmId}/>
                     </Helmet>
 
                     <div className="lg:py-12 py-6 px-5">

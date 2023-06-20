@@ -13,6 +13,7 @@ export const AboutPage: React.FC = () => {
             <Helmet>
                 <title>Описание бизнес-центра Виктори Парк. Инфраструктура, характеристики Victory Park</title>
                 <meta name="description" content="Информация о бизнес-центре Victory Park. Victory Park Plaza был построен в 2014 году рядом с Минской улицей в Москве. Бизнес-центр расположен в зеленой зоне, метро в шаговой доступности, современное техническое оснащение." />
+                <link rel="canonical" href={(import.meta as any).env.VITE_APP_URL + '/about'}/>
             </Helmet>
 
             <section className="relative md:px-[50px] px-5 z-0 text-white flex flex-col pb-32">

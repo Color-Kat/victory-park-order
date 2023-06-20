@@ -19,6 +19,7 @@ export const InfrastructurePage: React.FC = () => {
             <Helmet>
                 <title>Инфраструктура | Бизнес-центр Victory Park</title>
                 <meta name="description" content="Инфраструктура района, в котором расположен бизнес-центр Victory Park хорошо развита, здесь есть, заправки, аптеки, кафе, рестораны, супермаркеты, торговые центры, например, Океания и Времена Года. В самом бизнес-центре также есть необходимые объекты инфраструктуры." />
+                <link rel="canonical" href={(import.meta as any).env.VITE_APP_URL + '/infrastructure'}/>
             </Helmet>
 
             <section className="relative md:px-[50px] px-5 z-0 text-white flex flex-col pb-32 w-full mb-8">

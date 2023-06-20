@@ -38,6 +38,7 @@ export const SellOfficePage: React.FC = ({}) => {
                         <title>Продажа офиса {officeArea(office)} в бизнес-центре Victory Park</title>
                         <meta name="description" content={`Продажа офисов в бизнес-центре Victory Park (Минская Плаза). Площадь ${officeArea(office)}, ${office.floor} этаж.`} />
                         <meta name="keywords" content="бц Victory Park, купить офис в БЦ Victory Park, продажа офиса в БЦ Victory Park, бц Минская Плаза" />
+                        <link rel="canonical" href={(import.meta as any).env.VITE_APP_URL + '/sell/' + officeCrmId}/>
                     </Helmet>
 
                     <div className="lg:py-12 py-6 px-5">

@@ -19,6 +19,7 @@ export const TermsOfService: React.FC = () => {
 
             <Helmet>
                 <title>Victory Park - пользовательское соглашение</title>
+                <link rel="canonical" href={(import.meta as any).env.VITE_APP_URL + '/terms-of-service'}/>
             </Helmet>
 
             <section className="relative md:px-[50px] px-5 z-0 text-white flex flex-col pb-32 w-full">

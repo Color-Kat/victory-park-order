@@ -19,6 +19,7 @@ export const Page404: React.FC = () => {
                 <meta name="description" content="Аренда и продажа офисов класса А в Victory Park (ex. Минская Плаза) в Центре Москвы." />
                 <meta name='errorpage' content='true' />
                 <meta name='errortype' content='404 - Not Found' />
+                <link rel="canonical" href={(import.meta as any).env.VITE_APP_URL + '/404'}/>
             </Helmet>
 
             <section className="relative md:px-[50px] px-5 z-0 text-white flex flex-col pb-32 w-full mb-8">

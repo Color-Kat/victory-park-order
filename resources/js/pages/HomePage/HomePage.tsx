@@ -29,6 +29,7 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
             <Helmet>
                 <title>Бизнес-центр Victory Park (ex. Минская Плаза) в Москве</title>
                 <meta name="description" content="Аренда и продажа офисов класса А в Victory Park (ex. Минская Плаза) в Центре Москвы." />
+                <link rel="canonical" href={(import.meta as any).env.VITE_APP_URL + '/'}/>
             </Helmet>
 
             {/* Section 1 */}

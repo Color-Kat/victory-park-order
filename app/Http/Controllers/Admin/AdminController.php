@@ -24,6 +24,7 @@ class AdminController extends Controller
     private function getGalleryPhotos()
     {
         $directory = public_path("storage/gallery-photos/");
+        $photos = [];
 
         if (is_dir($directory)) {
             $photos = array_values(

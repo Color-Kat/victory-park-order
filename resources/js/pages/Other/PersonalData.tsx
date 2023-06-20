@@ -19,6 +19,7 @@ export const PersonalData: React.FC = () => {
 
             <Helmet>
                 <title>Victory Park - политика обработки персональных данных</title>
+                <link rel="canonical" href={(import.meta as any).env.VITE_APP_URL + '/personal-data'}/>
             </Helmet>
 
             <section className="relative md:px-[50px] px-5 z-0 text-white flex flex-col pb-32 w-full">
