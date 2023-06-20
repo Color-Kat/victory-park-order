@@ -20,18 +20,24 @@ export const WhatsAppRequestModal: React.FC<ModalProps> = ({}) => {
     const [requestWhatsApp] = useRequestWhatsAppMutation();
 
     const [isSent, setIsSent] = useState(false);
-    const [error, setError] = useState<boolean|string>(false);
     const [form, setForm] = useState({
         name: '',
         phone: '',
         agree: false
     });
 
+    const [error, setError] = useState<boolean|string>(false);
+    const [errorField, setErrorField] = useState<null|'name'|'phone'|'agree'|'all'>(null);
+    const showError = (text: string|false, field: any = null) => {
+        setError(text);
+        setErrorField(field);
+    }
+
     const sendRequest = async () => {
-        if(!form.name || !form.phone) return setError("Пожалуйста, заполните все поля.");
-        if(!form.agree) return setError("Вы должны принять политику обработки персональных данных");
-        if(!isPhoneNumber(form.phone)) return setError("Введите корректный номер телефона");
-        else setError(false);
+        if(!form.name || !form.phone) return showError("Пожалуйста, заполните все поля.", "all");
+        if(!isPhoneNumber(form.phone)) return showError("Введите корректный номер телефона", "phone");
+        if(!form.agree) return showError("Вы должны принять политику обработки персональных данных", "agreen");
+        else showError(false);
 
         await requestWhatsApp({
             name: form.name,
@@ -72,6 +78,7 @@ export const WhatsAppRequestModal: React.FC<ModalProps> = ({}) => {
                         value={form.name}
                         setForm={setForm}
                         type="text"
+                        error={errorField == "all" && form.name == ""}
                     />
 
                     <Input
@@ -81,6 +88,7 @@ export const WhatsAppRequestModal: React.FC<ModalProps> = ({}) => {
                         setForm={setForm}
                         type="text"
                         Icon={BsTelephone}
+                        error={errorField == "phone" || (errorField == "all" && form.phone == "")}
                     />
 
                     <Checkbox

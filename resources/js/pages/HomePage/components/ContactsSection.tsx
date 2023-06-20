@@ -20,15 +20,22 @@ export const ContactsSection: React.FC = ({}) => {
     });
 
     const [isSent, setIsSent] = useState(false);
-    const [error, setError] = useState<false|string>(false);
+
+    const [error, setError] = useState<boolean | string>(false);
+    const [errorField, setErrorField] = useState<null | 'name' | 'phone' | 'agree' | 'email' | 'all'>(null);
+    const showError = (text: string | false, field: any = null) => {
+        setError(text);
+        setErrorField(field);
+    }
+
     const send = async (e: any) => {
         e.preventDefault();
 
-        if(!form.name || !form.phone) return setError('Пожалуйста, заполните все поля.');
-        if(!form.agree) return setError('Вы должны принять политику обработки персональных данных');
-        if(!isPhoneNumber(form.phone)) return setError("Введите корректный номер телефона");
-        if(!form.email.includes('@')) return setError("Введите корректный E-mail");
-        else setError(false);
+        if (!form.name || !form.phone) return showError('Пожалуйста, заполните все поля.', 'all');
+        if (!isPhoneNumber(form.phone)) return showError('Введите корректный номер телефона', 'phone');
+        if (!form.email.includes('@')) return showError('Введите корректный E-mail', 'email');
+        if (!form.agree) return showError('Вы должны принять политику обработки персональных данных', 'agree');
+        else showError(false);
 
         await requestCall({
             ...form
@@ -57,7 +64,8 @@ export const ContactsSection: React.FC = ({}) => {
             </div>
 
             <form className="flex flex-col w-full">
-                <div className="relative w-full xl:space-x-6 xl:space-y-0 space-y-6 mb-6 flex xl:flex-row flex-col items-center">
+                <div
+                    className="relative w-full xl:space-x-6 xl:space-y-0 space-y-6 mb-6 flex xl:flex-row flex-col items-center">
                     <Input
                         value={form.name}
                         setForm={setForm}
@@ -66,6 +74,7 @@ export const ContactsSection: React.FC = ({}) => {
                         name="name"
                         placeholder="Ваше Имя"
                         className="xl:w-auto flex flex-1 flex-shrink-1 w-full"
+                        error={errorField == "all" && form.name == ""}
                     />
 
                     <Input
@@ -77,6 +86,7 @@ export const ContactsSection: React.FC = ({}) => {
                         placeholder="Ваш Телефон"
                         className="xl:w-auto w-full"
                         Icon={BsTelephone}
+                        error={errorField == "phone" || (errorField == "all" && form.phone == "")}
                     />
 
                     <Input
@@ -87,6 +97,7 @@ export const ContactsSection: React.FC = ({}) => {
                         placeholder="Ваш E-mail"
                         className="xl:w-auto w-full"
                         Icon={GoMail}
+                        error={errorField == "email" || (errorField == "all" && form.email == "")}
                     />
                 </div>
 
@@ -108,7 +119,10 @@ export const ContactsSection: React.FC = ({}) => {
                         checked={form.agree}
                         setForm={setForm}
                     >
-                        Отправляя свои данные, я соглашаюсь с <a href="/personal-data" className="underline" target="_blank">Политикой обработки персональных данных</a> и <a href="/terms-of-service" className="underline" target="_blank">Пользовательским соглашением</a>
+                        Отправляя свои данные, я соглашаюсь с <a href="/personal-data" className="underline"
+                                                                 target="_blank">Политикой обработки персональных
+                        данных</a> и <a href="/terms-of-service" className="underline" target="_blank">Пользовательским
+                        соглашением</a>
                     </Checkbox>
                 </div>
 
@@ -121,7 +135,7 @@ export const ContactsSection: React.FC = ({}) => {
                 </RedButton>
             </form>
 
-            <TermsFooter />
+            <TermsFooter/>
         </div>
     );
 }
