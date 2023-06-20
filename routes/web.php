@@ -17,6 +17,8 @@ Route::middleware('role:admin')->as('admin.')->group(function () {
     Route::resource('/admin/rent-office', RentOfficeController::class)->names('rent-office');
 
     Route::resource('/admin/sell-office', SellOfficeController::class)->names('sell-office');
+
+    Route::post('/admin/load-gallery-photos', [AdminController::class, 'loadGalleryPhotos'])->name('load-gallery-photos');
 });
 
 /**

@@ -39,7 +39,7 @@ export const officesApi = createApi({
                 url: `get-sell-offices`,
             }),
         }),
-        getOfficeByCrmId: builder.query<IOffice, {crmId: number, typeDeal: 'rent' | 'sell'}>({
+        getOfficeByCrmId: builder.query<IOffice, { crmId: number, typeDeal: 'rent' | 'sell' }>({
             query: (data) => ({
                 url: `get-office/${data.typeDeal}/${data.crmId}`,
             }),
@@ -75,7 +75,7 @@ export const officesApi = createApi({
             query: () => ({
                 url: `get-gallery-photos`,
             }),
-            // transformResponse: (response: any) => (response.items)
+            transformResponse: (response: { [key: number]: string }) => (Object.values(response).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))) as string[]
         }),
     })
 });

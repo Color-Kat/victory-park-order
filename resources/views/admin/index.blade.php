@@ -22,18 +22,20 @@
 
                     <div class="card-body overflow-auto">
                         <form
-                            class="flex-column d-flex gap-2"
-                            method="post"
-                            action="{{ route('admin.update-settings') }}"
+                                class="flex-column d-flex gap-2"
+                                method="post"
+                                action="{{ route('admin.update-settings') }}"
                         >
                             @csrf
                             <div class="items-center d-flex gap-2">
-                                <input @if($settings->get('is_rent_active')) checked @endif type="checkbox" id="is_rent_active" name="is_rent_active"/>
+                                <input @if($settings->get('is_rent_active')) checked @endif type="checkbox"
+                                       id="is_rent_active" name="is_rent_active"/>
                                 <label for="is_rent_active">Аренда офисов</label>
                             </div>
 
                             <div class="items-center d-flex gap-2">
-                                <input @if($settings->get('is_sell_active')) checked @endif type="checkbox" id="is_sell_active" name="is_sell_active"/>
+                                <input @if($settings->get('is_sell_active')) checked @endif type="checkbox"
+                                       id="is_sell_active" name="is_sell_active"/>
                                 <label for="is_sell_active">Продажа офисов</label>
                             </div>
 
@@ -172,6 +174,45 @@
                                 </tr>
                             @endif
                         </table>
+                    </div>
+                </div>
+
+                {{--        Load gallery files        --}}
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col col-md-6"><b>Фотографии для галереи</b></div>
+                        </div>
+                    </div>
+
+                    <div class="card-body overflow-auto">
+                        {{--      Photos      --}}
+                        <div class="mb-2 f-flex flex-wrap">
+                            @foreach($photos as $photo)
+
+                                <img src="{{$photo}}" alt="" style="height: 100px">
+
+                            @endforeach
+                        </div>
+
+                        <p>Перед загрузкой новых фотографий для галереи старые фотографии автоматически удалятся ({{count($photos)}})</p>
+
+
+                        <form
+                            class="col mb-3"
+                            method="post"
+                            action="{{ route('admin.load-gallery-photos') }}"
+                            enctype="multipart/form-data"
+                        >
+                            @csrf
+
+                            <label class="col-label-form mb-1">Выберите новые фото (сортировка по алфавиту)</label>
+                            <div class="col-sm-10">
+                                <input type="file" name="photos[]" multiple>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary mt-2">Загрузить</button>
+                        </form>
                     </div>
                 </div>
             </div>
