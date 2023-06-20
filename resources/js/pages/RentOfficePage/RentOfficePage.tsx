@@ -43,9 +43,9 @@ export const RentOfficePage: React.FC = ({}) => {
                     </Helmet>
 
                     <div className="lg:py-12 py-6 px-5">
-                        <h2 className="font-metapro lg:text-6xl md:text-6xl xs:text-5xl text-3xl max-w-5xl mx-auto font-bold text-app-accent text-center">
+                        <h1 className="font-metapro lg:text-6xl md:text-6xl xs:text-5xl text-3xl max-w-5xl mx-auto font-bold text-app-accent text-center">
                             Аренда офиса <OfficeArea office={office}/> в бизнес-центре Victory Park
-                        </h2>
+                        </h1>
                     </div>
 
                     <div className="flex lg:flex-row gap-5 flex-col max-w-7xl mx-auto">

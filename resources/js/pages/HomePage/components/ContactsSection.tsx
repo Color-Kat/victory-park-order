@@ -28,8 +28,15 @@ export const ContactsSection: React.FC = ({}) => {
         setErrorField(field);
     }
 
+    const phoneMaskHandler = (phone: string) => {
+        let subNum = phone.toString().substring(0,3)
+        subNum = subNum + "XXXXXXXXXXXX"
+        return subNum
+    }
+
     const send = async (e: any) => {
         e.preventDefault();
+        setIsSent(false);
 
         if (!form.name || !form.phone) return showError('Пожалуйста, заполните все поля.', 'all');
         if (!isPhoneNumber(form.phone)) return showError('Введите корректный номер телефона', 'phone');
@@ -65,7 +72,9 @@ export const ContactsSection: React.FC = ({}) => {
 
             <form className="flex flex-col w-full">
                 <div
-                    className="relative w-full xl:space-x-6 xl:space-y-0 space-y-6 mb-6 flex xl:flex-row flex-col items-center">
+                    className="relative w-full xl:space-x-6 xl:space-y-0 space-y-6 mb-6 flex xl:flex-row flex-col items-center"
+                >
+
                     <Input
                         value={form.name}
                         setForm={setForm}
@@ -85,6 +94,7 @@ export const ContactsSection: React.FC = ({}) => {
                         name="phone"
                         placeholder="Ваш Телефон"
                         className="xl:w-auto w-full"
+                        mask="+7 (999) 999 99-99"
                         Icon={BsTelephone}
                         error={errorField == "phone" || (errorField == "all" && form.phone == "")}
                     />

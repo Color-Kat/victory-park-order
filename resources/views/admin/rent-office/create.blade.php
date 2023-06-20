@@ -71,7 +71,7 @@
                             </div>
 
                             <div class="col mb-3">
-                                <label class="col-sm-2 col-label-form">Цена</label>
+                                <label class="col-sm-2 col-label-form">Цена за м<sup>2</sup>/год</label>
                                 <div class="col-sm-10">
                                     <input value="{{old('price')}}" type="number" name="price" class="form-control"/>
                                 </div>
@@ -113,7 +113,7 @@
                             </div>
 
                             <div class="col mb-3">
-                                <label class="col-sm-2 col-label-form">Эксплуатация</label>
+                                <label class="col-sm-2 col-label-form">Эксплуатация за м<sup>2</sup>/год</label>
                                 <div class="col-sm-10">
                                     <input value="{{old('explPrice')}}" type="number" name="explPrice" class="form-control"/>
                                 </div>

@@ -24,7 +24,7 @@ export const monthPrice = (office: IOffice, showPerMonth = false) => {
         ? `${(roundM2Price * office.areaMin).toLocaleString()} - 
             ${(roundM2Price * office.areaMax).toLocaleString()}`
         : `${(roundM2Price * office.areaMax).toLocaleString()}`
-    ) + ` ${office.priceCur}/мес.` ;
+    ) + ` ${office.priceCur}${office.typeDeal == 'rent' ? '/мес.' : ''}` ;
 }
 
 /*

@@ -81,7 +81,7 @@ export const OfficeModal: React.FC = () => {
                                 <OfficeParameter
                                     title={currentOffice.typeDeal == 'rent' ? 'Ставка аренды' : 'Цена за м2'}>
                                     {/*{currentOffice.explPrice} {currentOffice.explCur}/м<sup>2</sup> в год*/}
-                                    {rents(currentOffice)}
+                                    {rents(currentOffice)}{currentOffice.typeDeal == 'rent' && <>/м<sup>2</sup>/год</>}
                                 </OfficeParameter>
 
                                 <OfficeParameter
@@ -98,9 +98,9 @@ export const OfficeModal: React.FC = () => {
                                 className="flex items-center justify-between sm:flex-row mt-auto flex-col sm:gap-16 gap-5 bg-[#d7d7d7] w-full py-3 lg:px-8 px-4"
                             >
 
-                                <PhoneNumber/>
+                                <PhoneNumber />
 
-                                <div className="gap-2 flex flex-col ">
+                                <div className="gap-2 flex flex-col">
                                     <CallRequestButton
                                         filledButton={true}
                                         data={{

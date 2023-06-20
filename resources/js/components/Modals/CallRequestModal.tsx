@@ -87,6 +87,7 @@ export const CallRequestModal: React.FC<ModalProps> = ({}) => {
                         value={form.phone}
                         setForm={setForm}
                         type="text"
+                        mask="+7 (999) 999 99-99"
                         Icon={BsTelephone}
                         error={errorField == "phone" || (errorField == "all" && form.phone == "")}
                     />

@@ -11,27 +11,35 @@ class OfficesController extends Controller
     /**
      * Return all rent offices
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getRentOffices()
     {
-        return RentOffice::query()
+        $office = RentOffice::query()
             ->where('isActive', 1)
             ->orderBy('areaMax')
             ->get();
+
+        if(!$office) abort(404);
+
+        return response()->json($office, 200);
     }
 
     /**
      * Return all offices for sell
      *
-     * @return \Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\JsonResponse
      */
     public function getSellOffices()
     {
-        return SellOffice::query()
+        $office = SellOffice::query()
             ->where('isActive', 1)
             ->orderBy('areaMax')
             ->get();
+
+        if(!$office) abort(404);
+
+        return response()->json($office, 200);
     }
 
     public function getOffice(Request $request)
