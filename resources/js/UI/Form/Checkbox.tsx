@@ -1,10 +1,10 @@
-import {FunctionComponent, InputHTMLAttributes} from "react";
+import {FunctionComponent, InputHTMLAttributes, ReactNode} from "react";
 import {BsPerson} from "react-icons/bs";
 import ReactMarkdown from "react-markdown";
 import children = ReactMarkdown.propTypes.children;
 
 interface CheckboxProps extends InputHTMLAttributes<any>{
-    children: string;
+    children: ReactNode;
     className?: string;
     name: string;
     checked: boolean;

@@ -46,8 +46,6 @@ class CallController extends Controller
 
     public function requestCall(Request $request)
     {
-        return;
-
         $name = $request->get('name');
         $phone = '+' . preg_replace('/[^0-9]/', '', $request->get('phone'));
         $email = $request->get('email') ?? '';

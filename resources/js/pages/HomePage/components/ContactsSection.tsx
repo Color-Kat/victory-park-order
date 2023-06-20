@@ -5,6 +5,8 @@ import {useRequestCallMutation} from "@/store/offices/offices.api.ts";
 import {TermsFooter} from "@modules/Layout/components/TermsFooter.tsx";
 import Checkbox from "@UI/Form/Checkbox.tsx";
 import {isPhoneNumber} from "@/utils/formValidation.ts";
+import {BsTelephone} from "react-icons/bs";
+import {GoMail} from "react-icons/go";
 
 export const ContactsSection: React.FC = ({}) => {
     const [requestCall] = useRequestCallMutation();
@@ -74,6 +76,7 @@ export const ContactsSection: React.FC = ({}) => {
                         name="phone"
                         placeholder="Ваш Телефон"
                         className="xl:w-auto w-full"
+                        Icon={BsTelephone}
                     />
 
                     <Input
@@ -83,6 +86,7 @@ export const ContactsSection: React.FC = ({}) => {
                         name="email"
                         placeholder="Ваш E-mail"
                         className="xl:w-auto w-full"
+                        Icon={GoMail}
                     />
                 </div>
 
@@ -104,7 +108,7 @@ export const ContactsSection: React.FC = ({}) => {
                         checked={form.agree}
                         setForm={setForm}
                     >
-                        Отправляя свои данные, я соглашаюсь с Политикой обработки персональных данных и Пользовательским соглашением
+                        Отправляя свои данные, я соглашаюсь с <a href="/personal-data" className="underline" target="_blank">Политикой обработки персональных данных</a> и <a href="/terms-of-service" className="underline" target="_blank">Пользовательским соглашением</a>
                     </Checkbox>
                 </div>
 

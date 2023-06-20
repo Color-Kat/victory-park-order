@@ -7,6 +7,7 @@ import {RedButton} from "@UI/Buttons";
 import {useRequestCallMutation, useRequestWhatsAppMutation} from "@/store/offices/offices.api.ts";
 import Checkbox from "@UI/Form/Checkbox.tsx";
 import {isPhoneNumber} from "@/utils/formValidation.ts";
+import {BsTelephone} from "react-icons/bs";
 
 interface ModalProps {
 
@@ -65,16 +66,29 @@ export const WhatsAppRequestModal: React.FC<ModalProps> = ({}) => {
                         {error}
                     </div>
 
-                    <Input name="name" placeholder="Имя" value={form.name} setForm={setForm} type="text"/>
+                    <Input
+                        name="name"
+                        placeholder="Имя"
+                        value={form.name}
+                        setForm={setForm}
+                        type="text"
+                    />
 
-                    <Input name="phone" placeholder="Телефон" value={form.phone} setForm={setForm} type="text"/>
+                    <Input
+                        name="phone"
+                        placeholder="Телефон"
+                        value={form.phone}
+                        setForm={setForm}
+                        type="text"
+                        Icon={BsTelephone}
+                    />
 
                     <Checkbox
                         name="agree"
                         checked={form.agree}
                         setForm={setForm}
                     >
-                        Отправляя свои данные, я соглашаюсь с Политикой обработки персональных данных и Пользовательским соглашением
+                        Отправляя свои данные, я соглашаюсь с <a href="/personal-data" className="underline" target="_blank">Политикой обработки персональных данных</a> и <a href="/terms-of-service" className="underline" target="_blank">Пользовательским соглашением</a>
                     </Checkbox>
 
                     <RedButton 

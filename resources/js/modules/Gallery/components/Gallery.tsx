@@ -53,7 +53,7 @@ export const Gallery: React.FC<GalleryProps> = ({photos, className}) => {
                     </SwiperSlide>
                 ))}
 
-                <div className="absolute left-1/2 -translate-x-1/2 bottom-10 bg-black/[.6] shadow-lg rounded-full w-max mx-auto justify-center flex items-center gap-8 z-10 text-white">
+                <div className="absolute left-1/2 -translate-x-1/2 bottom-10 bg-black/[.3] shadow-lg rounded-full w-max mx-auto justify-center flex items-center gap-8 z-10 text-white">
                     <div onClick={() => swiperRef.current?.slidePrev()} className="cursor-pointer">
                         <img src={leftArrow} alt=""/>
                     </div>
