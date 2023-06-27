@@ -50,7 +50,8 @@ export const officesApi = createApi({
             email?: string,
             message?: string,
             officeSpace?: number,
-            officeCrmId?: number
+            officeCrmId?: number,
+            typeDeal?: string,
         }>({
             query: (payload) => ({
                 url: `request-call`,
@@ -63,7 +64,8 @@ export const officesApi = createApi({
             name: string,
             phone: string,
             officeSpace?: number,
-            officeCrmId?: number
+            officeCrmId?: number,
+            typeDeal?: string,
         }>({
             query: (payload) => ({
                 url: `request-whatsapp`,

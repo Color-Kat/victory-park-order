@@ -13,17 +13,24 @@ class CallController extends Controller
     {
 //        https://cloud.roistat.com/integration/webhook?key=8fbb4bb921aa2a01544fff95303eb43e
 
+        $site = env('APP_URL');
+        $typeDealRus = match ($data['typeDeal']) {
+            'sell' => 'Продажа',
+            'rent' => 'Аренда'
+        };
+
         $roistatData = [
-            "title" => $data['title'],
+            "title" => $data['title'] . " - $site",
             "name" => $data['name'],
             "email" => $data['email'] ?? null,
             "phone" => $data['phone'],
-            "comment" => $data['message'] ?? null,
+            "comment" => isset($data['message']) ? "Сообщение:\n " . $data['message'] : null,
             "roistat_visit" => $_COOKIE["roistat_visit"],
             "fields" => [
-                "site" => "http://minskayaplaza.ru/",
-                'officeCrmId' => $data['officeCrmId'],
-                'officeSpace' => $data['officeSpace'],
+                "Сайт" => $site,
+                'ID в CRM' => $data['officeCrmId'],
+                'Площадь' => $data['officeSpace'],
+                'Тип сделки' => $typeDealRus,
             ]
         ];
 
@@ -52,6 +59,7 @@ class CallController extends Controller
         $message = $request->get('message') ?? '';
         $officeSpace = $request->get('officeSpace') ?? '';
         $officeCrmId = $request->get('officeCrmId') ?? '';
+        $typeDeal = $request->get('typeDeal') ?? '';
 
         $data = [
             'title' => "Заявка Обратный звонок",
@@ -61,12 +69,12 @@ class CallController extends Controller
             'message' => $message,
             'officeCrmId' => $officeCrmId,
             'officeSpace' => $officeSpace,
+            'typeDeal' => $typeDeal,
         ];
 
         $this->sendRoistat($data);
 
         Mail::to('office@of.ru')->send(new NewCallRequestMail($data));
-
     }
 
     public function requestWhatsapp(Request $request)
@@ -75,6 +83,7 @@ class CallController extends Controller
         $phone = '+' . preg_replace('/[^0-9]/', '', $request->get('phone'));
         $officeSpace = $request->get('officeSpace') ?? '';
         $officeCrmId = $request->get('officeCrmId') ?? '';
+        $typeDeal = $request->get('typeDeal') ?? '';
 
         $data = [
             'title' => "Презентация Whatsapp",
@@ -82,6 +91,7 @@ class CallController extends Controller
             'phone' => $phone,
             'officeCrmId' => $officeCrmId,
             'officeSpace' => $officeSpace,
+            'typeDeal' => $typeDeal,
         ];
 
         $this->sendRoistat($data);

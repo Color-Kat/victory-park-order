@@ -70,7 +70,7 @@ export const ContactsSection: React.FC = ({}) => {
                 {error}
             </div>
 
-            <form className="flex flex-col w-full">
+            <form className="flex flex-col w-full lg:max-w-none max-w-xl mx-auto">
                 <div
                     className="relative w-full xl:space-x-6 xl:space-y-0 space-y-6 mb-6 flex xl:flex-row flex-col items-center"
                 >

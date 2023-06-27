@@ -105,7 +105,8 @@ export const OfficeModal: React.FC = () => {
                                         filledButton={true}
                                         data={{
                                             officeCrmId: currentOffice.crmId,
-                                            officeSpace: `${currentOffice.areaMin} - ${currentOffice.areaMax} м2 `
+                                            officeSpace: `${currentOffice.areaMin} - ${currentOffice.areaMax} м2 `,
+                                            typeDeal: currentOffice.typeDeal
                                         }}
                                         className="w-full"
                                     >
@@ -116,7 +117,8 @@ export const OfficeModal: React.FC = () => {
                                         className="uppercase border border-[#4ed35d] rounded cursor-pointer sm:p-3.5 p-2 sm:w-[200px] sm:h-[47px] justify-center transition-colors text-xs bg-[#4ed35d] hover:bg-transparent text-white hover:text-[#4ed35d] flex items-center"
                                         onClick={() => dispatch(openWhatsAppRequestModal({
                                             officeCrmId: currentOffice.crmId,
-                                            officeSpace: `${currentOffice.areaMin} - ${currentOffice.areaMax} м2 `
+                                            officeSpace: `${currentOffice.areaMin} - ${currentOffice.areaMax} м2 `,
+                                            typeDeal: currentOffice.typeDeal
                                         }))}
                                     >
                                         {/*<BsWhatsapp className="text-xl mr-2" />*/}
