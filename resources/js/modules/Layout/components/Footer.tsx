@@ -6,7 +6,7 @@ export const Footer: React.FC<{className?: string}> = memo(({className}) => {
 
 
     return (
-        <footer className={"lg:hidden flex w-full bg-app px-[50px] pb-5 pt-10 text-[#3b4256] flex-col text-center" + className}>
+        <footer className={"lg:hidden flex w-full bg-app px-[50px] pb-5 sm:pt-10 pt-5 text-[#3b4256] flex-col text-center" + className}>
             <div className="mb-8 text-center">
                 <Link to="/infrastructure" className="uppercase text-xs">Инфраструктура</Link>
             </div>

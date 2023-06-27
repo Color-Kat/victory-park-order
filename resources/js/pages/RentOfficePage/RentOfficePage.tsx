@@ -33,7 +33,7 @@ export const RentOfficePage: React.FC = ({}) => {
     });
 
     return (
-        <div className="relative w-full px-5 min-h-screen top-0">
+        <div className="relative w-full px-5 min-h-screen top-0 pb-32">
             {office &&
                 <div className="pb-10">
                     <Helmet>

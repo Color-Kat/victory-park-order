@@ -17,6 +17,8 @@
         crmId офиса: {{$data['officeCrmId']}} <br/>
         Площадь офиса: {{$data['officeSpace']}} <br/>
     @endif
+
+    Сайт: {{$data['site']}} <br/>
 </p>
 </body>
 </html>

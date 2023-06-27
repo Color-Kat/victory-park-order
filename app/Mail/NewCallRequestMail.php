@@ -13,14 +13,19 @@ class NewCallRequestMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    private $data;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(private $data)
+    public function __construct($data)
     {
-
+        $this->data = [
+            ...$data,
+            'site' => env('APP_URL')
+        ];
     }
 
     /**

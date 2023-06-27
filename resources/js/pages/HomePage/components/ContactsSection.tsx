@@ -70,11 +70,10 @@ export const ContactsSection: React.FC = ({}) => {
                 {error}
             </div>
 
-            <form className="flex flex-col w-full lg:max-w-none max-w-xl mx-auto">
+            <form className="flex flex-col w-full lg:max-w-none max-w-xl mx-auto sm:pb-10 md:pb-0 pb-24">
                 <div
                     className="relative w-full xl:space-x-6 xl:space-y-0 space-y-6 mb-6 flex xl:flex-row flex-col items-center"
                 >
-
                     <Input
                         value={form.name}
                         setForm={setForm}

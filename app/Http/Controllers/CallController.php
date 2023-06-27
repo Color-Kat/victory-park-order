@@ -14,10 +14,13 @@ class CallController extends Controller
 //        https://cloud.roistat.com/integration/webhook?key=8fbb4bb921aa2a01544fff95303eb43e
 
         $site = env('APP_URL');
-        $typeDealRus = match ($data['typeDeal']) {
-            'sell' => 'Продажа',
-            'rent' => 'Аренда'
-        };
+
+        $typeDealRus = $data['typeDeal']
+            ? match ($data['typeDeal']) {
+                'sell' => 'Продажа',
+                'rent' => 'Аренда'
+            }
+            : null;
 
         $roistatData = [
             "title" => $data['title'] . " - $site",
@@ -27,7 +30,7 @@ class CallController extends Controller
             "comment" => isset($data['message']) ? "Сообщение:\n " . $data['message'] : null,
             "roistat_visit" => $_COOKIE["roistat_visit"],
             "fields" => [
-                "Сайт" => $site,
+                "Сaйт" => $site,
                 'ID в CRM' => $data['officeCrmId'],
                 'Площадь' => $data['officeSpace'],
                 'Тип сделки' => $typeDealRus,
