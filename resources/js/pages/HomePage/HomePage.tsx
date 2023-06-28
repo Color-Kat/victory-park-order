@@ -27,8 +27,8 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
     return (
         <>
             <Helmet>
-                <title>Бизнес-центр «Central City Tower»</title>
-                <meta name="description" content="Бизнес-центр «Central City Tower» - один из самых престижных бизнес-центров класса «А». Здание представляет собой современный офисный центр, расположенный на Овчинниковской набережной, в историческом районе столицы Замоскворечье." />
+                <title>Бизнес-центр Лотте Плаза - аренда офисов и торговых площадей</title>
+                <meta name="description" content="Лотте Плаза (Lotte Plaza) – многофункциональный комплекс, состоящий из бизнес-центра класса премиум, торгового комплекса и пятизвёздочного отеля." />
                 <link rel="canonical" href={(import.meta as any).env.VITE_APP_URL + '/'}/>
             </Helmet>
 

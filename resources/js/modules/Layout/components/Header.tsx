@@ -90,8 +90,9 @@ export const Header = () => {
                         {/*    className="w-fit object-contain"*/}
                         {/*/>*/}
 
-                        <h1 className="font-metapro text-black font-bold md:text-4xl text-2xl text-center -tracking-tight">
-                            Central City <br/> Tower
+                        <h1 className="font-metapro text-black font-bold md:text-4xl text-2xl text-center tracking-tight">
+                            <span className="md:block hidden text-2xl leading-4">Бизнес центр</span>
+                            Лотте Плаза
                         </h1>
 
                         <p className="text-gray-400 mt-3 font-light" style={{fontSize: '13px'}}>

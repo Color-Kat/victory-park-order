@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- Title -->
-    <title>Бизнес-центр «Central City Tower»</title>
+    <title>Бизнес-центр Лотте Плаза - аренда офисов и торговых площадей</title>
 
     <!-- KeyWords -->
-    <meta name="keywords" content="бц Central City Tower, офис около Кремля" data-react-helmet="true">
+    <meta name="keywords" content="бц Лотте Плаза, офис на Новом Арбате">
 
     <!--  Description  -->
-    <meta name="description" content="Бизнес-центр «Central City Tower» - один из самых престижных бизнес-центров класса «А». Здание представляет собой современный офисный центр, расположенный на Овчинниковской набережной, в историческом районе столицы Замоскворечье." data-react-helmet="true">
+    <meta name="description" content="Лотте Плаза (Lotte Plaza) – многофункциональный комплекс, состоящий из бизнес-центра класса премиум, торгового комплекса и пятизвёздочного отеля." data-react-helmet="true">
 
     <!--  Favicon  -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
