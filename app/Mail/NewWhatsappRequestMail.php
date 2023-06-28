@@ -30,7 +30,7 @@ class NewWhatsappRequestMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Получить презентацию Victory Park')
+        return $this->subject('Получить презентацию ' . env('VITE_BC_NAME'))
             ->view('emails.newWhatsappRequest', [
                 'data' => $this->data
             ]);

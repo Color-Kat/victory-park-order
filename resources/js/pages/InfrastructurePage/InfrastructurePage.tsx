@@ -17,7 +17,7 @@ export const InfrastructurePage: React.FC = () => {
         <div className="w-full flex flex-col text-center text-[#3b4256]">
 
             <Helmet>
-                <title>Инфраструктура | Бизнес-центр Victory Park</title>
+                <title>Инфраструктура | Бизнес-центр {(import.meta as any).env.VITE_BC_NAME}</title>
                 <meta name="description" content="Инфраструктура района, в котором расположен бизнес-центр Victory Park хорошо развита, здесь есть, заправки, аптеки, кафе, рестораны, супермаркеты, торговые центры, например, Океания и Времена Года. В самом бизнес-центре также есть необходимые объекты инфраструктуры." />
                 <link rel="canonical" href={(import.meta as any).env.VITE_APP_URL + '/infrastructure'}/>
             </Helmet>
@@ -62,7 +62,7 @@ export const InfrastructurePage: React.FC = () => {
                     className="sm:mt-12 mt-8 text-app-accent font-bold lg:text-5xl md:text-4xl text-3xl font-metapro max-w-2xl mx-auto"
                 >
                     Арендаторы бизнес-центра
-                    Victory Park
+                    {(import.meta as any).env.VITE_BC_NAME}
                 </h2>
 
                 <div className="partner-logos flex items-center sm:my-16 my-8 gap-3 justify-between flex-wrap max-w-5xl mx-auto">

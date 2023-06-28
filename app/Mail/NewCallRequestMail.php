@@ -35,7 +35,7 @@ class NewCallRequestMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Новая заявка Victory Park')
+        return $this->subject('Новая заявка ' . env('VITE_BC_NAME'))
             ->view('emails.newCallRequest', [
                 'data' => $this->data
             ]);

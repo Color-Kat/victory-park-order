@@ -18,7 +18,7 @@ export const Footer: React.FC<{className?: string}> = memo(({className}) => {
             <div className="copyright text-center text-13 mt-4 whitespace-pre">
                 <p>
                     © 2023 Бизнес-центр<br/>
-                    Victory Park.
+                    {(import.meta as any).env.VITE_BC_NAME}.
                     Все права защищены
                 </p>
             </div>

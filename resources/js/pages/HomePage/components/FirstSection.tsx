@@ -13,12 +13,12 @@ export const FirstSection: React.FC = ({}) => {
         >
             <div className="flex flex-col justify-between">
                 <h1 className="font-metapro lg:text-8xl md:text-6xl xs:text-5xl text-4xl text-center font-bold lg:mb-16 mb-8">
-                    Бизнес Центр Victory Park
+                    {(import.meta as any).env.VITE_TITLE_1}
                 </h1>
 
                 <div className="text-right text-lg">
                     <p>
-                        Новый офисный центр класса B+ на западе Москвы.
+                        {(import.meta as any).env.VITE_SUBTITLE_1}
                     </p>
                 </div>
             </div>

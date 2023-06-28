@@ -15,7 +15,7 @@ export const Page404: React.FC = () => {
         <div className="w-full flex flex-col text-center text-[#3b4256]">
 
             <Helmet>
-                <title>Victory Park - 404</title>
+                <title>{(import.meta as any).env.VITE_BC_NAME} - 404</title>
                 <meta name="description" content="Аренда и продажа офисов класса А в Victory Park (ex. Минская Плаза) в Центре Москвы." />
                 <meta name='errorpage' content='true' />
                 <meta name='errortype' content='404 - Not Found' />

@@ -11,7 +11,7 @@ export const AboutPage: React.FC = () => {
         <div className="w-full flex flex-col text-center text-[#3b4256]">
 
             <Helmet>
-                <title>Описание бизнес-центра Виктори Парк. Инфраструктура, характеристики Victory Park</title>
+                <title>Описание бизнес-центра Виктори Парк. Инфраструктура, характеристики {(import.meta as any).env.VITE_BC_NAME}</title>
                 <meta name="description" content="Информация о бизнес-центре Victory Park. Victory Park Plaza был построен в 2014 году рядом с Минской улицей в Москве. Бизнес-центр расположен в зеленой зоне, метро в шаговой доступности, современное техническое оснащение." />
                 <link rel="canonical" href={(import.meta as any).env.VITE_APP_URL + '/about'}/>
             </Helmet>
@@ -23,8 +23,9 @@ export const AboutPage: React.FC = () => {
                     <Link to="/">Главная</Link><span className="mx-2">/</span>О бизнес-центре
                 </div>
 
-                <h1 className="lg:text-7xl md:text-5xl text-4xl font-bold font-metapro my-16">О бизнес-центре Victory
-                    Park</h1>
+                <h1 className="lg:text-7xl md:text-5xl text-4xl font-bold font-metapro my-16">
+                    О бизнес-центре {(import.meta as any).env.VITE_BC_NAME}
+                </h1>
 
                 <p className="max-w-5xl mx-auto">
                     Бизнес-центр Victory Park Plaza был построен в 2014 году рядом с Минской улицей в

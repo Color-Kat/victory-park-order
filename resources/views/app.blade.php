@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- Title -->
-    <title>Бизнес-центр Victory Park (ex. Минская Плаза) в Москве</title>
+    <title>Бизнес-центр {{env('VITE_BC_NAME')}} (ex. Минская Плаза) в Москве</title>
 
     <!-- KeyWords -->
     <meta name="keywords" content="бц Victory Park, бц Минская Плаза, офис в районе Раменки" data-react-helmet="true">

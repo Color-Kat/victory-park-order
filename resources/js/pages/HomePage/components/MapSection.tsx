@@ -58,7 +58,7 @@ export const MapSection: React.FC = ({}) => {
                     >
                         <h6 className="font-bold uppercase text-gray-400 sm:mb-2 md:text-base text-sm">Адрес: </h6>
                         <p className="md:text-sm text-xs text-gray-100">
-                            г. Москва Минская улица, 2Ж
+                            {(import.meta as any).env.VITE_ADDRESS}
                         </p>
                     </article>
 
@@ -66,8 +66,8 @@ export const MapSection: React.FC = ({}) => {
                         className="bg-gray-700 text-center xl:px-14 px-3 sm:py-5 py-2 sm:rounded md:w-1/4 flex sm:flex-col items-center sm:justify-center justify-between"
                     >
                         <h6 className="font-bold uppercase text-gray-400 sm:mb-2 md:text-base text-sm">Телефон: </h6>
-                        <a className="md:text-sm text-xs text-gray-100 underline" href="tel:+7 (495) 21-21-799">
-                            +7 (495) 21-21-799
+                        <a className="md:text-sm text-xs text-gray-100 underline" href={`tel:${(import.meta as any).env.VITE_PHONE}`}>
+                            {(import.meta as any).env.VITE_PHONE}
                         </a>
                     </article>
 
@@ -75,8 +75,8 @@ export const MapSection: React.FC = ({}) => {
                         className="bg-gray-700 text-center xl:px-14 px-3 sm:py-5 py-3 sm:rounded rounded-b md:w-1/4 flex sm:flex-col items-center sm:justify-center justify-between"
                     >
                         <h6 className="font-bold uppercase text-gray-400 sm:mb-2 md:text-base text-sm">E-mail: </h6>
-                        <a className="md:text-sm text-xs text-gray-100 underline" href="mailto:info@minskayaplaza.ru">
-                            info@minskayaplaza.ru
+                        <a className="md:text-sm text-xs text-gray-100 underline" href={`mailto:${(import.meta as any).env.VITE_EMAIL}`}>
+                            {(import.meta as any).env.VITE_EMAIL}
                         </a>
                     </article>
                 </div>

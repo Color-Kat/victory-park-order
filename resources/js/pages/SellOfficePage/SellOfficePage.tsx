@@ -35,15 +35,15 @@ export const SellOfficePage: React.FC = ({}) => {
                 <div className="pb-14 px-5">
 
                     <Helmet>
-                        <title>Продажа офиса {officeArea(office)} в бизнес-центре Victory Park</title>
-                        <meta name="description" content={`Продажа офисов в бизнес-центре Victory Park (Минская Плаза). Площадь ${officeArea(office)}, ${office.floor} этаж.`} />
+                        <title>Продажа офиса {officeArea(office)} в бизнес-центре {(import.meta as any).env.VITE_BC_NAME}</title>
+                        <meta name="description" content={`Продажа офисов в бизнес-центре ${(import.meta as any).env.VITE_BC_NAME}} (Минская Плаза). Площадь ${officeArea(office)}, ${office.floor} этаж.`} />
                         <meta name="keywords" content="бц Victory Park, купить офис в БЦ Victory Park, продажа офиса в БЦ Victory Park, бц Минская Плаза" />
                         <link rel="canonical" href={(import.meta as any).env.VITE_APP_URL + '/sell/' + officeCrmId}/>
                     </Helmet>
 
                     <div className="lg:py-12 py-6 px-5">
                         <h1 className="font-metapro lg:text-6xl md:text-6xl xs:text-5xl text-3xl max-w-5xl mx-auto font-bold text-app-accent text-center">
-                            Продажа офиса <OfficeArea office={office} /> в бизнес-центре Victory Park
+                            Продажа офиса <OfficeArea office={office} /> в бизнес-центре {(import.meta as any).env.VITE_BC_NAME}
                         </h1>
                     </div>
 

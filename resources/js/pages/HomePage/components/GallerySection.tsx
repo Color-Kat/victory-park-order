@@ -5,7 +5,7 @@ import {useGetGalleryPhotosQuery, useGetRentOfficesQuery, useGetSellOfficesQuery
 export const GallerySection: React.FC = ({}) => {
 
     const {data: photos = []} = useGetGalleryPhotosQuery();
-    console.log(photos)
+
     return (
         <div
             className="relative section w-full h-full lg:px-5 flex flex-col justify-start md:px-16 px-5 fullpage-overlay z-0"

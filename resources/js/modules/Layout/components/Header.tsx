@@ -122,7 +122,7 @@ export const Header = () => {
                     <div className="copyright text-center text-13 mt-14">
                         <span>
                             © 2023 Бизнес-центр<br/>
-                            Victory Park.<br/>
+                            {(import.meta as any).env.VITE_BC_NAME}.<br/>
                             Все права защищены
                         </span>
                     </div>

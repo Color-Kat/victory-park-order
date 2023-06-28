@@ -15,13 +15,12 @@ export const SecondSection: React.FC = ({}) => {
         >
             <div className="flex flex-col justify-between text-center mb-8 max-w-4xl">
                 <h1 className="font-metapro lg:text-7xl md:text-6xl xs:text-5xl text-3xl font-bold lg:mb-16 mb-8">
-                    Офисы на Минской улице
+                    {(import.meta as any).env.VITE_TITLE_2}
                 </h1>
 
                 <div className="text-lg">
                     <p>
-                        Бизнес-центр Victory Park (ex. Минская Плаза) расположен рядом со станцией метро Минская в
-                        Москве. На сайте бизнес-центра есть вся необходимая информация по свободным площадям.
+                        {(import.meta as any).env.VITE_SUBTITLE_2}
                     </p>
                 </div>
             </div>

@@ -18,7 +18,7 @@ export const PersonalData: React.FC = () => {
         <div className="w-full flex flex-col text-center text-[#3b4256]">
 
             <Helmet>
-                <title>Victory Park - политика обработки персональных данных</title>
+                <title>{(import.meta as any).env.VITE_BC_NAME} - политика обработки персональных данных</title>
                 <link rel="canonical" href={(import.meta as any).env.VITE_APP_URL + '/personal-data'}/>
             </Helmet>
 
