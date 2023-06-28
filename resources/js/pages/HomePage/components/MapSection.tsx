@@ -28,14 +28,14 @@ export const MapSection: React.FC = ({}) => {
                     }}>
                         <Map
                             defaultState={{
-                                center: [55.730426, 37.634793],
+                                center: [55.744004, 37.634955],
                                 zoom: 17,
                                 behaviors: ["disable('scrollZoom')"]
                             }}
                             className="w-full h-full"
                         >
                             <Placemark
-                                geometry={[55.730426, 37.634793]}
+                                geometry={[55.744004, 37.634955]}
                                 options={{
                                     iconColor: '#f82f38',
                                 }}

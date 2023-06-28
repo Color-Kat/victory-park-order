@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- Title -->
-    <title>Бизнес-центр Павелецкая Плаза (Paveletskaya Tower)</title>
+    <title>Бизнес-центр «Central City Tower»</title>
 
     <!-- KeyWords -->
-    <meta name="keywords" content="бц Павелецкая Плаза, офис на Павелецкой площади" data-react-helmet="true">
+    <meta name="keywords" content="бц Central City Tower, офис около Кремля" data-react-helmet="true">
 
     <!--  Description  -->
-    <meta name="description" content="Бизнес-центр Павелецкая Плаза (Paveletskaya Tower) – это современный деловой комплекс класса А, расположенный в одном из самых популярных и исторически значимых районов Москвы - Замоскворечье." data-react-helmet="true">
+    <meta name="description" content="Бизнес-центр «Central City Tower» - один из самых престижных бизнес-центров класса «А». Здание представляет собой современный офисный центр, расположенный на Овчинниковской набережной, в историческом районе столицы Замоскворечье." data-react-helmet="true">
 
     <!--  Favicon  -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">

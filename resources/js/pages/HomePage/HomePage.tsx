@@ -27,8 +27,8 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
     return (
         <>
             <Helmet>
-                <title>Бизнес-центр Павелецкая Плаза (Paveletskaya Tower)</title>
-                <meta name="description" content="Бизнес-центр Павелецкая Плаза (Paveletskaya Tower) – это современный деловой комплекс класса А, расположенный в одном из самых популярных и исторически значимых районов Москвы - Замоскворечье." />
+                <title>Бизнес-центр «Central City Tower»</title>
+                <meta name="description" content="Бизнес-центр «Central City Tower» - один из самых престижных бизнес-центров класса «А». Здание представляет собой современный офисный центр, расположенный на Овчинниковской набережной, в историческом районе столицы Замоскворечье." />
                 <link rel="canonical" href={(import.meta as any).env.VITE_APP_URL + '/'}/>
             </Helmet>
 
