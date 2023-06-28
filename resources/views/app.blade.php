@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- Title -->
-    <title>Бизнес-центр {{env('VITE_BC_NAME')}} (ex. Минская Плаза) в Москве</title>
+    <title>Бизнес-центр Монарх. Офисы в БЦ Монарх на Ленинградском проспекте, 31а</title>
 
     <!-- KeyWords -->
-    <meta name="keywords" content="бц Victory Park, бц Минская Плаза, офис в районе Раменки" data-react-helmet="true">
+    <meta name="keywords" content="бц Монарх, офис на Ленинградском проспекте" data-react-helmet="true">
 
     <!--  Description  -->
-    <meta name="description" content="Аренда и продажа офисов класса А в Victory Park (ex. Минская Плаза) в Центре Москвы." data-react-helmet="true">
+    <meta name="description" content="" data-react-helmet="true">
 
     <!--  Favicon  -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -50,7 +50,7 @@
             var p = d.location.protocol == "https:" ? "https://" : "http://";
             var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/"+id+"/init?referrer="+encodeURIComponent(d.location.href);
             var js = d.createElement(s); js.charset="UTF-8"; js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
-        })(window, document, 'script', 'cloud.roistat.com', '0c234f559ac46ed071d0bb8ca499e5e4');
+        })(window, document, 'script', 'cloud.roistat.com', {{env('ROISTAT_SCRIPT_KEY')}});
     </script>
     <!-- Roistat Counter End -->
 

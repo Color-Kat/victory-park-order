@@ -1,6 +1,7 @@
 .partner-logos img{
     height: 100%;
     filter: grayscale(100%);
+    border-radius: 15px;
 
     &:hover {
         filter: grayscale(0%);

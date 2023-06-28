@@ -32,7 +32,7 @@ export const FirstSection: React.FC = ({}) => {
             <img
                 src={firstScreenImg}
                 alt=""
-                className="absolute w-full h-full top-0 left-0 object-cover z-[-1] object-right-top"
+                className="absolute w-full h-full top-0 left-0 object-cover z-[-1] object-center"
             />
 
             <div className="section-overlay hidden lg:block"/>

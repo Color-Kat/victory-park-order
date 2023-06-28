@@ -66,6 +66,8 @@ class OfficesController extends Controller
     public function getGalleryPhotos() {
         $directory = public_path("storage/gallery-photos/");
 
+        $photos = [];
+
         if (is_dir($directory)) {
             $photos = array_values(
                 array_map(function ($value) {

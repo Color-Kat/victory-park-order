@@ -38,7 +38,7 @@ class CallController extends Controller
         ];
 
         $response = $this->httpPost(
-            'https://cloud.roistat.com/integration/webhook?key=8fbb4bb921aa2a01544fff95303eb43e',
+            'https://cloud.roistat.com/integration/webhook?key='.env('ROISTAT_SERVER_KEY'),
             json_encode($roistatData)
         );
     }

@@ -32,20 +32,22 @@ export const RentOfficePage: React.FC = ({}) => {
         crmId: +officeCrmId!
     });
 
+    const BC_name = (import.meta as any).env.VITE_BC_NAME;
+
     return (
         <div className="relative w-full px-5 min-h-screen top-0 pb-32">
             {office &&
                 <div className="pb-10">
                     <Helmet>
-                        <title>Аренда офиса {officeArea(office)} в бизнес-центре {(import.meta as any).env.VITE_BC_NAME}</title>
-                        <meta name="description" content={`Аренда офисов в бизнес-центре ${(import.meta as any).env.VITE_BC_NAME} (Минская Плаза). Площадь ${officeArea(office)}, ${office.floor} этаж.`} />
-                        <meta name="keywords" content="бц Victory Park, аренда офиса в БЦ Victory Park, снять офис в БЦ Victory Park, бц Минская Плаза" />
+                        <title>Аренда офиса {officeArea(office)} в бизнес-центре {BC_name}</title>
+                        <meta name="description" content={`Аренда офисов в бизнес-центре ${BC_name}. Площадь ${officeArea(office)}, ${office.floor} этаж.`} />
+                        <meta name="keywords" content={`бц ${BC_name}, аренда офиса в БЦ ${BC_name}, снять офис в БЦ ${BC_name}`} />
                         <link rel="canonical" href={(import.meta as any).env.VITE_APP_URL + '/rent/' + officeCrmId}/>
                     </Helmet>
 
                     <div className="lg:py-12 py-6 px-5">
                         <h1 className="font-metapro lg:text-6xl md:text-6xl xs:text-5xl text-3xl max-w-5xl mx-auto font-bold text-app-accent text-center">
-                            Аренда офиса <OfficeArea office={office}/> в бизнес-центре {(import.meta as any).env.VITE_BC_NAME}
+                            Аренда офиса <OfficeArea office={office}/> в бизнес-центре {BC_name}
                         </h1>
                     </div>
 

@@ -91,7 +91,7 @@ export const Header = () => {
                         />
 
                         <p className="text-gray-400 mt-3 font-light" style={{fontSize: '13px'}}>
-                            Современный комплекс класса B+
+                            Офисный центр класса A
                         </p>
                     </a>
 

@@ -1,12 +1,10 @@
 import React from 'react';
 import {RedButton} from "@UI/Buttons";
-import firstScreenImg from "@assets/images/first-screen.jpg";
+import secondScreenImg from "@assets/images/second-screen.jpg";
 import {Link} from "react-router-dom";
 
 
 export const SecondSection: React.FC = ({}) => {
-
-
     return (
         <div
             className="relative section w-full h-full lg:px-5 md:px-16 px-5 flex items-center justify-center fullpage-overlay"
@@ -18,7 +16,7 @@ export const SecondSection: React.FC = ({}) => {
                     {(import.meta as any).env.VITE_TITLE_2}
                 </h1>
 
-                <div className="text-lg">
+                <div className="text-lg shadow-3xl bg-black/20 rounded-xl backdrop-blur-sm p-3 ">
                     <p>
                         {(import.meta as any).env.VITE_SUBTITLE_2}
                     </p>
@@ -30,9 +28,9 @@ export const SecondSection: React.FC = ({}) => {
             </Link>
 
             <img
-                src={firstScreenImg}
+                src={secondScreenImg}
                 alt=""
-                className="absolute w-full h-full top-0 left-0 object-cover z-[-1] object-right-top"
+                className="absolute w-full h-full top-0 left-0 object-cover z-[-1] object-bottom"
             />
         </div>
     );
