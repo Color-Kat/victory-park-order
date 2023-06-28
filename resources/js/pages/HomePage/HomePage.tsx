@@ -27,8 +27,8 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
     return (
         <>
             <Helmet>
-                <title>Бизнес-центр Монарх. Офисы в БЦ Монарх на Ленинградском проспекте, 31а</title>
-                <meta name="description" content="Бизнес-центра Монарх в Москве на Ленинградском проспекте. БЦ Монарх входит в состав многофункционального делового спортивно-рекреационного комплекса МонАрх-Центр." />
+                <title>Бизнес-центр Павелецкая Плаза (Paveletskaya Tower)</title>
+                <meta name="description" content="Бизнес-центр Павелецкая Плаза (Paveletskaya Tower) – это современный деловой комплекс класса А, расположенный в одном из самых популярных и исторически значимых районов Москвы - Замоскворечье." />
                 <link rel="canonical" href={(import.meta as any).env.VITE_APP_URL + '/'}/>
             </Helmet>
 

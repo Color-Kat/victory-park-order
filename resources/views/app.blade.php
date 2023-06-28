@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- Title -->
-    <title>Бизнес-центр Монарх. Офисы в БЦ Монарх на Ленинградском проспекте, 31а</title>
+    <title>Бизнес-центр Павелецкая Плаза (Paveletskaya Tower)</title>
 
     <!-- KeyWords -->
-    <meta name="keywords" content="бц Монарх, офис на Ленинградском проспекте" data-react-helmet="true">
+    <meta name="keywords" content="бц Павелецкая Плаза, офис на Павелецкой площади" data-react-helmet="true">
 
     <!--  Description  -->
-    <meta name="description" content="" data-react-helmet="true">
+    <meta name="description" content="Бизнес-центр Павелецкая Плаза (Paveletskaya Tower) – это современный деловой комплекс класса А, расположенный в одном из самых популярных и исторически значимых районов Москвы - Замоскворечье." data-react-helmet="true">
 
     <!--  Favicon  -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
