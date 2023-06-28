@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- Title -->
-    <title>Бизнес-центр Каланчевская Плаза - аренда офисов и торговых площадей</title>
+    <title>Бизнес-центр Риверсайд Тауэрс - аренда офисов и торговых площадей</title>
 
     <!-- KeyWords -->
-    <meta name="keywords" content="БЦ каланчевская плаза, каланчевская плаза аренда, аренда офиса каланчевская, сайт каланчевская плаза">
+    <meta name="keywords" content="риверсайд тауэрс, бц риверсайд тауэрс, аренда офиса риверсайд тауэрс, бизнес центр риверсайд тауэрс">
 
     <!--  Description  -->
-    <meta name="description" content="БЦ Каланчевская Плаза. Аренда и продажа офисных помещений" data-react-helmet="true">
+    <meta name="description" content="Аренда и покупка офисов в бизнес-центре Риверсайд Тауэрс. Офисные помещения класса А в Москве, ЦАО, метро Павелецкая, район Замоскворечье. Адрес: Космодамианская набережная, 52" data-react-helmet="true">
 
     <!--  Favicon  -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">

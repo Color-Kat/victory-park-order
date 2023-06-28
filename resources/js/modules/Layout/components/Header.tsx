@@ -91,12 +91,12 @@ export const Header = () => {
                         {/*/>*/}
 
                         <h1 className="text-neutral-800 font-serif text-center leading-3 tracking-tight md:text-5xl text-3xl">
-                            <span className="block md:text-3xl text-xl -tracking-widest">Каланчевская</span>
-                            <span className="tracking-widest">Плаза</span>
+                            <span className="block md:text-3xl text-xl tracking-widest">Riverside</span>
+                            <span className="md:tracking-normal tracking-wide">Towers</span>
                         </h1>
 
                         <p className="text-gray-500 mt-3 font-light" style={{fontSize: '13px'}}>
-                            Офисный центр класса B+
+                            Офисный центр класса A
                         </p>
                     </a>
 

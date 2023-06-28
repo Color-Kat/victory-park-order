@@ -27,8 +27,8 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
     return (
         <>
             <Helmet>
-                <title>Бизнес-центр Каланчевская Плаза - аренда офисов и торговых площадей</title>
-                <meta name="description" content="БЦ Каланчевская Плаза. Аренда и продажа офисных помещений" />
+                <title>Бизнес-центр Риверсайд Тауэрс - аренда офисов и торговых площадей</title>
+                <meta name="description" content="Аренда и покупка офисов в бизнес-центре Риверсайд Тауэрс. Офисные помещения класса А в Москве, ЦАО, метро Павелецкая, район Замоскворечье. Адрес: Космодамианская набережная, 52" />
                 <link rel="canonical" href={(import.meta as any).env.VITE_APP_URL + '/'}/>
             </Helmet>
 
