@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- Title -->
-    <title>Бизнес-центр Лотте Плаза - аренда офисов и торговых площадей</title>
+    <title>Бизнес-центр Каланчевская Плаза - аренда офисов и торговых площадей</title>
 
     <!-- KeyWords -->
-    <meta name="keywords" content="бц Лотте Плаза, офис на Новом Арбате">
+    <meta name="keywords" content="БЦ каланчевская плаза, каланчевская плаза аренда, аренда офиса каланчевская, сайт каланчевская плаза">
 
     <!--  Description  -->
-    <meta name="description" content="Лотте Плаза (Lotte Plaza) – многофункциональный комплекс, состоящий из бизнес-центра класса премиум, торгового комплекса и пятизвёздочного отеля." data-react-helmet="true">
+    <meta name="description" content="БЦ Каланчевская Плаза. Аренда и продажа офисных помещений" data-react-helmet="true">
 
     <!--  Favicon  -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">

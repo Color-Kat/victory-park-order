@@ -27,8 +27,8 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
     return (
         <>
             <Helmet>
-                <title>Бизнес-центр Лотте Плаза - аренда офисов и торговых площадей</title>
-                <meta name="description" content="Лотте Плаза (Lotte Plaza) – многофункциональный комплекс, состоящий из бизнес-центра класса премиум, торгового комплекса и пятизвёздочного отеля." />
+                <title>Бизнес-центр Каланчевская Плаза - аренда офисов и торговых площадей</title>
+                <meta name="description" content="БЦ Каланчевская Плаза. Аренда и продажа офисных помещений" />
                 <link rel="canonical" href={(import.meta as any).env.VITE_APP_URL + '/'}/>
             </Helmet>
 
