@@ -4,10 +4,11 @@ import {Link} from "react-router-dom";
 import illustration from "@assets/images/first-screen.jpg";
 import {TextSection} from "@UI/Sections/TextSection.tsx";
 
-import partner_logo_1 from "@assets/partner-logos/1.jpg";
-import partner_logo_2 from "@assets/partner-logos/2.jpg";
-import partner_logo_3 from "@assets/partner-logos/3.jpg";
-import partner_logo_4 from "@assets/partner-logos/4.jpg";
+const partner_logo_1 = "/storage/partner-logos/1.jpg";
+const partner_logo_2 = "/storage/partner-logos/2.jpg";
+const partner_logo_3 = "/storage/partner-logos/3.jpg";
+const partner_logo_4 = "/storage/partner-logos/4.jpg";
+
 
 import "./infrastructure.scss";
 import {Helmet} from "react-helmet";
@@ -65,11 +66,11 @@ export const InfrastructurePage: React.FC = () => {
                     Арендаторы бизнес-центра {(import.meta as any).env.VITE_BC_NAME}
                 </h2>
 
-                <div className="partner-logos flex items-center sm:my-16 my-8 gap-3 justify-between flex-wrap max-w-5xl mx-auto">
-                    <img src={partner_logo_1} alt="Mr. Doors"/>
-                    <img src={partner_logo_2} alt="Miele"/>
-                    <img src={partner_logo_3} alt="СТС media"/>
-                    <img src={partner_logo_4} alt="Kotanyi"/>
+                <div className="partner-logos flex items-center sm:my-16 my-8 gap-3 justify-between flex-wrap max-w-5xl mx-auto sm:flex-row flex-col">
+                    <img src={partner_logo_1} alt=""/>
+                    <img src={partner_logo_2} alt=""/>
+                    <img src={partner_logo_3} alt=""/>
+                    <img src={partner_logo_4} alt=""/>
                 </div>
             </section>
 
