@@ -27,8 +27,8 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
     return (
         <>
             <Helmet>
-                <title>Бизнес-парк Золотое кольцо - аренда и продажа офисов</title>
-                <meta name="description" content="Аренда и покупка офисов в бизнес-центре Золотое кольцо. Офисные помещения класса B+ в Москве" />
+                <title>Особняк «Усадьба Якова Брюса» - аренда и продажа офисов</title>
+                <meta name="description" content="Аренда и покупка офисов в особняке «Усадьба Якова Брюса». Офисные помещения класса A в Москве" />
                 <link rel="canonical" href={(import.meta as any).env.VITE_APP_URL + '/'}/>
             </Helmet>
 
@@ -45,7 +45,7 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
             {is_sell_active && <SellSection />}
 
             {/* Photo gallery section */}
-            {/*<GallerySection />*/}
+            <GallerySection />
 
             {/* Section 6 - map */}
             <MapSection />
@@ -61,7 +61,7 @@ export const HomePage = FullPageHOC(({fullpageApi}: IProps) => {
         'page-2',
         (is_rent_active && 'page-3'),
         (is_sell_active && 'page-4'),
-        // 'page-5',
+        'page-5',
         'page-6',
         'page-7'
     ].filter(Boolean),

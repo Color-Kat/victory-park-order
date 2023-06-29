@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- Title -->
-    <title>Бизнес-парк Золотое кольцо - аренда и продажа офисов</title>
+    <title>Особняк «Усадьба Якова Брюса» - аренда и продажа офисов</title>
 
     <!-- KeyWords -->
-    <meta name="keywords" content="бц золотое кольцо, аренда офиса золотое кольцо, бизнес центр золотое кольцо">
+    <meta name="keywords" content="особняк усадьба якова брюса», аренда офиса усадьба якова брюса, бизнес центр усадьба якова брюса">
 
     <!--  Description  -->
-    <meta name="description" content="Аренда и покупка офисов в бизнес-центре Золотое кольцо. Офисные помещения класса B+ в Москве" data-react-helmet="true">
+    <meta name="description" content="Аренда и покупка офисов в особняке «Усадьба Якова Брюса». Офисные помещения класса A в Москве" data-react-helmet="true">
 
     <!--  Favicon  -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">

@@ -11,12 +11,12 @@ export const SecondSection: React.FC = ({}) => {
             data-anchor="page-2"
             id="page-2-anchor"
         >
-            <div className="flex flex-col justify-between text-center mb-8 max-w-4xl shadow-3xl bg-black/30 rounded-xl backdrop-blur-md p-4 py-8">
+            <div className="flex flex-col justify-between text-center mb-8 max-w-4xl">
                 <h1 className="font-metapro lg:text-7xl md:text-6xl xs:text-5xl text-3xl font-bold lg:mb-16 mb-8">
                     {(import.meta as any).env.VITE_TITLE_2}
                 </h1>
 
-                <div className="text-lg">
+                <div className="text-lg shadow-3xl bg-black/20 rounded-xl backdrop-blur-sm p-3 ">
                     <p>
                         {(import.meta as any).env.VITE_SUBTITLE_2}
                     </p>
