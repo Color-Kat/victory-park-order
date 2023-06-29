@@ -4,10 +4,10 @@ import {Link} from "react-router-dom";
 import illustration from "@assets/images/first-screen.jpg";
 import {TextSection} from "@UI/Sections/TextSection.tsx";
 
-import partner_logo_1 from "@assets/partner-logos/logo-1.png";
-import partner_logo_2 from "@assets/partner-logos/logo-2.png";
-import partner_logo_3 from "@assets/partner-logos/logo-3.png";
-import partner_logo_4 from "@assets/partner-logos/logo-4.png";
+const partner_logo_1 = "/storage/partner-logos/1.jpg";
+const partner_logo_2 = "/storage/partner-logos/2.jpg";
+const partner_logo_3 = "/storage/partner-logos/3.jpg";
+const partner_logo_4 = "/storage/partner-logos/4.jpg";
 
 import "./infrastructure.scss";
 import {Helmet} from "react-helmet";
@@ -65,7 +65,7 @@ export const InfrastructurePage: React.FC = () => {
                     {(import.meta as any).env.VITE_BC_NAME}
                 </h2>
 
-                <div className="partner-logos flex items-center sm:my-16 my-8 gap-3 justify-between flex-wrap max-w-5xl mx-auto">
+                <div className="partner-logos flex items-center sm:my-16 my-8 gap-3 justify-between flex-wrap max-w-5xl mx-auto sm:flex-row flex-col">
                     <img src={partner_logo_1} alt="new cinema lab"/>
                     <img src={partner_logo_2} alt="ОГК Групп"/>
                     <img src={partner_logo_3} alt="ЕНСК"/>
