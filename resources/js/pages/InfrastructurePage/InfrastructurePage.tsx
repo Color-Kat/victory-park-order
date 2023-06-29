@@ -2,12 +2,11 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 import illustration from "@assets/images/first-screen.jpg";
-import {TextSection} from "@UI/Sections/TextSection.tsx";
 
-import partner_logo_1 from "@assets/partner-logos/1.jpg";
-import partner_logo_2 from "@assets/partner-logos/2.jpg";
-import partner_logo_3 from "@assets/partner-logos/3.jpg";
-import partner_logo_4 from "@assets/partner-logos/4.jpg";
+const partner_logo_1 = "/storage/partner-logos/1.jpg";
+const partner_logo_2 = "/storage/partner-logos/2.jpg";
+const partner_logo_3 = "/storage/partner-logos/3.jpg";
+const partner_logo_4 = "/storage/partner-logos/4.jpg";
 
 import "./infrastructure.scss";
 import {Helmet} from "react-helmet";
@@ -40,7 +39,7 @@ export const InfrastructurePage: React.FC = () => {
 
             <section className="md:px-8 px-5">
                 <p className="max-w-3xl mx-auto sm:my-12 my-8">
-                    Бизнес-центр «Central City Tower» (Германия) отличается развитой внешней и внутренней инфраструктурой. Для приятного времяпровождения арендаторов предлагается широкий выбор разнообразных заведений. Неподалеку от бизнес-центра расположены десятки ресторанов и кафе. Кроме того в окрестностях бизнес центра расположен пятизвездочный отель «Балчуг Кемпински», где можно разместить гостей или арендовать конференц-зал. В «Central City Tower» функционируют отделения крупных российских и европейских банков («ЮниКредит Банк», «Рйффайзенбанк»). Это позволяет арендаторам проводить любые финансовые операции, не выходя из здания.
+                    Бизнес-центр «Central City Tower» отличается развитой внешней и внутренней инфраструктурой. Для приятного времяпровождения арендаторов предлагается широкий выбор разнообразных заведений. Неподалеку от бизнес-центра расположены десятки ресторанов и кафе. Кроме того в окрестностях бизнес центра расположен пятизвездочный отель «Балчуг Кемпински», где можно разместить гостей или арендовать конференц-зал. В «Central City Tower» функционируют отделения крупных российских и европейских банков («ЮниКредит Банк», «Рйффайзенбанк»). Это позволяет арендаторам проводить любые финансовые операции, не выходя из здания.
                 </p>
             </section>
 
@@ -57,7 +56,7 @@ export const InfrastructurePage: React.FC = () => {
                     Арендаторы бизнес-центра {(import.meta as any).env.VITE_BC_NAME}
                 </h2>
 
-                <div className="partner-logos flex items-center sm:my-16 my-8 gap-3 justify-between flex-wrap max-w-5xl mx-auto">
+                <div className="partner-logos flex items-center sm:my-16 my-8 gap-3 justify-between flex-wrap max-w-5xl mx-auto sm:flex-row flex-col">
                     <img src={partner_logo_1} alt="Mr. Doors"/>
                     <img src={partner_logo_2} alt="Miele"/>
                     <img src={partner_logo_3} alt="СТС media"/>
