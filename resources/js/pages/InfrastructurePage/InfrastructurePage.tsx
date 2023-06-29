@@ -4,10 +4,10 @@ import {Link} from "react-router-dom";
 import illustration from "@assets/images/first-screen.jpg";
 import {TextSection} from "@UI/Sections/TextSection.tsx";
 
-import partner_logo_1 from "@assets/partner-logos/1.jpg";
-import partner_logo_2 from "@assets/partner-logos/2.jpg";
-import partner_logo_3 from "@assets/partner-logos/3.jpg";
-import partner_logo_4 from "@assets/partner-logos/4.jpg";
+const partner_logo_1 = "/storage/partner-logos/1.jpg";
+const partner_logo_2 = "/storage/partner-logos/2.jpg";
+const partner_logo_3 = "/storage/partner-logos/3.jpg";
+const partner_logo_4 = "/storage/partner-logos/4.jpg";
 
 import "./infrastructure.scss";
 import {Helmet} from "react-helmet";
@@ -46,13 +46,28 @@ export const InfrastructurePage: React.FC = () => {
 
             <TextSection
                 title=""
-                text="Дополнительным преимуществом комплекса является развитая инфраструктура – практически любой текущий вопрос арендаторов можно решить не выходя за пределы бизнес-центра – на территории комплекса расположены отделения банков (Юникредит, Сбербанк, Банк БФА), кафе и рестораны (Sodexo, Prime Star, ресторан Музей, Starbucks), аптека, флористический салон, химчистка, автомойка, салон красоты, нотариус и многое другое."
+                text='В составе бизнес-парка "Золотое кольцо" вы найдете разнообразные кафе и рестораны, где можно насладиться вкусным обедом или провести деловую встречу в приятной атмосфере. Они предлагают разнообразные меню и кухни, чтобы удовлетворить вкусы самых требовательных посетителей.'
             />
 
-            {/*<TextSection*/}
-            {/*    title=""*/}
-            {/*    text="Для обеспечения комфорта и удобства сотрудников и посетителей в бизнес-центре имеются различные рестораны, кофейни и кафе, предлагающие разнообразное меню и возможность проведения деловых обедов или неформальных встреч. Фитнес-центр, расположенный внутри Каланчёвской Плазы, дает возможность заняться спортом и поддерживать здоровый образ жизни без необходимости покидать бизнес-центр."*/}
-            {/*/>*/}
+            <TextSection
+                title=""
+                text='Фитнес-клуб, расположенный в бизнес-парке, предоставляет возможность поддерживать здоровье и физическую форму. Здесь вы найдете современные тренажеры, групповые занятия и профессиональных инструкторов, готовых помочь вам достичь ваших фитнес-целей.'
+            />
+
+            <TextSection
+                title=""
+                text='Для удобства автовладельцев в бизнес-парке "Золотое кольцо" есть автомойка, где вы можете освежить внешний вид своего автомобиля. Также в комплексе имеется столовая, где можно быстро и вкусно перекусить в рабочий день.'
+            />
+
+            <TextSection
+                title=""
+                text='Для финансовых операций и удобства сотрудников и посетителей в бизнес-парке есть банкоматы и терминалы оплаты, позволяющие быстро и безопасно проводить финансовые операции.'
+            />
+
+            <TextSection
+                title=""
+                text='Кроме того, в составе бизнес-парка "Золотое кольцо" есть магазины, где можно приобрести различные товары и продукты. Это удобно для покупок в рабочий день, не выходя из комплекса."'
+            />
 
             <section className="md:px-8 px-5 text-base mb-16">
                 <h2
@@ -61,7 +76,7 @@ export const InfrastructurePage: React.FC = () => {
                     Арендаторы бизнес-центра {(import.meta as any).env.VITE_BC_NAME}
                 </h2>
 
-                <div className="partner-logos flex items-center sm:my-16 my-8 gap-3 justify-between flex-wrap max-w-5xl mx-auto">
+                <div className="partner-logos flex items-center sm:my-16 my-8 gap-3 justify-between flex-wrap max-w-5xl mx-auto  sm:flex-row flex-col">
                     <img src={partner_logo_1} alt="Mr. Doors"/>
                     <img src={partner_logo_2} alt="Miele"/>
                     <img src={partner_logo_3} alt="СТС media"/>
