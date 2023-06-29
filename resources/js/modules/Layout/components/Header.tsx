@@ -91,7 +91,7 @@ export const Header = () => {
                         {/*/>*/}
 
                         <h1 className="font-metapro text-black font-bold md:text-4xl text-2xl text-center tracking-tight">
-                            <span className="md:block hidden text-2xl leading-4">Бизнес центр</span>
+                            <span className="md:block hidden text-2xl leading-4">Бизнес-центр</span>
                             Лотте Плаза
                         </h1>
 
