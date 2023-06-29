@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <!-- Title -->
-    <title>Бизнес-центр Риверсайд Тауэрс - аренда офисов и торговых площадей</title>
+    <title>Бизнес-парк Золотое кольцо - аренда и продажа офисов</title>
 
     <!-- KeyWords -->
-    <meta name="keywords" content="риверсайд тауэрс, бц риверсайд тауэрс, аренда офиса риверсайд тауэрс, бизнес центр риверсайд тауэрс">
+    <meta name="keywords" content="бц золотое кольцо, аренда офиса золотое кольцо, бизнес центр золотое кольцо">
 
     <!--  Description  -->
-    <meta name="description" content="Аренда и покупка офисов в бизнес-центре Риверсайд Тауэрс. Офисные помещения класса А в Москве, ЦАО, метро Павелецкая, район Замоскворечье. Адрес: Космодамианская набережная, 52" data-react-helmet="true">
+    <meta name="description" content="Аренда и покупка офисов в бизнес-центре Золотое кольцо. Офисные помещения класса B+ в Москве" data-react-helmet="true">
 
     <!--  Favicon  -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -50,7 +50,7 @@
             var p = d.location.protocol == "https:" ? "https://" : "http://";
             var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/"+id+"/init?referrer="+encodeURIComponent(d.location.href);
             var js = d.createElement(s); js.charset="UTF-8"; js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
-        })(window, document, 'script', 'cloud.roistat.com', {{env('ROISTAT_SCRIPT_KEY')}});
+        })(window, document, 'script', 'cloud.roistat.com', '{{env('ROISTAT_SCRIPT_KEY')}}');
     </script>
     <!-- Roistat Counter End -->
 

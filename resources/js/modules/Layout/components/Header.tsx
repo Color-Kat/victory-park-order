@@ -50,7 +50,7 @@ const Navigation = ({isMobile = false}: { isMobile?: boolean }) => {
             <MenuLink isMobile={isMobile} isActive={hash == '#page-1' || hash == '#page-2'  || (isMobile && pathname == '/')} href="/#page-1">Главная</MenuLink>
             {is_rent_active && <MenuLink isMobile={isMobile} isActive={hash == '#page-3'} href="/#page-3">Аренда офисов</MenuLink>}
             {is_sell_active && <MenuLink isMobile={isMobile} isActive={hash == '#page-4'} href="/#page-4">Продажа офисов</MenuLink>}
-            <MenuLink isMobile={isMobile} isActive={hash == '#page-5'} href="/#page-5">Фотогалерея</MenuLink>
+            {/*<MenuLink isMobile={isMobile} isActive={hash == '#page-5'} href="/#page-5">Фотогалерея</MenuLink>*/}
             <MenuLink isMobile={isMobile} isActive={hash == '#page-6' || hash == '#page-7'} href="/#page-6">Контакты</MenuLink>
             <MenuLink isMobile={isMobile} isActive={pathname == '/about'} to="/about">О бизнес-центре</MenuLink>
         </ul>
@@ -91,12 +91,12 @@ export const Header = () => {
                         {/*/>*/}
 
                         <h1 className="text-neutral-800 font-serif text-center leading-3 tracking-tight md:text-5xl text-3xl">
-                            <span className="block md:text-3xl text-xl tracking-widest">Riverside</span>
-                            <span className="md:tracking-normal tracking-wide">Towers</span>
+                            <span className="block md:text-3xl text-xl md:tracking-widest tracking-wide">Golden</span>
+                            <span className="md:tracking-widest tracking-wide">Ring</span>
                         </h1>
 
                         <p className="text-gray-500 mt-3 font-light" style={{fontSize: '13px'}}>
-                            Офисный центр класса A
+                            Офисный центр класса B+
                         </p>
                     </a>
 
