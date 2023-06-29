@@ -61,8 +61,7 @@ export const InfrastructurePage: React.FC = () => {
                 <h2
                     className="sm:mt-12 mt-8 text-app-accent font-bold lg:text-5xl md:text-4xl text-3xl font-metapro max-w-2xl mx-auto"
                 >
-                    Арендаторы бизнес-центра
-                    {(import.meta as any).env.VITE_BC_NAME}
+                    Арендаторы бизнес-центра {(import.meta as any).env.VITE_BC_NAME}
                 </h2>
 
                 <div className="partner-logos flex items-center sm:my-16 my-8 gap-3 justify-between flex-wrap max-w-5xl mx-auto sm:flex-row flex-col">
