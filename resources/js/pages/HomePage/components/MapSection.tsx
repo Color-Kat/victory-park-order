@@ -57,7 +57,7 @@ export const MapSection: React.FC = ({}) => {
                         className="bg-gray-700 text-center xl:px-14 px-3 sm:py-5 py-3 sm:rounded rounded-t md:w-1/4 flex gap-2 sm:flex-col items-center sm:justify-center justify-between"
                     >
                         <h6 className="font-bold uppercase text-gray-400 sm:mb-2 md:text-base text-sm">Адрес: </h6>
-                        <p className="md:text-sm text-xs text-gray-100">
+                        <p className="md:text-sm text-xs text-gray-100 sm:text-center text-right">
                             Москва, Космодамианская набережная, <span className="whitespace-nowrap">д.52, стр.1-5</span>
                         </p>
                     </article>
