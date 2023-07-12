@@ -4,12 +4,13 @@ import illustration from "@assets/images/first-screen.jpg";
 import {Helmet} from "react-helmet";
 import Markdown from "react-markdown";
 
-export const PersonalData: React.FC = () => {
+export const PrivacyPolicy: React.FC = () => {
 
-    const [text, setText] = useState('');
+    const [text, setText
+    ] = useState('');
 
     useEffect(() => {
-        fetch('/storage/personal-data.md').then(response => {
+        fetch('/storage/privacy-policy.md').then(response => {
             return response.text()
         }).then(text => setText(text));
     }, []);
@@ -18,7 +19,7 @@ export const PersonalData: React.FC = () => {
         <div className="w-full flex flex-col text-center text-[#3b4256]">
 
             <Helmet>
-                <title>{(import.meta as any).env.VITE_BC_NAME} - согласие на обработку персональных данных</title>
+                <title>{(import.meta as any).env.VITE_BC_NAME} - политика конфиденциальности</title>
                 <link rel="canonical" href={(import.meta as any).env.VITE_APP_URL + '/personal-data'}/>
             </Helmet>
 
@@ -26,14 +27,14 @@ export const PersonalData: React.FC = () => {
                 <div className="image-overlay w-full h-full pointer-events-none absolute top-0 left-0"/>
 
                 <div className="relative my-12 text-gray-100 text-sm text-left">
-                    <Link to="/">Главная</Link><span className="mx-2">/</span>Согласие на обработку персональных данных
+                    <Link to="/">Главная</Link><span className="mx-2">/</span>политика конфиденциальности
                 </div>
 
                 <h1 className="lg:text-7xl md:text-5xl text-4xl font-bold font-metapro my-16">
-                    Согласие на обработку персональных данных
+                    Политика конфиденциальности
                 </h1>
 
-                <div className="disable-tailwind text-left bg-white text-black p-3 rounded-sm">
+                <div className="disable-tailwind text-left bg-white text-black py-3 px-5 rounded-sm">
                     <Markdown skipHtml children={text}/>
                 </div>
 

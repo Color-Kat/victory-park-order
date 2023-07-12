@@ -17,6 +17,7 @@ class OfficesController extends Controller
     {
         $office = RentOffice::query()
             ->where('isActive', 1)
+            ->orderBy('floor')
             ->orderBy('areaMax')
             ->get();
 
@@ -34,6 +35,7 @@ class OfficesController extends Controller
     {
         $office = SellOffice::query()
             ->where('isActive', 1)
+            ->orderBy('floor')
             ->orderBy('areaMax')
             ->get();
 
