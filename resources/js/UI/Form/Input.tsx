@@ -4,6 +4,7 @@ import {BsPerson} from "react-icons/bs";
 
 interface InputProps extends InputHTMLAttributes<any> {
     className?: string;
+    containerClassName?: string;
     name: string;
     value: string | number;
     setForm?: any;
@@ -20,6 +21,7 @@ const Input: FunctionComponent<InputProps> = ({
                                                   name,
                                                   setForm,
                                                   className,
+                                                  containerClassName,
                                                   label,
                                                   description,
                                                   error = false,
@@ -31,7 +33,7 @@ const Input: FunctionComponent<InputProps> = ({
 
 
     return (
-        <label htmlFor={name} className="w-full block">
+        <label htmlFor={name} className={"w-full block " + containerClassName}>
             {label && <div className={`leading-4 ${error ? 'mb-1' : 'mb-2'}`}>{label}:</div>}
             {description && <div className="text-sm text-red-500">{description}:</div>}
 

@@ -8,6 +8,7 @@ export const TermsFooter: React.FC = memo(() => {
             <div className="flex flex-wrap justify-end sm:gap-5 gap-2">
                 <a href="/personal-data" target="_blank" className="underline text-right">Политика обработки персональных данных</a>
                 <a href="/terms-of-service" target="_blank" className="underline text-right">Пользовательское соглашение</a>
+                <a href="/privacy-policy" target="_blank" className="underline text-right">Политика конфиденциальности</a>
             </div>
         </div>
     );

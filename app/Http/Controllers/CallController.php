@@ -6,6 +6,7 @@ use App\Mail\NewCallRequestMail;
 use App\Mail\NewWhatsappRequestMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 
 class CallController extends Controller
 {
@@ -28,7 +29,7 @@ class CallController extends Controller
             "email" => $data['email'] ?? null,
             "phone" => $data['phone'],
             "comment" => isset($data['message']) ? "Сообщение:\n " . $data['message'] : null,
-            "roistat_visit" => $_COOKIE["roistat_visit"],
+            "roistat_visit" => $_COOKIE["roistat_visit"] ?? '',
             "fields" => [
                 "Сaйт" => $site,
                 'ID в CRM' => $data['officeCrmId'],
@@ -56,6 +57,17 @@ class CallController extends Controller
 
     public function requestCall(Request $request)
     {
+
+        /* ----- Check Captcha ----- */
+        $validator = Validator::make($request->all(), [
+            'g-recaptcha-response' => 'required|captcha'
+        ]);
+
+        if ($validator->fails())
+            return json_encode(['success' => 0, 'error' => 'Вы не прошли проверку на бота!', 'data' => $validator->errors()]);
+        /* ----- Check Captcha ----- */
+
+
         $name = $request->get('name');
         $phone = '+' . preg_replace('/[^0-9]/', '', $request->get('phone'));
         $email = $request->get('email') ?? '';
@@ -65,7 +77,7 @@ class CallController extends Controller
         $typeDeal = $request->get('typeDeal') ?? '';
 
         $data = [
-            'title' => "Заявка Обратный звонок",
+            'title' => "Заявка Обратный звонок - " . env('APP_NAME'),
             'name' => $name,
             'phone' => $phone,
             'email' => $email,
@@ -77,11 +89,20 @@ class CallController extends Controller
 
         $this->sendRoistat($data);
 
-        Mail::to('office@of.ru')->send(new NewCallRequestMail($data));
+        Mail::to('lead@of.ru')->send(new NewCallRequestMail($data));
     }
 
     public function requestWhatsapp(Request $request)
     {
+        /* ----- Check Captcha ----- */
+        $validator = Validator::make($request->all(), [
+            'g-recaptcha-response' => 'required|captcha'
+        ]);
+
+        if ($validator->fails())
+            return json_encode(['success' => 0, 'error' => 'Вы не прошли проверку на бота!', 'data' => $validator->errors()]);
+        /* ----- Check Captcha ----- */
+
         $name = $request->get('name');
         $phone = '+' . preg_replace('/[^0-9]/', '', $request->get('phone'));
         $officeSpace = $request->get('officeSpace') ?? '';
@@ -89,7 +110,7 @@ class CallController extends Controller
         $typeDeal = $request->get('typeDeal') ?? '';
 
         $data = [
-            'title' => "Презентация Whatsapp",
+            'title' => "Презентация Whatsapp - " . env('APP_NAME'),
             'name' => $name,
             'phone' => $phone,
             'officeCrmId' => $officeCrmId,
@@ -99,6 +120,6 @@ class CallController extends Controller
 
         $this->sendRoistat($data);
 
-        Mail::to('office@of.ru')->send(new NewWhatsappRequestMail($data));
+        Mail::to('lead@of.ru')->send(new NewWhatsappRequestMail($data));
     }
 }

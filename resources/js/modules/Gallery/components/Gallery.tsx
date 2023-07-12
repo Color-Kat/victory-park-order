@@ -15,6 +15,8 @@ interface GalleryProps {
 }
 
 export const Gallery: React.FC<GalleryProps> = ({photos, className}) => {
+    if (typeof photos == 'object') photos = Object.values(photos);
+
     const swiperRef = React.useRef<SwiperType>();
 
     const [currentSlideIndex, setCurrentSlideIndex] = useState(1);
@@ -40,7 +42,7 @@ export const Gallery: React.FC<GalleryProps> = ({photos, className}) => {
                 slidesPerView={1}
                 className={className + ' will-change-transform'}
             >
-                {photos.map(photo => (
+                {photos?.map(photo => (
                     <SwiperSlide
                         key={photo}
                         className=""

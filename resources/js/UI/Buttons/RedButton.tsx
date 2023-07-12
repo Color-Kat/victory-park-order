@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 
 interface RedButtonProps {
-    children: string;
+    children: ReactNode;
     filled: boolean;
     onClick?: (e?: any) => void;
     className?: string;

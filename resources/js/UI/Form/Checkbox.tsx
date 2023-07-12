@@ -13,7 +13,7 @@ interface CheckboxProps extends InputHTMLAttributes<any>{
 
 const Checkbox: FunctionComponent<CheckboxProps> = ({children, checked, name, setForm, className, ...props}) => {
     return (
-        <label htmlFor={name} className="text-sm text-gray-600">
+        <label htmlFor={name} className="text-sm text-gray-600 my-0.5">
 
             <input
                 id={name}

@@ -44,7 +44,7 @@ export const officesApi = createApi({
                 url: `get-office/${data.typeDeal}/${data.crmId}`,
             }),
         }),
-        requestCall: builder.mutation<any, {
+        requestCall: builder.mutation<{success?: boolean, error?: string}, {
             name: string,
             phone: string,
             email?: string,
@@ -52,6 +52,7 @@ export const officesApi = createApi({
             officeSpace?: number,
             officeCrmId?: number,
             typeDeal?: string,
+            'g-recaptcha-response': string
         }>({
             query: (payload) => ({
                 url: `request-call`,
