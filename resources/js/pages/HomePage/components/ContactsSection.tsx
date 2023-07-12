@@ -145,7 +145,7 @@ export const ContactsSection: React.FC = ({}) => {
                         checked={form.agree_1}
                         setForm={setForm}
                     >
-                        Отправляя свои данные, я соглашаюсь с <a href="/terms-of-service" className="underline" target="_blank">Пользовательским соглашением</a> и <a href="/pivacy-policy" className="underline" target="_blank">Политикой конфиденциальности</a>
+                        Отправляя свои данные, я соглашаюсь с <a href="/terms-of-service" className="underline" target="_blank">Пользовательским соглашением</a> и <a href="/privacy-policy" className="underline" target="_blank">Политикой конфиденциальности</a>
                     </Checkbox>
 
                     <Checkbox
