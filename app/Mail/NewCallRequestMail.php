@@ -22,10 +22,12 @@ class NewCallRequestMail extends Mailable
      */
     public function __construct($data)
     {
-        $this->data = [
-            ...$data,
-            'site' => env('APP_URL')
-        ];
+        $this->data = array_merge(
+            $data,
+            [
+                'site' => env('APP_URL')
+            ]
+        );
     }
 
     /**
