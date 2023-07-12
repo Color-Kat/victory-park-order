@@ -9,6 +9,7 @@ import {SellOfficePage} from "@pages/SellOfficePage/SellOfficePage.tsx";
 import {Page404} from "@pages/Other/Page404.tsx";
 import {TermsOfService} from "@pages/Other/TermsOfService.tsx";
 import {PersonalData} from "@pages/Other/PersonalData.tsx";
+import {PrivacyPolicy} from "@pages/Other/PrivacyPolicy.tsx";
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
 
                     <Route path="/terms-of-service" element={<TermsOfService />}/>
                     <Route path="/personal-data" element={<PersonalData />}/>
+                    <Route path="/privacy-policy" element={<PrivacyPolicy />}/>
 
                     <Route path='*' element={<Page404 />}/>
                 </Routes>
