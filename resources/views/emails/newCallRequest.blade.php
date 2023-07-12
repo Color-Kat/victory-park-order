@@ -12,16 +12,16 @@
 <h2>Имя: {{$data['name']}}</h2>
 <p>Тел.: <a href="tel:{{$data['phone']}}">{{$data['phone']}}</a></p>
 
-@if($data['email'])
+@if(isset($data['email']))
     <p>E-mail: <a href="mailto:{{$data['email']}}">{{$data['email']}}</a></p>
 @endif
 
 <p>
-    @if($data['message'])
+    @if(isset($data['message']))
         Сообщение: <br> {{$data['message']}} <br/><br/>
     @endif
 
-    @if($data['officeCrmId'])
+    @if(isset($data['officeCrmId']))
         crmId офиса: {{$data['officeCrmId']}} <br/>
         Площадь офиса: {{$data['officeSpace']}} <br/>
     @endif
