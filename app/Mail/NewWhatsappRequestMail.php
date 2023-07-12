@@ -18,9 +18,14 @@ class NewWhatsappRequestMail extends Mailable
      *
      * @return void
      */
-    public function __construct(private $data)
+    public function __construct($data)
     {
-
+        $this->data = array_merge(
+            $data,
+            [
+                'site' => env('APP_URL')
+            ]
+        );
     }
 
     /**
