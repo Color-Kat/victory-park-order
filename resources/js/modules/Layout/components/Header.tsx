@@ -50,7 +50,7 @@ const Navigation = ({isMobile = false}: { isMobile?: boolean }) => {
             <MenuLink isMobile={isMobile} isActive={hash == '#page-1' || hash == '#page-2'  || (isMobile && pathname == '/')} href="/#page-1">Главная</MenuLink>
             {is_rent_active && <MenuLink isMobile={isMobile} isActive={hash == '#page-3'} href="/#page-3">Аренда офисов</MenuLink>}
             {is_sell_active && <MenuLink isMobile={isMobile} isActive={hash == '#page-4'} href="/#page-4">Продажа офисов</MenuLink>}
-            {/*<MenuLink isMobile={isMobile} isActive={hash == '#page-5'} href="/#page-5">Фотогалерея</MenuLink>*/}
+            <MenuLink isMobile={isMobile} isActive={hash == '#page-5'} href="/#page-5">Фотогалерея</MenuLink>
             <MenuLink isMobile={isMobile} isActive={hash == '#page-6' || hash == '#page-7'} href="/#page-6">Контакты</MenuLink>
             <MenuLink isMobile={isMobile} isActive={pathname == '/about'} to="/about">О бизнес-центре</MenuLink>
         </ul>
