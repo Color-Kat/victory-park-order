@@ -51,7 +51,7 @@ export const RentOfficePage: React.FC = ({}) => {
 
                     <div className="flex lg:flex-row gap-5 flex-col max-w-7xl mx-auto">
                         <ImageGallery
-                            items={office.photos.map(item => ({
+                            items={Object.values(office.photos).map(item => ({
                                 original: item,
                                 thumbnail: item
                             }))}

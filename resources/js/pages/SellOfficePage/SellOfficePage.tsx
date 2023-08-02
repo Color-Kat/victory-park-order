@@ -29,6 +29,7 @@ export const SellOfficePage: React.FC = ({}) => {
         crmId: +officeCrmId!
     });
 
+
     return (
         <div className="relative w-full min-h-screen pb-32">
             {office &&
@@ -49,10 +50,10 @@ export const SellOfficePage: React.FC = ({}) => {
 
                     <div className="flex lg:flex-row gap-5 flex-col max-w-7xl mx-auto">
                         <ImageGallery
-                            items={office.photos.map(item => ({
+                            items={Object.values(office.photos).map(item => ({
                                 original: item,
                                 thumbnail: item
-                            }))}
+                            })) ?? []}
                             additionalClass="xl:max-w-xl md:max-w-md w-full mx-auto flex-1"
                             infinite
                             showThumbnails
