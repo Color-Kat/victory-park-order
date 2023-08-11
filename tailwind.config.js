@@ -60,10 +60,24 @@ module.exports = {
                     },
                 },
                 screens: {
-                    'xs': '560px',
                     // 'lg': '960px',
+                    'xs': '560px',
+                    // 'notebook': '1200px'
+                    // 'height': {'raw': '(max-height: 800px), (min-width: 1024px)'},
+                    // 'small-height': {'raw': '(max-height: 800px), (min-width: 1024px)'},
+
                 }
             },
         },
+        // screens: {
+        //     xs: '560px',
+        //     sm: "640px",
+        //     md: "768px",
+        //     lg: "1024px",
+        //     xl: "1280px",
+        //     '2xl': "1536px",
+        //     'small-height': {'raw': '(max-height: 800px), (min-width: 1024px)'},
+        // },
+
     plugins: [],
 }

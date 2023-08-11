@@ -46,7 +46,7 @@ const Navigation = ({isMobile = false}: { isMobile?: boolean }) => {
     const {is_rent_active, is_sell_active} = useSettings(); // Get settings
 
     return (
-        <ul className="space-y-5">
+        <ul className="2xl:space-y-5 lg:space-y-3 space-y-5">
             <MenuLink isMobile={isMobile} isActive={hash == '#page-1' || hash == '#page-2'  || (isMobile && pathname == '/')} href="/#page-1">Главная</MenuLink>
             {is_rent_active && <MenuLink isMobile={isMobile} isActive={hash == '#page-3'} href="/#page-3">Аренда офисов</MenuLink>}
             {is_sell_active && <MenuLink isMobile={isMobile} isActive={hash == '#page-4'} href="/#page-4">Продажа офисов</MenuLink>}
@@ -66,8 +66,7 @@ export const Header = () => {
         <header
             className="relative flex justify-center lg:items-center lg:w-[300px] w-full h-max lg:px-0 px-4 bg-white z-10 lg:border-r border-app"
         >
-
-            <nav className="flex lg:flex-col lg:pt-8 lg:pb-0 pt-3 pb-3 justify-between items-center lg:h-screen w-full">
+            <nav className="flex lg:flex-col pt-3 pb-3 justify-between items-center lg:h-screen w-full lg:overflow-y-auto overflow-x-hidden">
 
                 {/* Open mobile menu button */}
                 <button
@@ -81,7 +80,7 @@ export const Header = () => {
 
                 {/* Logo block */}
                 <div
-                    className="lg:pb-8 lg:border-b lg:ml-0 xs:ml-[13%] mx-auto xs:mx-0 border-gray-200"
+                    className="lg:py-2 2xl:py-8 lg:border-b lg:ml-0 xs:ml-[13%] mx-auto xs:mx-0 border-gray-200"
                 >
                     <a href="/" className="flex flex-col items-center ">
                         <img
@@ -112,14 +111,14 @@ export const Header = () => {
                 </div>
 
                 {/* footer block */}
-                <div className="hidden lg:flex bg-app px-[50px] pb-5 pt-10 text-[#3b4256] flex-col">
-                    <Link to="/infrastructure" className="mb-9 uppercase text-xs cursor-pointer">Инфраструктура</Link>
+                <div className="hidden -mb-2 lg:flex bg-app px-[50px] 2xl:pb-5 lg:pb-2 2xl:pt-10 lg:pt-6 text-[#3b4256] flex-col">
+                    <Link to="/infrastructure" className="xl:mb-9 lg:mb-5 uppercase text-xs cursor-pointer">Инфраструктура</Link>
 
                     <CallRequestButton filledButton={true}>
                         Оставить заявку
                     </CallRequestButton>
 
-                    <div className="copyright text-center text-13 mt-14">
+                    <div className="copyright text-center text-13 xl:mt-14 lg:mt-8">
                         <span>
                             © 2023 Бизнес-центр<br/>
                             {(import.meta as any).env.VITE_BC_NAME}.<br/>
