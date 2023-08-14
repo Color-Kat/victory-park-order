@@ -66,7 +66,7 @@ export const Header = () => {
         <header
             className="relative flex justify-center lg:items-center lg:w-[300px] w-full h-max lg:px-0 px-4 bg-white z-10 lg:border-r border-app"
         >
-            <nav className="flex lg:flex-col pt-3 pb-3 justify-between items-center lg:h-screen w-full lg:overflow-y-auto overflow-x-hidden">
+            <nav className="flex lg:flex-col pt-3 pb-3 justify-between items-center lg:h-screen w-full lg:overflow-y-auto overflow-x-hidden no-scrollbar">
 
                 {/* Open mobile menu button */}
                 <button
@@ -97,7 +97,7 @@ export const Header = () => {
                 </div>
 
                 {/* Phone block */}
-                <div className="hidden xs:flex items-center flex-col">
+                <div className="hidden xs:flex items-center flex-col my-5">
                     <PhoneNumber className="mb-3"/>
 
                     <CallRequestButton filledButton={false}>
@@ -106,7 +106,7 @@ export const Header = () => {
                 </div>
 
                 {/* Navigation */}
-                <div className="hidden lg:flex w-full px-[50px]">
+                <div className="hidden lg:flex w-full px-[50px] mt-3 mb-8">
                     <Navigation/>
                 </div>
 
