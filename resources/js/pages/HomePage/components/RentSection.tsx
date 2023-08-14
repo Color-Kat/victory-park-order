@@ -24,7 +24,7 @@ export const RentSection: React.FC = ({}) => {
             data-anchor="page-3"
             id="page-3-anchor"
         >
-            <h2 className="font-metapro lg:text-6xl md:text-6xl xs:text-5xl text-3xl font-bold text-app-accent text-center lg:mb-16 mb-8">
+            <h2 className="font-metapro lg:text-6xl md:text-6xl xs:text-5xl text-3xl font-bold text-app-accent text-center lg:my-16 my-8 no-scrollbar">
                 {(import.meta as any).env.VITE_RENT_TITLE}
             </h2>
 
