@@ -51,7 +51,7 @@ export const OfficeModal: React.FC = () => {
                 onClick={closeModal}
             />
 
-            <div className="relative modal bg-white z-10 rounded overflow-y-auto mx-2 max-w-5xl lg:mx-auto max-h-full">
+            <div className="relative modal bg-white z-10 rounded overflow-y-auto overflow-x-hidden mx-2 max-w-5xl w-full lg:mx-auto max-h-full">
                 <div
                     className="absolute top-4 right-4 cursor-pointer font-bold text-gray-800 text-3xl z-30"
                     onClick={closeModal}
