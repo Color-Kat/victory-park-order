@@ -68,7 +68,7 @@ export const ContactsSection: React.FC = ({}) => {
             data-anchor="page-7"
             id="page-7-anchor"
         >
-            <h2 className="font-metapro lg:text-6xl md:text-6xl xs:text-5xl text-3xl font-bold text-app-accent text-center lg:mb-16 mb-8">
+            <h2 className="font-metapro lg:text-6xl md:text-6xl xs:text-5xl text-3xl font-bold text-app-accent text-center lg:my-16 my-8">
                 Оставьте заявку на просмотр
             </h2>
 
@@ -81,7 +81,7 @@ export const ContactsSection: React.FC = ({}) => {
                 {error}
             </div>
 
-            <form className="flex flex-col w-full lg:max-w-none max-w-xl mx-auto sm:pb-10 md:pb-0 pb-24">
+            <form className="flex flex-col w-full lg:max-w-none max-w-xl mx-auto sm:pb-10 md:pb-0 mb-16">
                 <ReCaptcha
                     sitekey={(import.meta as any).env.VITE_CAPTCHA_SITE_KEY}
                     size='invisible'
