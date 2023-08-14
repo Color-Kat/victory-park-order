@@ -23,7 +23,7 @@ export const SellSection: React.FC = ({}) => {
             data-anchor="page-4"
             id="page-4-anchor"
         >
-            <h2 className="font-metapro lg:text-6xl md:text-6xl xs:text-5xl text-3xl font-bold text-app-accent text-center lg:mb-16 mb-8">
+            <h2 className="font-metapro lg:text-6xl md:text-6xl xs:text-5xl text-3xl font-bold text-app-accent text-center lg:my-16 my-8 no-scrollbar">
                 {(import.meta as any).env.VITE_SELL_TITLE}
             </h2>
             <div className="md:overflow-x-auto overflow-x-scroll w-screen lg:w-full px-2">
